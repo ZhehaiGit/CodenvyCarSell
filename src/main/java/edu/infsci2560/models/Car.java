@@ -35,17 +35,20 @@ public class Car {
     protected Long id;
     protected String title;
     protected WorkoutType workoutType;
+    protected String describe;
 
     public Car() {
         this.id = Long.MAX_VALUE;
         this.title = null;
         this.workoutType = WorkoutType.Unknown;
+        this.describe =  null;
     }
 
-    public Car(Long id, String name, WorkoutType workoutType) {
+    public Car(Long id, String name, WorkoutType workoutType, String describe) {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
+        this.describe = describe;
     }
 
     @Override
