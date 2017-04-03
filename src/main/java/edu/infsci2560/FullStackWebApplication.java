@@ -20,9 +20,9 @@ public class FullStackWebApplication {
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
 
         DvdRepository repository = ctx.getBean(DvdRepository.class);
-        repository.save(new Dvd(1L, "P90X", WorkoutType.CrossTrain));
-        repository.save(new Dvd(2L, "Insanity", WorkoutType.Cardio));
-        repository.save(new Dvd(3L, "Body Beast", WorkoutType.Strength));
+        repository.save(new Dvd(1L, "P90X", WorkoutType.Classics));
+        repository.save(new Dvd(2L, "Insanity", WorkoutType.Comedies));
+        repository.save(new Dvd(3L, "Body Beast", WorkoutType.Romance));
     }
 
 
