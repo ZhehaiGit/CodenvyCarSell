@@ -1,8 +1,8 @@
 package edu.infsci2560;
 
-import edu.infsci2560.models.Dvd;
-import edu.infsci2560.models.Dvd.WorkoutType;
-import edu.infsci2560.repositories.DvdRepository;
+import edu.infsci2560.models.Car;
+import edu.infsci2560.models.Car.WorkoutType;
+import edu.infsci2560.repositories.CarRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +21,8 @@ public class FullStackWebApplication {
 
         CarRepository repository = ctx.getBean(CarRepository.class);
         repository.save(new Car(1L, "P90X", WorkoutType.SUV));
-        repository.save(new Car(2L, "Insanity", WorkoutType.NomalCar));
-        repository.save(new Car(3L, "Body Beast", WorkoutType.Ven));
+        repository.save(new Car(2L, "Insanity", WorkoutType.NormalCar));
+        repository.save(new Car(3L, "Body Beast", WorkoutType.Van));
     }
 
 

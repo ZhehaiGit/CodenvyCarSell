@@ -5,8 +5,8 @@
  */
 package edu.infsci2560.controllers;
 
-import edu.infsci2560.models.Dvd;
-import edu.infsci2560.repositories.DvdRepository;
+import edu.infsci2560.models.Car;
+import edu.infsci2560.repositories.CarRepository;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -27,7 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CarsController {
     @Autowired
-    private CarsRepository repository;
+    private CarRepository repository;
     
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {        
