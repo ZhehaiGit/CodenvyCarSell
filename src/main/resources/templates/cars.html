@@ -10,8 +10,8 @@
             <table style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Workout Type</th>
+                    <th>CarsModel</th>
+                    <th>Type</th>
                 </tr>                
                 <tr data-th-each="car : ${cars}">
                     <td data-th-text="${car.id}"></td>
@@ -22,10 +22,10 @@
         </div>
         
         <hr />
-        Add DVD<br />
+        Add Car<br />
         <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-            Title: <input type="text" name="title" /><br />
-            Workout Type:<br />
+            Cars Model: <input type="text" name="title" /><br />
+            Cars Type:<br />
             <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
             <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
             <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
