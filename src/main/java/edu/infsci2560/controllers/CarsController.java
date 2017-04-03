@@ -25,19 +25,19 @@ import org.springframework.web.servlet.ModelAndView;
  * @author kolobj
  */
 @Controller
-public class DvdsController {
+public class CarsController {
     @Autowired
-    private DvdRepository repository;
+    private CarsRepository repository;
     
-    @RequestMapping(value = "dvds", method = RequestMethod.GET)
+    @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {        
-        return new ModelAndView("dvds", "dvds", repository.findAll());
+        return new ModelAndView("cars", "cars", repository.findAll());
     }
     
-    @RequestMapping(value = "dvds/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid Dvd dvd, BindingResult result) {
-        repository.save(dvd);
-        return new ModelAndView("dvds", "dvds", repository.findAll());
+    @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+        repository.save(car);
+        return new ModelAndView("cars", "cars", repository.findAll());
     }
     
 }

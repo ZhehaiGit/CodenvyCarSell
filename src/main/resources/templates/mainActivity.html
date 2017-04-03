@@ -4,7 +4,7 @@
         <title>User Home</title>
     </head>
     <body>
-        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s DVD's!</h1>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s Count!</h1>
 
         <div>
             <table style="border: 1px solid black">
@@ -13,23 +13,25 @@
                     <th>Name</th>
                     <th>Workout Type</th>
                 </tr>                
-                <tr data-th-each="dvd : ${dvds}">
-                    <td data-th-text="${dvd.id}"></td>
-                    <td data-th-text="${dvd.title}"></td>
-                    <td data-th-text="${dvd.workoutType}"></td>
+                <tr data-th-each="car : ${cars}">
+                    <td data-th-text="${car.id}"></td>
+                    <td data-th-text="${car.title}"></td>
+                    <td data-th-text="${car.workoutType}"></td>
                 </tr>
             </table>
         </div>
         
         <hr />
         Add DVD<br />
-        <form data-th-action="@{/dvds/add}" name="addDvdForm" method="post">
+        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
             Title: <input type="text" name="title" /><br />
             Workout Type:<br />
             <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value=" Classics" /> Classics<br />
-            <input type="radio" name="workoutType" value="Comedies" /> Actions<br />
-            <input type="radio" name="workoutType" value="Actions" /> Actions<br />
+            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
+            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
+            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
+            <input type="radio" name="workoutType" value="Van" /> Van<br />
+            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
             <input type="submit" value="Add Workout"/>
         </form>
         

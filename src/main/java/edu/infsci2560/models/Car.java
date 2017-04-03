@@ -17,17 +17,17 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * @author kolobj
  */
 @Entity
-public class Dvd {
+public class Car {
 
     private static final long serialVersionUID = 1L;
 
     public enum WorkoutType {
         Unknown,
-        Classics,
-        Comedies,
-        Actions,
-        Romance,
-        Drama
+        MicroCar,
+        NormalCar,
+        SportsCar,
+        Van,
+        SUV
     }
 
     @Id
@@ -36,13 +36,13 @@ public class Dvd {
     protected String title;
     protected WorkoutType workoutType;
 
-    public Dvd() {
+    public Car() {
         this.id = Long.MAX_VALUE;
         this.title = null;
         this.workoutType = WorkoutType.Unknown;
     }
 
-    public Dvd(Long id, String name, WorkoutType workoutType) {
+    public Car(Long id, String name, WorkoutType workoutType) {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
