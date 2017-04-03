@@ -10,13 +10,15 @@
             <table style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
-                    <th>CarsModel</th>
+                    <th>Model</th>
                     <th>Type</th>
+                    <th>Describe</th>
                 </tr>                
                 <tr data-th-each="car : ${cars}">
                     <td data-th-text="${car.id}"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
+                    <td data-th-text="${car.describe}"></td>
                 </tr>
             </table>
         </div>
@@ -24,14 +26,15 @@
         <hr />
         Add Car<br />
         <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-            Cars Model: <input type="text" name="title" /><br />
-            Cars Type:<br />
+            Model: <input type="text" name="title" /><br />
+            Type:<br />
             <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
             <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
             <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
             <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
             <input type="radio" name="workoutType" value="Van" /> Van<br />
             <input type="radio" name="workoutType" value="SUV" /> SUV<br />
+            Describe : <input style="border: 1px solid black" type="text" name="Describe" /><br />
             <input type="submit" value="Add Workout"/>
         </form>
         
