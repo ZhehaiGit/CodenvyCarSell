@@ -53,7 +53,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", workoutType=" + this.workoutType + " ]";
+        return "[ id=" + this.id + ", title=" + this.title + ", workoutType=" + this.workoutType +", describe=" + this.describe + " ]";
     }
 
     @Override
