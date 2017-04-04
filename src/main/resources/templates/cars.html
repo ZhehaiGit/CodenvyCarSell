@@ -11,43 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
-         <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s Count!</h1>
-
-        <div>
-            <table class = "table table-hover">
-                <tr>
-                    <th>ID</th>
-                    <th>Model</th>
-                    <th>Type</th>
-                    <th>Describe</th>
-                </tr>                
-                <tr data-th-each="car : ${cars}">
-                    <td data-th-text="${car.id}"></td>
-                    <td data-th-text="${car.title}"></td>
-                    <td data-th-text="${car.workoutType}"></td>
-                    <td data-th-text="${car.describe}"></td>
-                </tr>
-            </table>
-                  </div>
-        
-        <hr />
-        Add Car<br />
-        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-            Model: <input type="text" name="title" /><br />
-            Type:<br />
-            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
-            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
-            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
-            <input type="radio" name="workoutType" value="Van" /> Van<br />
-            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
-            <input type="submit" value="Add Workout"/>
-        </form>
-        
-        <hr />       
-        <form data-th-action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+         <button class = "btn btn = success"> click me</button>
          
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
