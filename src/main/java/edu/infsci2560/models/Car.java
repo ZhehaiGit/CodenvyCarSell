@@ -50,6 +50,14 @@ public class Car {
         this.workoutType = workoutType;
         this.describe = des;
     }
+    
+    public String getDescribe(){
+        return describe;
+    }
+    
+    public void setDescribe(String des){
+        describe=des;
+    }
 
     @Override
     public String toString() {
