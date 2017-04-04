@@ -44,11 +44,11 @@ public class Car {
         this.describe =  null;
     }
 
-    public Car(Long id, String name, WorkoutType workoutType, String describe) {
+    public Car(Long id, String name, WorkoutType workoutType, String des) {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
-        this.describe = describe;
+        this.describe = des;
     }
 
     @Override
