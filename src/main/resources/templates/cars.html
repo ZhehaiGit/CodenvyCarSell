@@ -29,6 +29,33 @@
             </table>
           </div>
         <hr />
+        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
+        <div class="container">
+        	<div class="row">
+        		<div class="span6">
+                    <form>
+                        <div class="controls controls-row">
+                            <input id="name" name="name" type="text" name="title" class="span3" placeholder="Car Model"> 
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                              <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                              </ul>
+                        </div>
+                        <div class="controls">
+                            <textarea id="message" name="message" class="span6" placeholder="Your Message" rows="5"></textarea>
+                        </div>
+                          
+                        <div class="controls">
+                            <button id="contact-submit" type="submit" class="btn btn-primary input-medium pull-right">Send</button>
+                        </div>
+                    </form>
+                </div>
+        	</div>
+        </div>
+        </form>
         Add Car<br />
         <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
           <div class="form-group">
@@ -43,10 +70,11 @@
             <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
             <input type="radio" name="workoutType" value="Van" /> Van<br />
             <input type="radio" name="workoutType" value="SUV" /> SUV<br />
-            
-          </div>
-            <textarea class="form-control" rows="3" name="describe" placeholder="Describe your car"></textarea>
             <input type="submit" value="Add Workout"/>
+          </div>
+            Describe:<br />
+            <textarea class="form-control" rows="3" name="describe" placeholder="Describe your car"></textarea>
+            
           <button type="submit" class="btn btn-default"  >Submit</button>
         </form>
         <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
