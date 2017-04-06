@@ -36,7 +36,7 @@
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
                             <select name="workoutType" class="selectpicker" >
-                              <option value="SUV">SUV</option>
+                              <option value="Suw">SUV</option>
                               <option value="33">33</option>
                               <option value="sport">sport</option>
                             </select>
@@ -91,9 +91,8 @@
             <input type="submit" value="Sign Out"/>
         </form>
         <script>$('select[name=workoutType]').selectpicker();
-                var sVal = $('select[name=workoutType] option:first').val();
-                $('select[name=workoutType]').val(sVal);
-                $('select[name=workoutType]').selectpicker('refresh');
+                $('select[name=workoutType]').val(1);
+                $('.selectpicker').selectpicker('refresh')
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
