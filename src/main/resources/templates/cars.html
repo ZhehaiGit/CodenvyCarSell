@@ -90,11 +90,13 @@
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
-        <script>$('select[name=workoutType]').selectpicker();
-                $('select[name=workoutType]').val(Suw);
-                $('.selectpicker').selectpicker('refresh')
-        </script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>$('select[name=workoutType]').selectpicker();
+                var text = $("select[name=workoutType] option[value='1']").text();
+                $('.bootstrap-select .filter-option').text(text);
+                $('select[name=workoutType]').val(1);
+        </script>
     </body>
 </html>
