@@ -36,14 +36,14 @@
                     <form>
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <select class="selectpicker" name = "workoutType">
-                              <option value="MicroCar">Mustard</option>
-                              <option value="unknown">Ketchup</option>
-                              <option value="3">Relish</option>
+                            <select class="selectpicker">
+                              <option name="workoutType" value="SUV">SUV</option>
+                              <option name="workoutType" value="33">33</option>
+                              <option name="workoutType" value="sport">sport</option>
                             </select>
                         </div>
-                        <div class="controls" name = "describe">
-                            <textarea id="message" name="message" class="span6" placeholder="Your Message" rows="5"></textarea>
+                        <div class="controls">
+                            <textarea id="message" name="describe" class="span6" placeholder="Desvribe your car" rows="5"></textarea>
                         </div>
                           
                         <div class="controls">
@@ -55,7 +55,7 @@
         </div>
         </form>
         Add Car<br />
-        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
+        <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
           <div class="form-group">
             <label for="carModel">Car Model</label>
             <input type="text" class="form-control" name="title" id="carModel" placeholder="Car Model"/>
