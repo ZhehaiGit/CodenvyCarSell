@@ -29,35 +29,31 @@
             </table>
           </div>
         <hr />
-        <div class="container" data-th-action="@{/cars/add}" name="addCarForm" method="post">
-        	<div class="row">
-        		<div class="span6">
-                    <form>
-                        <div class="controls controls-row">
-                            <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <select class="selectpicker">
-                              <option name="workoutType" value="SUV">SUV</option>
-                              <option name="workoutType" value="33">33</option>
-                              <option name="workoutType" value="sport">sport</option>
-                            </select>
-                        </div>
-                        <div class="controls">
-                            <textarea id="message" name="describe" class="span6" placeholder="Desvribe your car" rows="5"></textarea>
-                        </div>
-                          
-                        <div class="controls">
-                            <button id="contact-submit" type="submit" value="Add Workout" class="btn btn-primary input-medium pull-right">Send</button>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                            <button type="submit" value="Add Workout" >Submit</button>
-                            
-                        </div>
-                        <button type="submit" value="Add Workout" >Submit</button>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
-        	</div>
-        </div>
-        
+        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
+            <div class="container">
+            	<div class="row">
+            		<div class="span6">
+                        <form>
+                            <div class="controls controls-row">
+                                <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
+                                <select class="selectpicker">
+                                  <option name="workoutType" value="SUV">SUV</option>
+                                  <option name="workoutType" value="33">33</option>
+                                  <option name="workoutType" value="sport">sport</option>
+                                </select>
+                            </div>
+                            <div class="controls">
+                                <textarea id="message" name="describe" class="span6" placeholder="Desvribe your car" rows="5"></textarea>
+                            </div>
+                              
+                            <div class="controls">
+                                <button id="contact-submit" type="submit" value="Add Workout" class="btn btn-primary input-medium pull-right">Send</button>
+                            </div>
+                        </form>
+                    </div>
+            	</div>
+            </div>
+        </form>
         
         Add Car<br />
         <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
