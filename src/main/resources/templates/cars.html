@@ -31,6 +31,24 @@
         <hr />
         Add Car<br />
         <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
+          <div class="form-group">
+            <label for="carModel1">Car Model</label>
+            <input type="text" class="form-control" name="title" id="carModel1" placeholder="title">
+          </div>
+          
+          <div>
+            Type:<br />
+            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
+            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
+            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
+            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
+            <input type="radio" name="workoutType" value="Van" /> Van<br />
+            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
+            <input type="submit" value="Add Workout"/>
+          </div>
+    
+        </form>
+        <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
             Model: <input type="text" name="title" /><br />
             Type:<br />
             <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
@@ -40,7 +58,7 @@
             <input type="radio" name="workoutType" value="Van" /> Van<br />
             <input type="radio" name="workoutType" value="SUV" /> SUV<br />
             <input type="submit" value="Add Workout"/>
-        </form>
+        </form-->
         
         <hr />       
         <form data-th-action="@{/logout}" method="post">
