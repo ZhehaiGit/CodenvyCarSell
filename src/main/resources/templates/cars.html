@@ -36,9 +36,12 @@
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
                             <select name="workoutType" class="selectpicker" >
-                              <option value="Suw">SUV</option>
-                              <option value="33">33</option>
-                              <option value="sport">sport</option>
+                              <option value="Unknown">Unknown</option>
+                              <option value="MicroCar">MicroCar</option>
+                              <option value="NormalCar">NormalCar</option>
+                              <option value="SportsCar">SportsCar</option>
+                              <option value="Van">Van</option>
+                              <option value="SUV">SUV</option>
                             </select>
                         </div>
                         <div class="controls">
@@ -93,10 +96,10 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script>$('select[name=workoutType]').selectpicker();
-                var text = $("select[name=workoutType] option[value='1']").text();
-                $('.bootstrap-select .filter-option').text(text);
+        <script>/*eslint-env jquery, jquery*/
+                $('select[name=workoutType]').selectpicker();
                 $('select[name=workoutType]').val(1);
+                $('.selectpicker').selectpicker('refresh')
         </script>
     </body>
 </html>
