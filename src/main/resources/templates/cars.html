@@ -35,10 +35,10 @@
                     <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <select class="selectpicker">
-                              <option name="workoutType" value="SUV">SUV</option>
-                              <option name="workoutType" value="33">33</option>
-                              <option name="workoutType" value="sport">sport</option>
+                            <select class="selectpicker" name="workoutType">
+                              <option value="SUV">SUV</option>
+                              <option value="33">33</option>
+                              <option value="sport">sport</option>
                             </select>
                         </div>
                         <div class="controls">
