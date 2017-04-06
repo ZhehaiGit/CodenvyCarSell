@@ -29,18 +29,17 @@
             </table>
           </div>
         <hr />
-        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-        <div class="container">
+        <div class="container" data-th-action="@{/cars/add}" name="addCarForm" method="post">
         	<div class="row">
         		<div class="span6">
                     <form>
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <!--select class="selectpicker">
+                            <select class="selectpicker">
                               <option name="workoutType" value="SUV">SUV</option>
                               <option name="workoutType" value="33">33</option>
                               <option name="workoutType" value="sport">sport</option>
-                            </select-->
+                            </select>
                         </div>
                         <div class="controls">
                             <textarea id="message" name="describe" class="span6" placeholder="Desvribe your car" rows="5"></textarea>
@@ -59,7 +58,6 @@
         	</div>
         </div>
         
-        </form>
         
         Add Car<br />
         <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
