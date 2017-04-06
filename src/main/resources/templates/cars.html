@@ -35,7 +35,7 @@
                     <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <select class="selectpicker" name="workoutType">
+                            <select name="workoutType" class="selectpicker" >
                               <option value="SUV">SUV</option>
                               <option value="33">33</option>
                               <option value="sport">sport</option>
@@ -90,11 +90,9 @@
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
-        <script $('select[name=workouType]').selectpicker();
-                        $('#mybutton').click(function(){
-                            $('select[name=workouType]').val(1);
-                            $('.selectpicker').selectpicker('refresh');
-                        });
+        <script 
+                    $('select[name=workouType]').val(1);
+                    $('.selectpicker').selectpicker('refresh')
         ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
