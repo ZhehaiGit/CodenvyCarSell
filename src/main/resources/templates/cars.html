@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button-->
-              <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]</h1>
+              <h1 class="navbar-text">[[${#httpServletRequest.remoteUser}]]</h1>
               <!-- a class="navbar-brand" data-th-inline="text" href="#">[[${#httpServletRequest.remoteUser}]]</a-->
             </div>
         
@@ -51,10 +51,13 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
               </form>
+              <form class="nav navbar-nav navbar-right" data-th-action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+              </form>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Link</a></li>
                   <div class="form-group">
-                      <a <button data-th-action="@{/logout}" method="post" value="Sign Out" type="submit" class="btn btn-default">SignOut</button></a>
+                       <button data-th-action="@{/logout}" method="post" value="Sign Out" type="submit" class="btn btn-default">SignOut</button>
                   </div>
               </ul>
             </div><!-- /.navbar-collapse -->
