@@ -47,7 +47,7 @@ public class CarsController {
         while (repository.findOne(id) != null) {
             repository.findOne(id).setId(curt);
             curt++;
-            id++
+            id++;
         }
         return new ModelAndView("cars", "cars", repository.findAll());
     }
