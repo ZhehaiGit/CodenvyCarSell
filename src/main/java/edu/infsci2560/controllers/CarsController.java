@@ -51,13 +51,18 @@ public class CarsController {
     @RequestMapping(value = "cars/delet",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     
     public ModelAndView remove(@RequestParam("id") Long id) {
-        ModelAndView mv = new ModelAndView("cars");
+        ModelAndView model = new ModelAndView("cars");
         if (repository.findOne(id) != null) {
            repository.delete(id);
+           id++;
+           while (repository.findOne(id) != null) {
+               repository.findOne(id).setId(id-1);
+               id++;
+           }
         } else {
             log.error("ID not exsit!");
         }
-        mv.addObject("cars", repository.findAll());
+        model.addObject("cars", repository.findAll());
         return mv;
         
     }
