@@ -52,7 +52,10 @@ public class CarsController {
     public ModelAndView remove(@RequestParam("id") Long id) {
         if (repository.findOne(id) != null) {
            repository.delete(id);
+           return new ModelAndView("cars", "cars", repository.findAll());
+        } else {
+            log("ID not exsit!");
         }
-        return new ModelAndView("cars", "cars", repository.findAll());
+        
     }
 }
