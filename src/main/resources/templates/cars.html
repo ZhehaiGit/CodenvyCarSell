@@ -102,7 +102,7 @@
         <div class="container">
         	<div class="row">
         		<div class="span6">
-                    <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
+                    <form data-th-action="@{/cars}" name="addCarForm" method="post">
                         <div class="controls controls-row">
                             <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
                             <select name="workoutType" class="selectpicker">
@@ -127,7 +127,7 @@
         	</div>
         </div>
         Remove Car<br />
-        <form data-th-action="@{/cars/delet}" name="deletCarForm" method="post">
+        <form data-th-action="@{/cars}" name="deletCarForm" method="post">
             <input type="number" name="id" class="form-control" placeholder="ID"/>
             <input id="contact-submit" type="submit" value="delet" class="btn btn-primary"></input>
         </form>
