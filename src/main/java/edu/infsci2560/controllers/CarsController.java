@@ -38,7 +38,17 @@ public class CarsController {
     private CarRepository repository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     @RequestMapping(value = "cars", method = RequestMethod.GET)
-    public ModelAndView index() {        
+    public ModelAndView index() {
+        Long id = 1;
+        Long curt = 1;
+        while (repository.findOne(id) == 0) {
+            id++;
+        }
+        while (repository.findOne(id) != null) {
+            repository.findOne(id).setId(curt);
+            curt++;
+            id++
+        }
         return new ModelAndView("cars", "cars", repository.findAll());
     }
     
