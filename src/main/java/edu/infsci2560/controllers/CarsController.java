@@ -48,7 +48,7 @@ public class CarsController {
     }
     
     @RequestMapping(value = "cars/delet",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    @ResponseStatus(value=HttpStatus.OK)
+    
     public ModelAndView remove(@RequestParam("id") Long id) {
         repository.delete(id);
         ModelAndView mv = new ModelAndView("cars");
