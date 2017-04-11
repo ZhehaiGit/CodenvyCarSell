@@ -28,9 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.apache.log4j.Logger;
 /**
  *
  * @author kolobj
@@ -54,12 +52,18 @@ public class CarsController {
     @RequestMapping(value = "cars/delet",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     
     public ModelAndView remove(@RequestParam("id") Long id) {
+        ModelAndView mv = new ModelAndView("cars");
         if (repository.findOne(id) != null) {
            repository.delete(id);
-           return new ModelAndView("cars", "cars", repository.findAll());
+           mv.addObject("cars", repository.findAll());
         } else {
+            Logger log = Logger.getLogger(CarsController.class);
             log.info("ID not exsit!");
+            mv.addObject("cars", repository.findAll());
+            mv.addObject("msg", "Hello Spring MVC + Log4j");
+            
         }
+        return mv;
         
     }
 }
