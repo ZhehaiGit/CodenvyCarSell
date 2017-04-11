@@ -98,6 +98,7 @@
             </table>
           </div>
         <hr />
+        Add Car<br />
         <div class="container">
         	<div class="row">
         		<div class="span6">
@@ -119,14 +120,19 @@
                         </div>
                           
                         <div class="controls">
-                            <button id="contact-submit" type="submit" value="Add Workout" class="btn btn-primary input-medium pull-right">Send</button>
+                            <button id="contact-submit" type="submit" value="Add Workout" class="btn btn-primary input-medium pull-down">Send</button>
                         </div>
                     </form>
                 </div>
         	</div>
         </div>
+        Remove Car<br />
+        <form data-th-action="@{/cars/delet}" name="deletCarForm" method="delet">
+            <input type="text" name="id" class="form-control" placeholder="Search"/>
+            <button id="" type="submit" value="Delet" class="btn btn-primary">Delet</button>
+        </form>
         
-        Add Car<br />
+        
         <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
           <div class="form-group">
             <label for="carModel">Car Model</label>

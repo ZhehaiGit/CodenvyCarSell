@@ -12,4 +12,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  *
  * @author kolobj
  */
-public interface CarRepository extends PagingAndSortingRepository<Car, Long> {}
+public interface CarRepository extends PagingAndSortingRepository<Car, Long> {
+    @Override
+    void delete(Long id);
+}
