@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public class CarsController {
     @Autowired
     private CarRepository repository;
-    final static Logger log = LoggerFactory.getLogger(Wombat.class);
+    final static Logger log = LoggerFactory.getLogger(CarsController.class);
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {        
         return new ModelAndView("cars", "cars", repository.findAll());
