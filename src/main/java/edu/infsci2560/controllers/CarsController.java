@@ -54,11 +54,10 @@ public class CarsController {
         ModelAndView mv = new ModelAndView("cars");
         if (repository.findOne(id) != null) {
            repository.delete(id);
-           mv.addObject("cars", repository.findAll());
         } else {
-            log.info("ID not exsit!");
-            mv.addObject("msg", "Hello Spring MVC + Log4j");
+            log.error("ID not exsit!");
         }
+        mv.addObject("cars", repository.findAll());
         return mv;
         
     }
