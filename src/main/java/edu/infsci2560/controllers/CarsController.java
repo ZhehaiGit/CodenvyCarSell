@@ -42,10 +42,10 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());
     }
     
-    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
-    public ModelAndView newindex() {
-        return new ModelAndView("cars", "cars", repository.findAll());
-    }
+//    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
+//    public ModelAndView newindex() {
+//        return new ModelAndView("cars", "cars", repository.findAll());
+//    }
     
     @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
