@@ -47,7 +47,7 @@ public class CarsController {
         return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     @RequestMapping(value = "removecar", method = RequestMethod.GET)
-    public ModelAndView SellCars() {
+    public ModelAndView removecar() {
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
