@@ -59,9 +59,7 @@ public class CarsController {
         } else {
             Logger log = Logger.getLogger(CarsController.class);
             log.info("ID not exsit!");
-            mv.addObject("cars", repository.findAll());
             mv.addObject("msg", "Hello Spring MVC + Log4j");
-            
         }
         return mv;
         
