@@ -60,7 +60,6 @@ public class CarsController {
     @RequestMapping(value = "removecardelt",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     
     public ModelAndView remove(@RequestParam("id") Long id) {
-        ModelAndView model = new ModelAndView("cars");
         if (repository.findOne(id) != null) {
            repository.delete(id);
 //           id++;
@@ -71,7 +70,6 @@ public class CarsController {
         } else {
             log.error("ID not exsit!");
         }
-        model.addObject("cars", repository.findAll());
-        return model;
+        return new ModelAndView("reomvecar", "cars", repository.findAll());
     }
 }
