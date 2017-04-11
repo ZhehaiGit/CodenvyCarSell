@@ -63,7 +63,6 @@ public class CarsController {
             log.error("ID not exsit!");
         }
         model.addObject("cars", repository.findAll());
-        return mv;
-        
+        return model;
     }
 }
