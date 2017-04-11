@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public class CarsController {
     @Autowired
     private CarRepository repository;
-    
+    final static Logger log = LoggerFactory.getLogger(Wombat.class);
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {        
         return new ModelAndView("cars", "cars", repository.findAll());
@@ -56,7 +56,6 @@ public class CarsController {
            repository.delete(id);
            mv.addObject("cars", repository.findAll());
         } else {
-            Logger log = Logger.getLogger(CarsController.class);
             log.info("ID not exsit!");
             mv.addObject("msg", "Hello Spring MVC + Log4j");
         }
