@@ -54,7 +54,7 @@ public class CarsController {
            repository.delete(id);
            return new ModelAndView("cars", "cars", repository.findAll());
         } else {
-            log("ID not exsit!");
+            log.info("ID not exsit!");
         }
         
     }
