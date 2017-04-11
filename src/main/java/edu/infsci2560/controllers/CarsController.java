@@ -59,11 +59,11 @@ public class CarsController {
         ModelAndView model = new ModelAndView("cars");
         if (repository.findOne(id) != null) {
            repository.delete(id);
-           id++;
-           while (repository.findOne(id) != null) {
-               repository.findOne(id).setId(id-1);
-               id++;
-           }
+//           id++;
+//           while (repository.findOne(id) != null) {
+//               repository.findOne(id).setId(id-1);
+//               id++;
+//           }
         } else {
             log.error("ID not exsit!");
         }
