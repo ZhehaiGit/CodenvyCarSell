@@ -47,10 +47,10 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());
     }
     
-    @RequestMapping(value = "cars",  method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "cars/delet",  method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView remove(@RequestParam("id") Long id) {
         repository.delete(id);
-         ModelAndView mv = new ModelAndView("cars");
+        ModelAndView mv = new ModelAndView("cars");
         mv.addObject("cars", repository.findAll());
         return mv;
     }
