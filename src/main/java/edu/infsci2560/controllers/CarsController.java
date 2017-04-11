@@ -43,7 +43,7 @@ public class CarsController {
     }
     
     @RequestMapping(value = "sellcars", method = RequestMethod.GET)
-    public ModelAndView index() {
+    public ModelAndView newindex() {
         return new ModelAndView("cars", "cars", repository.findAll());
     }
     
