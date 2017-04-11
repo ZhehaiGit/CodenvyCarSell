@@ -47,13 +47,13 @@ public class CarsController {
         return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     
-    @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "sellcars", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
         repository.save(car);
-        return new ModelAndView("cars", "cars", repository.findAll());
+        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     
-    @RequestMapping(value = "cars/delet",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "/removecar",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     
     public ModelAndView remove(@RequestParam("id") Long id) {
         ModelAndView model = new ModelAndView("cars");
