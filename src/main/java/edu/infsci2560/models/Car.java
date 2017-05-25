@@ -55,7 +55,7 @@ public class Car {
         this.title = name;
         this.workoutType = workoutType;
         this.describe = des;
-        this.Email = email;
+        this.Email = des;
         this.Dealer = dealer;
     }
     /**
