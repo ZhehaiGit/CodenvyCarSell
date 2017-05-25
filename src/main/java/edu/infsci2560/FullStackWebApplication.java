@@ -1,8 +1,10 @@
 package edu.infsci2560;
 
 import edu.infsci2560.models.Car;
+import edu.infsci2560.models.Customer;
 import edu.infsci2560.models.Car.WorkoutType;
 import edu.infsci2560.repositories.CarRepository;
+import edu.infsci2560.repositories.CustomerRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
