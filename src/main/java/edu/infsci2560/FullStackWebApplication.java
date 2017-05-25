@@ -28,9 +28,9 @@ public class FullStackWebApplication {
         
         
         CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
-        CstmRepository.save(new Customer(1L, "zzh", "hzz", "zzh@pitt.edu"));
-        CstmRepository.save(new Customer(1L, "xjl", "jlx", "xjl@gmail.edu"));
-        CstmRepository.save(new Customer(1L, "wdyj", "dyjw", "wdyj@su.edu"));
+        CstmRepository.save(new Customer( "zzh", "hzz", "zzh@pitt.edu"));
+        CstmRepository.save(new Customer( "xjl", "jlx", "xjl@gmail.edu"));
+        CstmRepository.save(new Customer( "wdyj", "dyjw", "wdyj@su.edu"));
     }
 
 
