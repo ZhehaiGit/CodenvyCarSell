@@ -50,12 +50,12 @@ public class Car {
         this.Dealer = null;
     }
 
-    public Car(Long id, String name, WorkoutType workoutType, String des) {
+    public Car(Long id, String name, WorkoutType workoutType, String des, String email, String dealer) {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
         this.describe = des;
-        this.Email = email;
+        this.Email = des;
         this.Dealer = dealer;
     }
     /**
