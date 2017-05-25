@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import edu.infsci2560.models.Car;
 
 @Entity
 public class Customer {
@@ -16,19 +17,21 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String Name;
+    private List<Car> cars;
 
     protected Customer() {}
 
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer(String Name) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+        this.Name = Name;
+        this.cars = null;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']", getId(), getFirstName(), getLastName());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getFirstName(), getLastName());
     }
 
     /**
@@ -48,29 +51,33 @@ public class Customer {
     /**
      * @return the firstName
      */
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
     /**
      * @param firstName the firstName to set
      */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String Name) {
+        this.Name = Name;
     }
-
-    /**
-     * @return the lastName
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
+    
     /**
      * @param lastName the lastName to set
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    
+    public void addCustomerCars(Car car) {
+        cars.add(car);
+    }
+    
+    public void deletCustomerCars(Long id) {
+        cars.remove(id);
+    }
+    public List<Car> getCustomerCars() {
+        return cars;
     }
 
 }

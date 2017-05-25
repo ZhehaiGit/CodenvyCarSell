@@ -33,6 +33,10 @@ public class DatabaseConfig {
         String password = dbUri.getUserInfo().split(":")[1];
         String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";       
 
+        System.out.println(username);
+        System.out.println(password);
+        System.out.println(dbUrl);
+
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setUrl(dbUrl);
         basicDataSource.setUsername(username);
