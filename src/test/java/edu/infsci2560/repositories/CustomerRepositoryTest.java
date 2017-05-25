@@ -31,7 +31,7 @@ public class CustomerRepositoryTest {
         Customer customer = new Customer("username", "password", "email");
         entityManager.persist(customer);
 
-        List<Customer> FindByUsername = customers.FindByUsername(customer.getUsername());
+        List<Customer> FindByUsername = customers.findByUsername(customer.getUsername());
         assertThat(FindByUsername).extracting(Customer::getUsername).containsOnly(customer.getUsername());
     }
 }
