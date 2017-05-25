@@ -25,8 +25,8 @@ public class Customer {
 
     protected Customer() {}
 
-    public Customer( Long id, String password, String username, String email) {
-        this.id = id;
+    public Customer( String password, String username, String email) {
+        
         this.Password = password;
         this.Username = username;
         this.Email = email;

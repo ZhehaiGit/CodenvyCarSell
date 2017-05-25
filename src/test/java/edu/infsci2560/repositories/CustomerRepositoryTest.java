@@ -28,10 +28,10 @@ public class CustomerRepositoryTest {
 
     @Test
     public void testFindByLastName() {
-        Customer customer = new Customer("first", "last");
+        Customer customer = new Customer("username", "password", "email");
         entityManager.persist(customer);
 
-        List<Customer> findByLastName = customers.findByLastName(customer.getLastName());
-        assertThat(findByLastName).extracting(Customer::getLastName).containsOnly(customer.getLastName());
+        List<Customer> findByUsername = customers.findByUsername(customer.getUsername());
+        assertThat(findByUsername).extracting(Customer::getUsername).containsOnly(customer.getUsername());
     }
 }
