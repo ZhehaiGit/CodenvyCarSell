@@ -35,7 +35,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Password='%s', Username='%s']", getId(), getFirstName(), getLastName());
+        return String.format("Customer[id=%d, Password='%s', Username='%s']", getId(), getUsername(), getPassword().getEmail());
     }
 
     /**
@@ -58,12 +58,15 @@ public class Customer {
     public String getPassword() {
         return Password;
     }
+    public String getUsername() {
+        return Username;
+    }
 
     /**
      * @param firstName the firstName to set
      */
     public void setPassword(String password) {
-        this.Passwrod = password;
+        this.Password = password;
     }
     
     public String getEmail() {

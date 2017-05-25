@@ -22,9 +22,9 @@ public class FullStackWebApplication {
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
    
         CarRepository repository = ctx.getBean(CarRepository.class);
-        repository.save(new Car(1L, "BMW X6", WorkoutType.SUV, "BMW"));
-        repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz"));
-        repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge"));
+        repository.save(new Car(1L, "BMW X6", WorkoutType.SUV, "BMW", "zzh@pitt.edu", "zzh"));
+        repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz","xjl@gmail.com", "xjl"));
+        repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge", "wdyj@ppp.com", "wdyj"));
         
         
         CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
