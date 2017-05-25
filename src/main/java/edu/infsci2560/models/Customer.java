@@ -17,21 +17,24 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String Name;
+    private String Password;
+    private String Username;
+    private String Email;
     private List<Car> cars;
 
     protected Customer() {}
 
-    public Customer(String Name) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-        this.Name = Name;
+    public Customer( Long id, String password, String username, String email) {
+        this.id = id;
+        this.Password = password;
+        this.Username = username;
+        this.Email = email;
         this.cars = null;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getFirstName(), getLastName());
+        return String.format("Customer[id=%d, Password='%s', Username='%s']", getId(), getFirstName(), getLastName());
     }
 
     /**
@@ -51,33 +54,33 @@ public class Customer {
     /**
      * @return the firstName
      */
-    public String getName() {
-        return Name;
+    public String getPassword() {
+        return Password;
     }
 
     /**
      * @param firstName the firstName to set
      */
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setPassword(String password) {
+        this.Passwrod = password;
     }
     
-    /**
-     * @param lastName the lastName to set
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getEmail() {
+        return Email;
+    }
+    public void setEmail(String email) {
+        this.Email = email;
     }
     
-    public void addCustomerCars(Car car) {
-        cars.add(car);
-    }
-    
-    public void deletCustomerCars(Long id) {
-        cars.remove(id);
-    }
-    public List<Car> getCustomerCars() {
-        return cars;
-    }
+//    public void addCustomerCars(Car car) {
+//        cars.add(car);
+//    }
+//    
+//    public void deletCustomerCars(Long id) {
+//        cars.remove(id);
+//    }
+//    public List<Car> getCustomerCars() {
+//        return cars;
+//    }
 
 }

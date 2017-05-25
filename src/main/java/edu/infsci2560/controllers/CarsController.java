@@ -36,7 +36,26 @@ import org.slf4j.LoggerFactory;
 public class CarsController {
     @Autowired
     private CarRepository repository;
+    private CustomerRepository cstmRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
+    
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password) {
+        if (username.equals("zzh") && password.equals("hzz")) {
+            return new ModelAndView("cars", "cars", repository.findAll());
+        } else {
+            return new ModelAndView("login");
+        }
+//        if (cstmRepository.contains(username) && cstmRepository.get(username).Password.equals(password) {
+//            return new ModelAndView("home", "cars", repository.findAll());
+//        } else {
+//            
+//        }     
+        
+    }
+
+    
+    
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {
         return new ModelAndView("cars", "cars", repository.findAll());

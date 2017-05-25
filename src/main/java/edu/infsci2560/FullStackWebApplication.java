@@ -18,11 +18,17 @@ public class FullStackWebApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
-
+   
         CarRepository repository = ctx.getBean(CarRepository.class);
         repository.save(new Car(1L, "BMW X6", WorkoutType.SUV, "BMW"));
         repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz"));
         repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge"));
+        
+        
+        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
+        CstmRepository.save(new Customer(1L, "zzh", "hzz", "zzh@pitt.edu"));
+        CstmRepository.save(new Customer(1L, "xjl", "jlx", "xjl@gmail.edu"));
+        CstmRepository.save(new Customer(1L, "wdyj", "dyjw", "wdyj@su.edu"));
     }
 
 

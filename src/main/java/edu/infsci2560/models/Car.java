@@ -29,6 +29,8 @@ public class Car {
         Van,
         SUV
     }
+    
+    
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,32 +38,53 @@ public class Car {
     protected String title;
     protected WorkoutType workoutType;
     protected String describe;
+    protected String Email;
+    protected String Dealer;
 
     public Car() {
         this.id = Long.MAX_VALUE;
         this.title = null;
         this.workoutType = WorkoutType.Unknown;
         this.describe =  null;
+        this.Email = null;
+        this.Dealer = null;
     }
 
-    public Car(Long id, String name, WorkoutType workoutType, String des) {
+    public Car(Long id, String name, WorkoutType workoutType, String des, String email, String dealer) {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
         this.describe = des;
+        this.Email = email;
+        this.Dealer = dealer;
+    }
+    /**
+     * @return the Email
+     */
+    public String getEmail(){
+        return Email;
+    }
+    public void setEmail(String email){
+        this.Email = email;
+    }
+    
+    public String getDealer(){
+        return Dealer;
+    }
+    public void setDealer(String dealer){
+        this.Dealer = dealer;
     }
     
     public String getDescribe(){
         return describe;
     }
-    
     public void setDescribe(String des){
         describe=des;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", workoutType=" + this.workoutType +", describe=" + this.describe + " ]";
+        return "[ id=" + this.id + ", title=" + this.title + ", workoutType=" + this.workoutType +", describe=" + this.describe + ", email=" + this.Email +", dealer=" + this.Dealer +"]";
     }
 
     @Override
