@@ -35,7 +35,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Password='%s', Username='%s']", getId(), getUsername(), getPassword().getEmail());
+        return String.format("Customer[id=%d, Password='%s', Username='%s']", getId(), getUsername(), getPassword(), getEmail());
     }
 
     /**
