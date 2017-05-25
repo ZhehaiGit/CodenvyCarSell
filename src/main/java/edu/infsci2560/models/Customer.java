@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import edu.infsci2560.models.Car;
+import java.util.List;
 
 @Entity
 public class Customer {

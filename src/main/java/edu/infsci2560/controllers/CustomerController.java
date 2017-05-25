@@ -1,6 +1,7 @@
 package edu.infsci2560.controllers;
 
 import edu.infsci2560.models.Car;
+import edu.infsci2560.models.Customer;
 import edu.infsci2560.repositories.CustomerRepository;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,44 +29,44 @@ import org.slf4j.LoggerFactory;
  * @author kolobj
  */
 @Controller
-public class CustomerController {
-    @Autowired
-    private CustomerRepository CustRepository;
-    private @RequestParam("Cid") Long id;
-    private Customer customer = CustRepository.findOne(id);
-    final static Logger log = LoggerFactory.getLogger(CustomerController.class);
-    @RequestMapping(value = "cars", method = RequestMethod.GET)
-    public ModelAndView index() {
-        return new ModelAndView("cars", "cars", CustRepository.findOne(id));
-    }
-    
-    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
-    public ModelAndView SellCars(){
-        return new ModelAndView("sellcars", "cars", CustRepository.findOne(id).getCustomerCars());
-    }
-    @RequestMapping(value = "removecar", method = RequestMethod.GET)
-    public ModelAndView removecar() {
-        return new ModelAndView("removecar", "cars", CustRepository.findOne(id).getCustomerCars());
-    }
-    
-    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
-        CustRepository.findOne(id).add(car);
-        return new ModelAndView("sellcars", "cars", CustRepository.findOne(id));
-    }
-    
-    @RequestMapping(value = "removecardelt",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView remove(@RequestParam("id") Long carId) {
-        if (CustRepository.findOne(id) != null) {
-           repository.delete(id);
-//           id++;
-//           while (repository.findOne(id) != null) {
-//               repository.findOne(id).setId(id-1);
-//               id++;
-//           }
-        } else {
-            log.error("ID not exsit!");
-        }
-        return new ModelAndView("removecar", "cars", CustRepository.findAll());
-    }
-}
+//public class CustomerController {
+//    @Autowired
+//    private CustomerRepository CustRepository;
+//    
+//    private Customer customer = CustRepository.findOne(id);
+//    final static Logger log = LoggerFactory.getLogger(CustomerController.class);
+//    @RequestMapping(value = "cars", method = RequestMethod.GET)
+//    public ModelAndView index() {
+//        return new ModelAndView("cars", "cars", CustRepository.findOne(id));
+//    }
+//    
+//    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
+//    public ModelAndView SellCars(){
+//        return new ModelAndView("sellcars", "cars", CustRepository.findOne(id).getCustomerCars());
+//    }
+//    @RequestMapping(value = "removecar", method = RequestMethod.GET)
+//    public ModelAndView removecar() {
+//        return new ModelAndView("removecar", "cars", CustRepository.findOne(id).getCustomerCars());
+//    }
+//    
+//    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+//        CustRepository.findOne(id).add(car);
+//        return new ModelAndView("sellcars", "cars", CustRepository.findOne(id));
+//    }
+//    
+//    @RequestMapping(value = "removecardelt",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView remove(@RequestParam("id") Long carId) {
+//        if (CustRepository.findOne(id) != null) {
+//           repository.delete(id);
+////           id++;
+////           while (repository.findOne(id) != null) {
+////               repository.findOne(id).setId(id-1);
+////               id++;
+////           }
+//        } else {
+//            log.error("ID not exsit!");
+//        }
+//        return new ModelAndView("removecar", "cars", CustRepository.findAll());
+//    }
+//}

@@ -7,6 +7,7 @@ package edu.infsci2560.controllers;
 
 import edu.infsci2560.models.Car;
 import edu.infsci2560.repositories.CarRepository;
+import edu.infsci2560.repositories.CustomerRepository;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
