@@ -80,6 +80,7 @@ public class Customer {
     private String Password;
     private String Username;
     private String Email;
+    @ManyToOne
     private List<Car> cars;
 
     protected Customer() {}
