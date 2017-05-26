@@ -26,7 +26,7 @@ public class CustomerRepositoryTest {
     @Autowired
     private CustomerRepository customers;
 
-    @Test
+//    @Test
 //    public void testFindByLastName() {
 //        Customer customer = new Customer("first", "last");
 //        entityManager.persist(customer);
