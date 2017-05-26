@@ -12,8 +12,8 @@ import javax.persistence.Id;
 import edu.infsci2560.models.Car;
 import java.util.List;
 
-//@Entity
-//public class Customer {
+@Entity
+public class Customer {
 //    @Id
 //    @GeneratedValue(strategy=GenerationType.AUTO)
 //    private Long id;
