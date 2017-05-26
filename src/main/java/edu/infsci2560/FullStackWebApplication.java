@@ -26,16 +26,16 @@ public class FullStackWebApplication {
         repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz","xjl@gmail.com", "xjl"));
         repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge", "wdyj@ppp.com", "wdyj"));
         
-        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
-        CstmRepository.save(new Customer( "zzh", "hzz"));
-        CstmRepository.save(new Customer( "xjl", "jlx"));
-        CstmRepository.save(new Customer( "wdyj", "dyjw"));
+//        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
+//        CstmRepository.save(new Customer( "zzh", "hzz"));
+//        CstmRepository.save(new Customer( "xjl", "jlx"));
+//        CstmRepository.save(new Customer( "wdyj", "dyjw"));
     
 
-//        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
-//        CstmRepository.save(new Customer( "zzh", "hzz", "zzh@pitt.edu"));
-//        CstmRepository.save(new Customer( "xjl", "jlx", "xjl@gmail.edu"));
-//        CstmRepository.save(new Customer( "wdyj", "dyjw", "wdyj@su.edu"));
+        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
+        CstmRepository.save(new Customer( "zzh", "hzz", "zzh@pitt.edu"));
+        CstmRepository.save(new Customer( "xjl", "jlx", "xjl@gmail.edu"));
+        CstmRepository.save(new Customer( "wdyj", "dyjw", "wdyj@su.edu"));
     }
 
 
