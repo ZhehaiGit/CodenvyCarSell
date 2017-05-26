@@ -40,7 +40,14 @@ public class CarsController {
 //    private CustomerRepository cstmRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
+    
     @RequestMapping(value = "login", method = RequestMethod.GET)
+    public ModelAndView index() {
+        return new ModelAndView("login", null, null);
+    }
+    
+    
+    @RequestMapping(value = "auth", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (username.equals("zzh") && password.equals("hzz")) {
             return new ModelAndView("cars", "cars", repository.findAll());
