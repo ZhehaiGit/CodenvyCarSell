@@ -11,7 +11,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
-    List<Customer> findByLastName(String username);
+    public List<Customer> findByUsername(String Username);
 
 //      Customer findByUsername(String lastName);
 
