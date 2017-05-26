@@ -52,7 +52,7 @@ public class CarsController {
         if (username.equals("zzh") && password.equals("hzz")) {
             return new ModelAndView("cars", "cars", repository.findAll());
         } else {
-            return new ModelAndView("login");
+            return new ModelAndView("home");
         }
 
 //        if (cstmRepository.contains(username) && cstmRepository.get(username).Password.equals(password) {
