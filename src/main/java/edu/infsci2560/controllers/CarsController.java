@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 public class CarsController {
     @Autowired
     private CarRepository repository;
-//    private CustomerRepository cstmRepository;
+    private CustomerRepository cstmRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
     
@@ -49,9 +49,9 @@ public class CarsController {
     @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (username.equals("zzh") && password.equals("hzz")) {
-            return new ModelAndView("cars", "cars", repository.findAll());
+            return new ModelAndView("cars", "cars", cstmRepository.findByUsername(username).Cars);
         } else {
-            return new ModelAndView("home");
+            return new ModelAndView("param.error");
         }
     }
 
