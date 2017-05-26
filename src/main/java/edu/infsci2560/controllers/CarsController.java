@@ -46,8 +46,7 @@ public class CarsController {
         return new ModelAndView("login", "login", null);
     }
     
-    
-    @RequestMapping(value = "auth", method = RequestMethod.GET)
+    @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
 //        if (username.equals("zzh") && password.equals("hzz")) {
             return new ModelAndView("cars", "cars", repository.findAll());
