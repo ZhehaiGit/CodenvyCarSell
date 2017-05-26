@@ -43,7 +43,7 @@ public class CarsController {
     
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public ModelAndView index() {
-        return new ModelAndView("login", null, null);
+        return new ModelAndView("login", "login", null);
     }
     
     
