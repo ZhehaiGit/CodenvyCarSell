@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 public class CarsController {
     @Autowired
     private CarRepository repository;
-    private CustomerRepository cstmRepository;
+//    private CustomerRepository cstmRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
 //    @RequestMapping(value = "login", method = RequestMethod.GET)
