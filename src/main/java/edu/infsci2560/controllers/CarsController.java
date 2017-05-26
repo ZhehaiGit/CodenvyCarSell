@@ -41,7 +41,7 @@ public class CarsController {
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
     
-    @RequestMapping(value = "login", method = RequestMethod.GET)
+    @RequestMapping(value = "loginin", method = RequestMethod.GET)
     public ModelAndView index() {
         return new ModelAndView("login", "login", null);
     }
