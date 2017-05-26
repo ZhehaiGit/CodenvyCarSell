@@ -17,12 +17,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/private").permitAll()
                 .anyRequest().authenticated()
                 .and()
-            .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and()
-            .logout()
-                .permitAll();
+            .formLogin();
+//                .loginPage("/login")
+//                .permitAll()
+//                .and()
+//            .logout()
+//                .permitAll();
     }
 
     @Autowired
