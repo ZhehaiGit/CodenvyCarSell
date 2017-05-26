@@ -48,26 +48,27 @@ public class CarsController {
     
     @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
-//        if (username.equals("zzh") && password.equals("hzz")) {
+        if (username.equals("zzh") && password.equals("hzz")) {
             return new ModelAndView("cars", "cars", repository.findAll());
-//        } else {
-//            return new ModelAndView("home");
-//        }
+        } else {
+            return new ModelAndView("home");
+        }
+    }
+
 
 //        if (cstmRepository.contains(username) && cstmRepository.get(username).Password.equals(password) {
 //            return new ModelAndView("home", "cars", repository.findAll());
 //        } else {
 //            
 //        }     
-        
-    }
+
 
     
     
-//    @RequestMapping(value = "cars", method = RequestMethod.GET)
-//    public ModelAndView index() {
-//        return new ModelAndView("cars", "cars", repository.findAll());
-//    }
+    @RequestMapping(value = "cars", method = RequestMethod.GET)
+    public ModelAndView cars() {
+        return new ModelAndView("cars", "cars", repository.findAll());
+    }
     
 //    @RequestMapping(value = "cars", method = RequestMethod.GET)
 //    public ModelAndView cars() {
