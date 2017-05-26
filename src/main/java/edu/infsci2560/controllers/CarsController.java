@@ -48,7 +48,7 @@ public class CarsController {
     
     
     @RequestMapping(value = "auth", method = RequestMethod.GET)
-    public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
 //        if (username.equals("zzh") && password.equals("hzz")) {
             return new ModelAndView("cars", "cars", repository.findAll());
 //        } else {
@@ -70,10 +70,10 @@ public class CarsController {
 //        return new ModelAndView("cars", "cars", repository.findAll());
 //    }
     
-    @RequestMapping(value = "cars", method = RequestMethod.GET)
-    public ModelAndView cars() {
-        return new ModelAndView("cars", "cars", repository.findAll());
-    }
+//    @RequestMapping(value = "cars", method = RequestMethod.GET)
+//    public ModelAndView cars() {
+//        return new ModelAndView("cars", "cars", repository.findAll());
+//    }
     
     @RequestMapping(value = "sellcars", method = RequestMethod.GET)
     public ModelAndView SellCars() {
