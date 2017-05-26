@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import edu.infsci2560.models.Car;
 import java.util.List;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Customer {
