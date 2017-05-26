@@ -25,7 +25,7 @@ public class Customer {
 
     protected Customer() {}
 
-    public Customer( String password, String username, String email) {
+    public Customer(String password, String username, String email) {
         
         this.Password = password;
         this.Username = username;
