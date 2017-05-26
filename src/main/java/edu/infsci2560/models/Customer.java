@@ -86,8 +86,7 @@ public class Customer {
 
     protected Customer() {}
 
-    public Customer(String username, String Password, String email) {
-        
+    public Customer(String username, String password, String email) {
         this.Password = password;
         this.Username = username;
         this.Email = email;
