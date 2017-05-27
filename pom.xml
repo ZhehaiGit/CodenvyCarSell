@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <!--xmlns="http://maven.apache.org/POM/4.0.0"-->
     <groupId>edu.infsci2560</groupId>
     <artifactId>full-stack-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -25,17 +24,8 @@
         <java.version>1.8</java.version>
     </properties>
 
-
-
-
     <dependencies>
-    
     <!-- SEC -->
-    <dependency>
-    <groupId>org.springframework.data</groupId>
-    <artifactId>spring-data-jpa</artifactId>
-    </dependency>
-    
     <dependency>
         <groupId>org.thymeleaf.extras</groupId>
         <artifactId>thymeleaf-extras-springsecurity4</artifactId>
@@ -65,7 +55,6 @@
         <version>4.4</version>
     </dependency>
     <!-- before mar.8-->
-    
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -94,8 +83,6 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
         </dependency>
-        
-        <!-- tryyyyyyyyyy-->
 <dependency>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
@@ -111,7 +98,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>webjars-locator</artifactId>
     <version>0.1</version>
-</dependency>        
+</dependency>
         <!--<dependency>
                 <groupId>org.springframework.session</groupId>
                 <artifactId>spring-session</artifactId>
@@ -124,11 +111,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
@@ -172,8 +154,6 @@
             <type>jar</type>
         </dependency>
     </dependencies>
-    
-    
     <build>
         <plugins>
             <plugin>
@@ -221,14 +201,6 @@
                     <reporter>jslint</reporter>
                     <reportFile>target/jshint.xml</reportFile>
                     <failOnError>true</failOnError>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
         </plugins>
