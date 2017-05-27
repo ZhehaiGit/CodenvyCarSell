@@ -22,8 +22,8 @@ import com.google.gson.annotations.JsonAdapter;
 
 @Configurable
 @ComponentScan
-@EnableJpaRepositories("net.ubilife.springjpa")
-
+//@EnableJpaRepositories("net.ubilife.springjpa")
+@EnableJpaRepositories("com.acme.repositories")
 class Config  {
     @Bean
     public DataSource dataSource() {
@@ -39,7 +39,7 @@ class Config  {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(ds);
         emf.setJpaVendorAdapter(jva);
-        emf.setPackagesToScan(new String[]{"net.ubilife.springjpa"});
+        emf.setPackagesToScan(new String[]{"com.acme.repositories"});
         
         return emf;
     }
