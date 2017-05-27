@@ -1,6 +1,5 @@
 package edu.infsci2560;
 
-////import edu.infsci2560.LiUserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -20,7 +19,7 @@ import edu.infsci2560.repositories.CustomerRepository;
 import java.util.List;
 
 @Component
-public class LiAuthenticationProvider implements AuthenticationProvider {
+public class CarAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private CustomerRepository repository;
