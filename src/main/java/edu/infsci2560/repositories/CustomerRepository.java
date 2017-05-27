@@ -11,8 +11,8 @@ import java.util.List;
 
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
-    
-    List<Customer> findByNameIn(String Name);
+//    @Query("select u from #{#entityName} u where u.name = ?1")
+    List<Customer> findByUsername(String Name);
 
 //    List<Customer> findByLastName(String Username);
 

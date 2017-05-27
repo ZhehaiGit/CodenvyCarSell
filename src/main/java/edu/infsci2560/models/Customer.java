@@ -18,17 +18,17 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String Name;
+    private String UserName;
     private String lastName;
 
     protected Customer() {
-        this.Name = null;
+        this.UserName = null;
         this.lastName = null;
         this.id = Long.MAX_VALUE;
     }
 
     public Customer(String firstName, String lastName) {
-        this.Name = firstName;
+        this.UserName = firstName;
         this.lastName = lastName;
     }
 
@@ -55,14 +55,14 @@ public class Customer {
      * @return the firstName
      */
     public String getName() {
-        return Name;
+        return UserName;
     }
 
     /**
      * @param firstName the firstName to set
      */
     public void setName(String firstName) {
-        this.Name = firstName;
+        this.UserName = firstName;
     }
 
     /**
