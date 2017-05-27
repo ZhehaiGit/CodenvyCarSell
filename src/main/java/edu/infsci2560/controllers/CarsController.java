@@ -49,7 +49,7 @@ public class CarsController {
     @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (username.equals("zzh") && password.equals("hzz")) {
-            return new ModelAndView("customer", "customer", cstmRepository.findByUsername("username"));
+            return new ModelAndView("customer", "customer", cstmRepository.findByName("username"));
         } else {
             return new ModelAndView("param.error");
         }
