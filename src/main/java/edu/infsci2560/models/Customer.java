@@ -21,7 +21,11 @@ public class Customer {
     private String Name;
     private String lastName;
 
-    protected Customer() {}
+    protected Customer() {
+        this.Name = null;
+        this.lastName = null;
+        this.id = Long.MAX_VALUE;
+    }
 
     public Customer(String firstName, String lastName) {
         this.Name = firstName;
