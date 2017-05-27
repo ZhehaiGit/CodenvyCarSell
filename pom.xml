@@ -85,6 +85,24 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
         </dependency>
+        
+        <!-- tryyyyyyyyyy-->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>jquery</artifactId>
+    <version>2.1.1</version>
+</dependency>
+ 
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>3.2.0</version>
+</dependency>
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>webjars-locator</artifactId>
+    <version>0.1</version>
+</dependency>        
         <!--<dependency>
                 <groupId>org.springframework.session</groupId>
                 <artifactId>spring-session</artifactId>
@@ -194,14 +212,14 @@
                     <failOnError>true</failOnError>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
 </project>
