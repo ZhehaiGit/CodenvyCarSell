@@ -7,7 +7,7 @@ import org.springframework.orm.jpa.EntityManagerFactoryInfo;
 
 @Configurable
 @EnableJpaRepositories("com.acme.repositories")
-class ApplicationConfiguration {
+class Config {
 
   @Bean
   public EntityManagerFactoryInfo entityManagerFactory() {
