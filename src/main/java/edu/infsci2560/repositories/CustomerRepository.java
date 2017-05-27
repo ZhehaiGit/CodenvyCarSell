@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 //    @Query("select u from #{#entityName} u where u.name = ?1")
-    List<Customer> findByUserName(String Name);
+    List<Customer> findAllByUserName(String Name);
 
 //    List<Customer> findByLastName(String Username);
 

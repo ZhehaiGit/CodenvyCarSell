@@ -33,7 +33,7 @@ public class CarAuthenticationProvider implements AuthenticationProvider {
         System.out.println(password);
 
         try{
-            Customer userInfo = repository.findByUserName(username).get(0);  //name is unique;
+            Customer userInfo = repository.findAllByUserName(username).get(0);  //name is unique;
             if (password.equals(userInfo.getLastName())){
                 User user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList(""));
 //                if (!userInfo.getIsAdmin()){
