@@ -133,6 +133,10 @@ public class Customer {
     public String getEmail() {
         return Email;
     }
+    
+    public String getLastName() {
+        return name;
+    }
     public void setEmail(String email) {
         this.Email = email;
     }
