@@ -23,17 +23,31 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
+
 <dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-releasetrain</artifactId>
-      <version>${release-train}</version>
-      <scope>import</scope>
-      <type>pom</type>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${spring.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-releasetrain</artifactId>
+				<version>${spring-data.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+
     <dependencies>
     
     <!-- SEC -->
