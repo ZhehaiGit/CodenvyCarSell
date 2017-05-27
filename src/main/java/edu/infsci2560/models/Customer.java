@@ -18,19 +18,19 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String firstName;
+    private String Name;
     private String lastName;
 
     protected Customer() {}
 
     public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
+        this.Name = firstName;
         this.lastName = lastName;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']", getId(), getFirstName(), getLastName());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getName(), getLastName());
     }
 
     /**
@@ -50,15 +50,15 @@ public class Customer {
     /**
      * @return the firstName
      */
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
     /**
      * @param firstName the firstName to set
      */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String firstName) {
+        this.Name = firstName;
     }
 
     /**
