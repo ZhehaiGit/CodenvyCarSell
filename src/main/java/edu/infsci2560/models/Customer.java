@@ -79,7 +79,8 @@ public class Customer {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String Password;
-    private String Username;
+    private String name;
+//    private String Username;
     private String Email;
     @ManyToOne
     private List<Car> cars;
@@ -88,7 +89,7 @@ public class Customer {
 
     public Customer(String username, String password, String email) {
         this.Password = password;
-        this.Username = username;
+        this.name = username;
         this.Email = email;
         this.cars = null;
     }
@@ -119,7 +120,7 @@ public class Customer {
         return Password;
     }
     public String getUsername() {
-        return Username;
+        return name;
     }
 
     /**
