@@ -36,16 +36,14 @@ public class CarAuthenticationProvider implements AuthenticationProvider {
             Customer userInfo = repository.findByUsername(username).get(0);  //name is unique;
             
             if (password.equals(userInfo.getPassword())){
-            
                 User user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList(""));
-            
-                if (!userInfo.getIsAdmin()){
-                    System.out.println("ROLE_ADMIN!");
-                    user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_ADMIN"));   // logon success return userdetail info
-                } else {
+//                if (!userInfo.getIsAdmin()){
+//                    System.out.println("ROLE_ADMIN!");
+//                    user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_ADMIN"));   // logon success return userdetail info
+//                } else {
                     System.out.println("ROLE_USER!");
                     user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
-                }
+//                }
             
                 Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
                 return new UsernamePasswordAuthenticationToken(user, password, authorities);
