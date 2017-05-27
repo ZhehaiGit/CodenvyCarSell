@@ -34,7 +34,7 @@ public class CustomerController {
     private CustomerRepository CustRepository;
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
-    public ModelAndView index() {
+    public ModelAndView su() {
         return new ModelAndView("signup", "signup", null);
     }
     
