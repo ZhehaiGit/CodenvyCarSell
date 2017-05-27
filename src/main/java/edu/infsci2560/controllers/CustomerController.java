@@ -45,7 +45,8 @@ public class CustomerController {
                                 @RequestParam("email") String email) {
         Customer newCustomer = new Customer(username, password, email);
         CustRepository.save(newCustomer);
-        return ew ModelAndView("login", "login", null);
+        System.out.println("Success!");
+        return new ModelAndView("login", "login", null);
     }
     
 }
