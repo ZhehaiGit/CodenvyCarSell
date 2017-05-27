@@ -10,25 +10,30 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    
+    @Autowired
+    private CarAuthenticationProvider authenticationProvider;
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/private").hasRole("USER")
-//                .anyRequest().authenticated()
+                .antMatchers("/", "/home","/signup", "/public/*").permitAll();
+                .anyRequest().authenticated()
                 .and()
             .formLogin();
-//                .loginPage("/login")
-//                .permitAll()
-//                .and()
-//            .logout()
-//                .permitAll();
+                .loginPage("/login")
+                .permitAll()
+                .and()
+            .logout()
+                .permitAll();
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
-        auth.inMemoryAuthentication().withUser("drk").password("shh").roles("USER");
-        auth.inMemoryAuthentication().withUser("zzh").password("hzz").roles("USER");
+//        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+//        auth.inMemoryAuthentication().withUser("drk").password("shh").roles("USER");
+//        auth.inMemoryAuthentication().withUser("zzh").password("hzz").roles("USER");
+        auth.authenticationProvider(authenticationProvider);
     }
 }

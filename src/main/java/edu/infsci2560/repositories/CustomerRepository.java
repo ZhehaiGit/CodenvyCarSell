@@ -11,13 +11,13 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
-//    public List<Customer> findByUsername(String Username);
-    
-    public List<Customer> findByLastName(String Username);
+    List<Customer> findByUsername(String name);
 
-//      List<Customer> findByLastName(String lastName);
+//    List<Customer> findByLastName(String Username);
 
-//    public boolean contains(String userName) {
-//   
-//    }
+    //      List<Customer> findByLastName(String lastName);
+
+    //    public boolean contains(String userName) {
+    //   
+    //    }
 }
