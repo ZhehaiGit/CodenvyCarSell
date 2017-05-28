@@ -91,7 +91,7 @@
             <table class = "table table-bordered table-striped table-hover">
                 
                 <tr>
-                    <th class = "text-mid">Id</th>
+                    <th data-formatter="runningFormatter">Index</th>
                     <th class = "text-mid">Model</th>
                     <th class = "text-mid">Type</th>
                     <th class = "text-mid">Describe</th>
@@ -103,7 +103,7 @@
                     <td data-th-text="${car.describe}"></td>
                 </tr-->
                  <tr data-th-each="car : ${cars}">
-                    <td data-formatter="runningFormatter"></td>
+                    <td></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
@@ -191,7 +191,7 @@
         </script>
         <script>
             function runningFormatter(value, row, index) {
-                index++:
+                index++;
                 return index;
         </script>
 }
