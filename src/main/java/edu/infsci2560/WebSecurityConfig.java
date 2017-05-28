@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home","/signup", "/public/*").permitAll()
+                .antMatchers("/", "/home","/signup", "/public/*").hasRole("USER")
                 .anyRequest().authenticated()
                 .and();
 //            .formLogin()
@@ -30,11 +30,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .permitAll();
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
-        auth.inMemoryAuthentication().withUser("drk").password("shh").roles("USER");
-        auth.inMemoryAuthentication().withUser("zzh").password("hzz").roles("USER");
-//        auth.authenticationProvider(authenticationProvider);
-    }
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+//        auth.inMemoryAuthentication().withUser("drk").password("shh").roles("USER");
+//        auth.inMemoryAuthentication().withUser("zzh").password("hzz").roles("USER");
+////        auth.authenticationProvider(authenticationProvider);
+//    }
 }
