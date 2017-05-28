@@ -103,7 +103,7 @@
                     <td data-th-text="${car.describe}"></td>
                 </tr-->
                  <tr data-th-each="car : ${cars}">
-                    <td></td>
+                    <td data-th-text="i"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
@@ -195,7 +195,7 @@
                 return index;
             }
         </script>
-        <!--script>
+        <script>
             var addSerialNumber = function () {
             var i = 1
                 $('table tr').each(function(index) {
@@ -203,6 +203,6 @@
                 });
                 };
             addSerialNumber();
-        </script-->
+        </script>
     </body>
 </html>
