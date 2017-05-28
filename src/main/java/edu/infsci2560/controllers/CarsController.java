@@ -106,7 +106,7 @@ public class CarsController {
 //        return new ModelAndView("removecar", "cars", repository.findAll());
 //    }
     @RequestMapping(value = "/removecardelt/{id}")
-    public ModelAndView remove(@PathVariable("id") @Value("#{new Long.parseLong('${cars.id}')}") Long id) {
+    public ModelAndView remove(@Value("#{new Long.parseLong('${cars.id}')}") Long id) {
         if (repository.findOne(id) != null) {
            repository.delete(id);
 //           id++;
