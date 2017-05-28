@@ -106,7 +106,7 @@ public class CarsController {
 //        return new ModelAndView("removecar", "cars", repository.findAll());
 //    }
     @RequestMapping(value = "/removecardelt/{id}")
-    public ModelAndView remove(@Value("#{new Long.parseLong('${cars.id}')}") Long id) {
+    public ModelAndView remove(@PathVariable("id") Long id) {
         if (repository.findOne(id) != null) {
            repository.delete(id);
 //           id++;
@@ -120,8 +120,8 @@ public class CarsController {
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
-    @RequestMapping( value = "/delete-task/{id}") 
-    public ModelAndView deleteTask(@PathVariable("id") Long id){
+    @RequestMapping( value = "/delete-task") 
+    public ModelAndView deleteTask(@PathVariable("id") @Value("#{new Long.parseLong('${cars.id}')}")Long id){
         if (repository.findOne(id) != null) {
            repository.delete(id);
         } else {
