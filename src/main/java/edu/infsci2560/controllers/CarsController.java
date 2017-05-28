@@ -120,7 +120,7 @@ public class CarsController {
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
-    @RequestMapping( value = "/delete-task/{id}") 
+    @RequestMapping( value = "delete-task/{id}") 
     public ModelAndView deleteTask(@PathVariable("id")  Long id){
         if (repository.findOne(id) != null) {
            repository.delete(id);
