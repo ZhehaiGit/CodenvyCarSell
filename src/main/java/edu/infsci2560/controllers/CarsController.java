@@ -121,7 +121,7 @@ public class CarsController {
     }
     
     @GetMapping("/delete-task") 
-    public ModelAndView deleteTask(@RequestParam int id, HttpServletRequest request){
+    public ModelAndView deleteTask(@RequestParam Long id, HttpServletRequest request){
         if (repository.findOne(id) != null) {
            repository.delete(id);
         } else {
