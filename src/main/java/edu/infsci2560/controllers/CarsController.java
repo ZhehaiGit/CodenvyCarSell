@@ -91,8 +91,22 @@ public class CarsController {
         return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     
-    @RequestMapping(value = "/removecardelt/{id}",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView remove(@RequestParam("id") Long id) {
+//    @RequestMapping(value = "/removecardelt/{id}",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView remove(@RequestParam("id") Long id) {
+//        if (repository.findOne(id) != null) {
+//           repository.delete(id);
+////           id++;
+////           while (repository.findOne(id) != null) {
+////               repository.findOne(id).setId(id-1);
+////               id++;
+////           }
+//        } else {
+//            log.error("ID not exsit!");
+//        }
+//        return new ModelAndView("removecar", "cars", repository.findAll());
+//    }
+    @RequestMapping(value = "/removecardelt/{id}")
+    public ModelAndView remove(@PathVariable("id") Long id) {
         if (repository.findOne(id) != null) {
            repository.delete(id);
 //           id++;
