@@ -102,7 +102,7 @@
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
-                    <td><a data-th-action = "@{delete-task/{id}(id=${car.id})}" ><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td><a data-th-href = "@{delete-task?id=${car.id}}" ><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
             </table>
           </div>
