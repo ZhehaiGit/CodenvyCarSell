@@ -121,7 +121,7 @@ public class CarsController {
     }
     
     @RequestMapping( value = "delete-task")
-    public ModelAndView deleteTask(@PathVariable("id")  Long id){
+    public ModelAndView deleteTask(@PathVariable  Long id){
         if (repository.findOne(id) != null) {
            repository.delete(id);
         } else {
