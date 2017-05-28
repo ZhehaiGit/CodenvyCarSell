@@ -26,10 +26,15 @@ public class FullStackWebApplication {
         repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz","xjl@gmail.com", "xjl"));
         repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge", "wdyj@ppp.com", "wdyj"));
         
-//        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
-//        CstmRepository.save(new Customer( "zzh", "hzz"));
-//        CstmRepository.save(new Customer( "xjl", "jlx"));
-//        CstmRepository.save(new Customer( "wdyj", "dyjw"));
+        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
+        Customer c1 = new Customer( "zzh", "hzz");
+        CstmRepository.save(c1);
+        Customer c2 = new Customer("aaaa", "zzh");
+        CstmRepository.save(c2);
+        Customer c3 = new Customer("xjl", "jlx");
+        CstmRepository.save(c3);
+        Customer c4 = new Customer("wdyj", "dyjw");
+        CstmRepository.save(c4);
     
 
 //        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
