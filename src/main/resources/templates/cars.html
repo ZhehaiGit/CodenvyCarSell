@@ -91,7 +91,7 @@
             <table class = "table table-bordered table-striped table-hover">
                 
                 <tr>
-                    <th data-formatter="runningFormatter">Index</th>
+                    <th class = "text-mid">#</th>
                     <th class = "text-mid">Model</th>
                     <th class = "text-mid">Type</th>
                     <th class = "text-mid">Describe</th>
@@ -189,17 +189,17 @@
                 $('select[name=workoutType]').val(1);
                 $('.selectpicker').selectpicker('refresh');
         </script>
-        <script>
+        <!--script>
             function runningFormatter(value, row, index) {
                 index++;
                 return index;
             }
-        </script>
+        </script-->
         <script>
             var addSerialNumber = function () {
             var i = 1
                 $('table tr').each(function(index) {
-                    $(this).find('td:nth-child(1)').html(index+1);
+                    $(this).find('td:nth-child(1)').html(index+0);
                 });
                 };
             addSerialNumber();
