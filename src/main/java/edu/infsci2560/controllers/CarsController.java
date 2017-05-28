@@ -119,4 +119,14 @@ public class CarsController {
         }
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
+    
+    @GetMapping("/delete-task") 
+    public ModelAndView deleteTask(@RequestParam int id, HttpServletRequest request){
+        if (repository.findOne(id) != null) {
+           repository.delete(id);
+        } else {
+            log.error("ID not exsit!");
+        }
+        return new ModelAndView("removecar", "cars", repository.findAll());
+    }
 }
