@@ -82,7 +82,7 @@ public class CarsController {
     }
     @RequestMapping(value = "removecar", method = RequestMethod.GET)
     public ModelAndView removecar() {
-        return new ModelAndView("removecar", "cars", repository.findAll());
+        return new ModelAndView("/removecar", "cars", repository.findAll());
     }
     
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
@@ -127,6 +127,6 @@ public class CarsController {
         } else {
             log.error("ID not exsit!");
         }
-        return new ModelAndView("removecar", "cars", repository.findAll());
+        return new ModelAndView("/removecar", "cars", repository.findAll());
     }
 }
