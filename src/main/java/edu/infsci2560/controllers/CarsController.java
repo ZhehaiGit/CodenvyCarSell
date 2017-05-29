@@ -120,13 +120,13 @@ public class CarsController {
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
-    @RequestMapping( value = "/removecar/delete-task/{id}", method = RequestMethod.GET )
+    @RequestMapping( value = "delete-task/{id}")
     public ModelAndView deleteTask(@PathVariable("id")  Long id){
         if (repository.findOne(id) != null) {
            repository.delete(id);
         } else {
             log.error("ID not exsit!");
         }
-        return new ModelAndView("/removecar", "cars", repository.findAll());
+        return new ModelAndView("removecar", "cars", repository.findAll());
     }
 }
