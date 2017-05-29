@@ -40,10 +40,11 @@ public class CarsController {
     private CustomerRepository cstmRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
-     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public ModelAndView index() {
-        return new ModelAndView("cars", "cars", repository.findAll());
-    }
+//     @RequestMapping(value = "login", method = RequestMethod.GET)
+//    public ModelAndView index() {
+//        return new ModelAndView("cars", "cars", repository.findAll());
+//    }
+
 //    @RequestMapping(value = "loginin", method = RequestMethod.GET)
 //    public ModelAndView index() {
 //        return new ModelAndView("login", "login", null);
