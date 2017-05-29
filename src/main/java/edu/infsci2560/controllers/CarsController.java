@@ -71,17 +71,12 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());
     }
     
-//    @RequestMapping(value = "cars", method = RequestMethod.GET)
-//    public ModelAndView cars() {
-//        return new ModelAndView("cars", "cars", repository.findAll());
-//    }
-    
     @RequestMapping(value = "sellcars", method = RequestMethod.GET)
     public ModelAndView SellCars() {
         return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     @RequestMapping(value = "removecar", method = RequestMethod.GET)
-    public ModelAndView removecar() {
+    public ModelAndView removeCar() {
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
@@ -113,15 +108,7 @@ public class CarsController {
         } else {
             log.error("ID not exsit!");
         }
-        return new ModelAndView("removecar", "cars", repository.findAll());
-    }
-    @RequestMapping( value = "delete-task/{id}" , method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView deleteTaskPost(@PathVariable("id")  Long id){
-        if (repository.findOne(id) != null) {
-           repository.delete(id);
-        } else {
-            log.error("ID not exsit!");
-        }
-        return new ModelAndView("removecar", "cars", repository.findAll());
+//        return new ModelAndView("removecar", "cars", repository.findAll());
+        return new ModelAndView(new RedirectView("removecar"));
     }
 }
