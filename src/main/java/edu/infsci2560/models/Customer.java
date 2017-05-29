@@ -146,9 +146,9 @@ public class Customer {
     }
     
     public void saveCar(Car c) {
-        cars.add(c);
+        this.cars.add(c);
     }
-    public Car<List> getCars() {
+    public List<Car> getCars() {
         return cars;
     }
     
