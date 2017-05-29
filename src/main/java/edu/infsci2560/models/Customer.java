@@ -127,15 +127,16 @@ public class Customer {
     public String getUsername() {
         return username;
     }
+    public void setUsername(String username) {
+        this.username = username;
+    }
     /**
      * @param firstName the firstName to set
      */
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    
     
     public String getEmail() {
         return email;
