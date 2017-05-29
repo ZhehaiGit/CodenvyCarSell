@@ -43,7 +43,7 @@ public class CustomerController {
     public ModelAndView signup(@RequestParam("username") String username, 
                                 @RequestParam("password") String password, 
                                 @RequestParam("email") String email) {
-        Customer newCustomer = new Customer(username, password);
+        Customer newCustomer = new Customer(1L,username, password, email);
         CustRepository.save(newCustomer);
         System.out.println("Success!");
         return new ModelAndView("login", "login", null);
