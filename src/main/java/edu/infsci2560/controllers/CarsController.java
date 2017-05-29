@@ -80,9 +80,9 @@ public class CarsController {
     public ModelAndView SellCars() {
         return new ModelAndView("sellcars", "cars", repository.findAll());
     }
-    @RequestMapping(value = "/removecar", method = RequestMethod.GET)
+    @RequestMapping(value = "removecar", method = RequestMethod.GET)
     public ModelAndView removecar() {
-        return new ModelAndView("/removecar", "cars", repository.findAll());
+        return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
