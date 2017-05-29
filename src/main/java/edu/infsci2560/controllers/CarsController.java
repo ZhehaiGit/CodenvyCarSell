@@ -80,7 +80,7 @@ public class CarsController {
     public ModelAndView SellCars() {
         return new ModelAndView("sellcars", "cars", repository.findAll());
     }
-    @RequestMapping(value = "removecar", method = RequestMethod.GET)
+    @RequestMapping(value = "/removecar", method = RequestMethod.GET)
     public ModelAndView removecar() {
         return new ModelAndView("/removecar", "cars", repository.findAll());
     }
@@ -120,7 +120,7 @@ public class CarsController {
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
     
-    @RequestMapping( value = "delete-task/{id}", method = RequestMethod.GET )
+    @RequestMapping( value = "/removecar/delete-task/{id}", method = RequestMethod.GET )
     public ModelAndView deleteTask(@PathVariable("id")  Long id){
         if (repository.findOne(id) != null) {
            repository.delete(id);
