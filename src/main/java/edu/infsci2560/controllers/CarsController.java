@@ -109,6 +109,6 @@ public class CarsController {
             log.error("ID not exsit!");
         }
 //        return new ModelAndView("removecar", "cars", repository.findAll());
-        return new ModelAndView(new RedirectView("removecar"));
+        return new ModelAndView(new RedirectView("/removecar"));
     }
 }
