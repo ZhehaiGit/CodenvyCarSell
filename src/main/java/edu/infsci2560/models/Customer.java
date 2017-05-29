@@ -22,19 +22,19 @@ public class Customer {
     private String lastName;
 
     protected Customer() {
-        this.UserName = null;
+        this.userName = null;
         this.lastName = null;
         this.id = Long.MAX_VALUE;
     }
 
     public Customer(String firstName, String lastName) {
-        this.UserName = firstName;
+        this.userName = firstName;
         this.lastName = lastName;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getName(), getLastName());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getLastName());
     }
 
     /**
