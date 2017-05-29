@@ -26,15 +26,13 @@ public class CarAuthenticationProvider implements AuthenticationProvider {
     
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
         
-        System.out.println(username);
-        System.out.println(password);
-
         try{
-            Customer userInfo = repository.findByUserName(username).get(0);  //name is unique;
-            if (password.equals(userInfo.getLastName())){
+            Customer userInfo = repository.findByUsername(username).get(0);  //name is unique;
+            if (password.equals(userInfo.getPassword())){
                 User user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList(""));
 ////                if (!userInfo.getIsAdmin()){
 ////                    System.out.println("ROLE_ADMIN!");
