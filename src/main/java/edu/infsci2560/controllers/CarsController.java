@@ -41,20 +41,20 @@ public class CarsController {
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
     
-    @RequestMapping(value = "loginin", method = RequestMethod.GET)
-    public ModelAndView index() {
-        return new ModelAndView("login", "login", null);
-    }
+//    @RequestMapping(value = "loginin", method = RequestMethod.GET)
+//    public ModelAndView index() {
+//        return new ModelAndView("login", "login", null);
+//    }
     
-    @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
-        if (username.equals("zzh") && password.equals("hzz")) {
-//            return new ModelAndView("cars", "cars", repository.findAll());
-            return new ModelAndView("customer", "customer", cstmRepository.findByUserName("username"));
-        } else {
-            return new ModelAndView("param.error");
-        }
-    }
+//    @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
+//        if (username.equals("zzh") && password.equals("hzz")) {
+////            return new ModelAndView("cars", "cars", repository.findAll());
+//            return new ModelAndView("customer", "customer", cstmRepository.findByUserName("username"));
+//        } else {
+//            return new ModelAndView("param.error");
+//        }
+//    }
 
 
 //        if (cstmRepository.contains(username) && cstmRepository.get(username).Password.equals(password) {
