@@ -115,7 +115,7 @@ public class CarsController {
         }
         return new ModelAndView("removecar", "cars", repository.findAll());
     }
-    @RequestMapping( value = "delete-task/{id}" method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping( value = "delete-task/{id}" , method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView deleteTaskPost(@PathVariable("id")  Long id){
         if (repository.findOne(id) != null) {
            repository.delete(id);
