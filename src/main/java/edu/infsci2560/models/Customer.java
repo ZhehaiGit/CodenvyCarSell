@@ -20,21 +20,24 @@ public class Customer {
     private Long id;
     private String userName;
     private String password;
+    private String email;
 
     protected Customer() {
         this.userName = null;
         this.password = null;
+        this.email = null;
         this.id = Long.MAX_VALUE;
     }
 
-    public Customer(String firstName, String password) {
+    public Customer(String firstName, String password, String email) {
         this.userName = firstName;
         this.password = password;
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail());
     }
 
     /**
@@ -78,6 +81,14 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
 
 //    @Id
 //    @GeneratedValue(strategy=GenerationType.AUTO)
