@@ -34,7 +34,6 @@ public class CustomerController {
     @Autowired
 	HttpServletRequest request;
     @Autowired
-//    private CarRepository repository;
     private CustomerRepository CustRepository;
     
 //    private String Uname = request.getRemoteUser();
