@@ -76,8 +76,8 @@ public class CarsController {
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView cars() {
         
-        List<Car> cars = cstmRepository.findByUsername(request.getRemoteUser()).get(0).getCars();
-//        return new ModelAndView("cars", "cars", cars);
+        List<Car> cars = cstmRepository.findByUserName(request.getRemoteUser()).get(0).getCars();
+        return new ModelAndView("cars", "cars", cars);
 //          return new ModelAndView("cars", "cars", repository.findAll());  
     }
     
