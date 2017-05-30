@@ -83,7 +83,7 @@ public class Customer {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String password;
-    private String username;
+    private String userName;
 //    private String Username;
     private String email;
     @ManyToOne
@@ -94,7 +94,7 @@ public class Customer {
     public Customer(Long id, String username, String password, String email) {
         this.id = id;
         this.password = password;
-        this.username = username;
+        this.userName = username;
         this.email = email;
         this.cars = null;
     }
@@ -124,11 +124,11 @@ public class Customer {
     public String getPassword() {
         return password;
     }
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String username) {
+        this.userName = username;
     }
     /**
      * @param firstName the firstName to set
