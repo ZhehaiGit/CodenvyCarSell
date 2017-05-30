@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import edu.infsci2560.repositories.CarRepository;
+import java.util.List;
 /**
  *
  * @author kolobj
@@ -97,7 +98,7 @@ public class CustomerController {
         String Uname = request.getRemoteUser();
         Customer customer = CustRepository.findByUserName(Uname);
         car.setEmail(customer.getEmail());
-        car.setDeall(Uname);
+        car.setDealer(Uname);
         repository.save(car);
         
         List<Car> cars = customer.getCars();
