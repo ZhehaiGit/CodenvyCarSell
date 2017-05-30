@@ -40,7 +40,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail(), getCars());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail());
     }
 
     /**
@@ -95,8 +95,8 @@ public class Customer {
     public List<Car> getCars() {
         return cars;
     }
-    public void setCar(Car car) {
-        cars.add(car);
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
     }
     
 
