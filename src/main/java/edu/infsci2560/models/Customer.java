@@ -89,7 +89,12 @@ public class Customer {
     @ManyToOne
     private List<Car> cars;
 
-    protected Customer() {}
+    protected Customer() {
+        this.userName = null;
+        this.password = null;
+        this.email = null;
+        this.id = Long.MAX_VALUE;
+    }
 
     public Customer(Long id, String username, String password, String email) {
         this.id = id;
@@ -121,9 +126,6 @@ public class Customer {
     /**
      * @return the firstName
      */
-    public String getPassword() {
-        return password;
-    }
     public String getUserName() {
         return userName;
     }
@@ -133,11 +135,11 @@ public class Customer {
     /**
      * @param firstName the firstName to set
      */
-    public void setPassword(String password) {
-        this.password = password;
-    }
     public String getPassword() {
         return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
     
     
