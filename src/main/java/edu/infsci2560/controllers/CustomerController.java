@@ -53,10 +53,9 @@ public class CustomerController {
                                 @RequestParam("password") String password, 
                                 @RequestParam("email") String email) {
         Customer newCustomer = new Customer(username, password, email);
-//        Customer newCustomer = new Customer(username, password);
         CustRepository.save(newCustomer);
         System.out.println("Success!");
-        return new ModelAndView("login", "login", null);
+        return new ModelAndView("login", "login", repository.findAll());
     }
     
 //    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
