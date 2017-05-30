@@ -19,22 +19,22 @@ public class Customer {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String userName;
-    private String lastName;
+    private String password;
 
     protected Customer() {
         this.userName = null;
-        this.lastName = null;
+        this.password = null;
         this.id = Long.MAX_VALUE;
     }
 
-    public Customer(String firstName, String lastName) {
+    public Customer(String firstName, String password) {
         this.userName = firstName;
-        this.lastName = lastName;
+        this.password = password;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getLastName());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword());
     }
 
     /**
@@ -68,15 +68,15 @@ public class Customer {
     /**
      * @return the lastName
      */
-    public String getLastName() {
-        return lastName;
+    public String getPassword() {
+        return password;
     }
 
     /**
      * @param lastName the lastName to set
      */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 //    @Id
