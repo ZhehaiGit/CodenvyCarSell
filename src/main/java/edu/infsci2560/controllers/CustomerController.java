@@ -57,7 +57,7 @@ public class CustomerController {
         CustRepository.save(newCustomer);
         repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
         System.out.println("Success!");
-        return new ModelAndView("login", "login", repository.findAll());
+        return new ModelAndView("home", "home", null);
     }
     
 //    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
