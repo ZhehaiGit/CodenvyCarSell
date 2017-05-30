@@ -13,9 +13,11 @@
 #        </div>
         <form data-th-action="@{/signup/add}" method="post">
             <div><label> User Name: <input type="text" name="userName"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><label> Password: <input type="text" name="password"/> </label></div>
             <div><label> Email: <input type="text" name="email"/> </label></div>
+            <div class="controls">
             <div><input type="submit" value="Sign up"/></div>
+            </div>
         </form>
     </body>
 </html>

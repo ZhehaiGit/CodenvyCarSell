@@ -35,8 +35,8 @@ public class Customer {
         this.cars = new ArrayList<Car>();
     }
 
-    public Customer(String firstName, String password, String email) {
-        this.userName = firstName;
+    public Customer(String userName, String password, String email) {
+        this.userName = userName;
         this.password = password;
         this.email = email;
         this.cars = new ArrayList<Car>();
