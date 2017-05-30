@@ -78,7 +78,7 @@ public class CarsController {
         String username = request.getRemoteUser();
         System.out.println(username);
 //        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-        return new ModelAndView("cars", "customer", cstmRepository.findByUserName(username).get(0));
+        return new ModelAndView("customer", "customer", cstmRepository.findByUserName(username).get(0));
 //        return new ModelAndView("cars", "cars", repository.findAll());  
     }
     
