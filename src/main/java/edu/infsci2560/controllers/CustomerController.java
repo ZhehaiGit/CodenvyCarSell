@@ -37,8 +37,8 @@ public class CustomerController {
 //    private CarRepository repository;
     private CustomerRepository CustRepository;
     
-    private String Uname = request.getRemoteUser();
-    final static Logger log = LoggerFactory.getLogger(CarsController.class);
+//    private String Uname = request.getRemoteUser();
+//    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
