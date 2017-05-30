@@ -36,7 +36,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepository CustRepository;
     
-//    private String Uname = request.getRemoteUser();
+    private String Uname = request.getRemoteUser();
 //    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
     
