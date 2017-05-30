@@ -21,6 +21,7 @@ public class Customer {
     private String userName;
     private String password;
     private String email;
+    @ManyToOne
     private List<Car> cars;
 
     protected Customer() {
