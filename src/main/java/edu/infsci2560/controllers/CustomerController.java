@@ -90,13 +90,22 @@ public class CustomerController {
         return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
     }
     
-//    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
-////        repository.save(car);
-//        String Uname = request.getRemoteUser();
-//        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
-////        return new ModelAndView("sellcars", "cars", repository.findAll());
-//    }
+    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+//        repository.save(car);
+        
+        String Uname = request.getRemoteUser();
+        Customer customer = CustRepository.findByUserName(Uname);
+        car.setEmail(customer.getEmail());
+        car.setDeall(Uname);
+        repository.save(car);
+        
+        List<Car> cars = customer.getCars();
+        cars.add(car);
+        customer.setCars(cars);
+        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
+//        return new ModelAndView("sellcars", "cars", repository.findAll());
+    }
     
     
     
