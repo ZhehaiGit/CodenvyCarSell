@@ -41,7 +41,7 @@ public class CarAuthenticationProvider implements AuthenticationProvider {
 //                    System.out.println("ROLE_USER!");
 //                    user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
 ////                }
-            
+                user = new User(username,password,AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
                 Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
                 return new UsernamePasswordAuthenticationToken(user, password, authorities);
                 
