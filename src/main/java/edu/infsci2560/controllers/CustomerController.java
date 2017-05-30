@@ -66,32 +66,6 @@ public class CustomerController {
 //        return new ModelAndView("customer", "cars", repository.findAll());  
     }
     
-//    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
-//    public ModelAndView SellCars() {
-//        return new ModelAndView("sellcars", "cars", repository.findAll());
-////        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
-//    }
-//    @RequestMapping(value = "removecar", method = RequestMethod.GET)
-//    public ModelAndView removeCar() {
-//        return new ModelAndView("removecar", "cars", repository.findAll());
-////        return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
-//    }
-//    
-//    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
-//        repository.save(car);
-//        return new ModelAndView("sellcars", "cars", repository.findAll());
-//    }
-//    
-//    @RequestMapping( value = "delete-task/{id}")
-//    public ModelAndView deleteTask(@PathVariable("id")  Long id){
-//        if (repository.findOne(id) != null) {
-//           repository.delete(id);
-//        } else {
-//            log.error("ID not exsit!");
-//        }
-////        return new ModelAndView("removecar", "cars", repository.findAll());
-//        return new ModelAndView(new RedirectView("/removecar"));
-//    }
+    
     
 }
