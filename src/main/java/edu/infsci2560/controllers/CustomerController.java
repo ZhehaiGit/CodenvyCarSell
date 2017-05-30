@@ -38,6 +38,8 @@ public class CustomerController {
     private CustomerRepository CustRepository;
     
     private String Uname = request.getRemoteUser();
+    final static Logger log = LoggerFactory.getLogger(CarsController.class);
+    
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
     public ModelAndView su() {
