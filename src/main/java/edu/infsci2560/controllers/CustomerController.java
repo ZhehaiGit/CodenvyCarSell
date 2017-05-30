@@ -91,8 +91,8 @@ public class CustomerController {
         return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
     }
     
-    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+//    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
 ////        repository.save(car);
 //        
 //        String Uname = request.getRemoteUser();
@@ -104,9 +104,9 @@ public class CustomerController {
 //        List<Car> cars = customer.getCars();
 //        cars.add(car);
 //        customer.setCars(cars);
-        return new ModelAndView(new RedirectView("/removecar"));
-//        return new ModelAndView("sellcars", "cars", repository.findAll());
-    }
+//        return new ModelAndView(new RedirectView("/removecar"));
+////        return new ModelAndView("sellcars", "cars", repository.findAll());
+//    }
     
     
     
