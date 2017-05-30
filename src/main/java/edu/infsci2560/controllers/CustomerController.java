@@ -93,17 +93,17 @@ public class CustomerController {
     
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+////        repository.save(car);
+//        
+//        String Uname = request.getRemoteUser();
+//        Customer customer = CustRepository.findByUserName(Uname).get(0);
+//        car.setEmail(customer.getEmail());
+//        car.setDealer(Uname);
 //        repository.save(car);
-        
-        String Uname = request.getRemoteUser();
-        Customer customer = CustRepository.findByUserName(Uname).get(0);
-        car.setEmail(customer.getEmail());
-        car.setDealer(Uname);
-        repository.save(car);
-        
-        List<Car> cars = customer.getCars();
-        cars.add(car);
-        customer.setCars(cars);
+//        
+//        List<Car> cars = customer.getCars();
+//        cars.add(car);
+//        customer.setCars(cars);
         return new ModelAndView(new RedirectView("/removecar"));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
