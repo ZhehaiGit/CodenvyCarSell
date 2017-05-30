@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.Query;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.servlet.ModelAndView;
@@ -94,7 +93,7 @@ public class CustomerController {
     }
     
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    @Query("update RssFeedEntry feedEntry set feedEntry.read =:isRead where feedEntry.id =:entryId")
+    @Query("UPDATE Customer c SET c.ars = :cars WHERE c.id = :id")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
 //        repository.save(car);
         
@@ -106,7 +105,6 @@ public class CustomerController {
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
-        CustRepository.flush();
         return new ModelAndView(new RedirectView("sellcars"));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
