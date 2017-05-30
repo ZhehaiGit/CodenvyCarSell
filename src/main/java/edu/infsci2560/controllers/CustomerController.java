@@ -92,6 +92,7 @@ public class CustomerController {
     }
     
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @Query("update RssFeedEntry feedEntry set feedEntry.read =:isRead where feedEntry.id =:entryId")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
 //        repository.save(car);
         
