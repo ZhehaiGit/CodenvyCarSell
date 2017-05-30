@@ -96,7 +96,7 @@ public class CustomerController {
 //        repository.save(car);
         
         String Uname = request.getRemoteUser();
-        Customer customer = CustRepository.findByUserName(Uname);
+        Customer customer = CustRepository.findByUserName(Uname).get(0);
         car.setEmail(customer.getEmail());
         car.setDealer(Uname);
         repository.save(car);
