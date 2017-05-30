@@ -22,7 +22,7 @@ public class Customer {
     private String userName;
     private String password;
     private String email;
-//    @ElementCollection
+    
     @OneToMany
     private List<Car> cars;
 
@@ -38,13 +38,13 @@ public class Customer {
         this.userName = firstName;
         this.password = password;
         this.email = email;
-        this.cars = null;
+        this.cars = new ArrayList<Car>();
     }
 
-    @Override
-    public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail());
-    }
+//    @Override
+//    public String toString() {
+//        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail());
+//    }
 
     /**
      * @return the id
