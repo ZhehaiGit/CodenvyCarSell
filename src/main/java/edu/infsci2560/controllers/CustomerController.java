@@ -59,13 +59,13 @@ public class CustomerController {
         return new ModelAndView("login", "login", null);
     }
     
-    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
-    public ModelAndView cstmCars() {
-        String Uname = request.getRemoteUser();
-//        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-        return new ModelAndView("customer", "customer", CustRepository.findByUserName(Uname).get(0));
-//        return new ModelAndView("customer", "cars", repository.findAll());  
-    }
+//    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
+//    public ModelAndView cstmCars() {
+//        String Uname = request.getRemoteUser();
+////        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
+//        return new ModelAndView("customer", "customer", CustRepository.findByUserName(Uname).get(0));
+////        return new ModelAndView("customer", "cars", repository.findAll());  
+//    }
     
     @RequestMapping(value = "sellcars", method = RequestMethod.GET)
     public ModelAndView SellCars() {
