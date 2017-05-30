@@ -101,7 +101,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Username='%s', Password='%s', Email='%s']", getId(), getUsername(), getPassword(), getEmail());
+        return String.format("Customer[id=%d, Username='%s', Password='%s', Email='%s']", getId(), getUserName(), getPassword(), getEmail());
     }
 
     /**
