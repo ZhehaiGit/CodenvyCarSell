@@ -100,12 +100,12 @@ public class CarsController {
 ////        return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
 //    }
     
-    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
-        repository.save(car);
-        return new ModelAndView("sellcars", "cars", repository.findAll());
-    }
-    
+//    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+//        repository.save(car);
+//        return new ModelAndView("sellcars", "cars", repository.findAll());
+//    }
+//    
     @RequestMapping( value = "delete-task/{id}")
     public ModelAndView deleteTask(@PathVariable("id")  Long id){
         if (repository.findOne(id) != null) {
