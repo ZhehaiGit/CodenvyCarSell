@@ -34,9 +34,10 @@ public class CustomerController {
     @Autowired
 	HttpServletRequest request;
     @Autowired
+    private CarRepository repository;
     private CustomerRepository CustRepository;
     
-    private String Uname = request.getRemoteUser();
+//    private String Uname = request.getRemoteUser();
 //    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
     
