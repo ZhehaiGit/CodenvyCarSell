@@ -60,7 +60,7 @@ public class CustomerController {
     
     @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
     public ModelAndView cstmCars() {
-        String Uname = request.getRemoteUser()
+        String Uname = request.getRemoteUser();
 //        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
         return new ModelAndView("customer", "customer", CustRepository.findByUserName(Uname).get(0));
 //        return new ModelAndView("customer", "cars", repository.findAll());  
