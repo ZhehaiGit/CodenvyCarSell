@@ -31,6 +31,8 @@ import org.slf4j.LoggerFactory;
 @Controller
 public class CustomerController {
     @Autowired
+	HttpServletRequest request;
+    @Autowired
     private CustomerRepository CustRepository;
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
@@ -51,11 +53,11 @@ public class CustomerController {
     }
     
     @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
-    public ModelAndView cars() {
+    public ModelAndView cstmCars() {
         String username = request.getRemoteUser();
         System.out.println(username);
 //        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-        return new ModelAndView("customer", "customer", cstmRepository.findByUserName(username).get(0));
+        return new ModelAndView("customer", "customer", CustRepository.findByUserName(username).get(0));
 //        return new ModelAndView("cars", "cars", repository.findAll());  
     }
     
