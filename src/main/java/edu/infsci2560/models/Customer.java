@@ -21,23 +21,26 @@ public class Customer {
     private String userName;
     private String password;
     private String email;
+    private List<Car> cars;
 
     protected Customer() {
         this.userName = null;
         this.password = null;
         this.email = null;
         this.id = Long.MAX_VALUE;
+        this.cars = null;
     }
 
     public Customer(String firstName, String password, String email) {
         this.userName = firstName;
         this.password = password;
         this.email = email;
+        this.cars = null;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail());
+        return String.format("Customer[id=%d, Name='%s', lastName='%s']", getId(), getUserName(), getPassword(), getEmail(), getCars());
     }
 
     /**
@@ -87,6 +90,13 @@ public class Customer {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public List<Car> getCars() {
+        return cars;
+    }
+    public void saveCar(Car car) {
+        cars.add(car);
     }
     
 
