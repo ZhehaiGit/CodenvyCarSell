@@ -34,11 +34,11 @@ public class CustomerController {
     @Autowired
 	HttpServletRequest request;
     @Autowired
-    private CarRepository repository;
+//    private CarRepository repository;
     private CustomerRepository CustRepository;
     
 //    private String Uname = request.getRemoteUser();
-    final static Logger log = LoggerFactory.getLogger(CarsController.class);
+//    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
