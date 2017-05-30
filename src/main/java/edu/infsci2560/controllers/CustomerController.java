@@ -93,7 +93,7 @@ public class CustomerController {
     }
     
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
+//    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
 //        repository.save(car);
         
