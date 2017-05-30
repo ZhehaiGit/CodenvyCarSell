@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import edu.infsci2560.models.Car;
 import java.util.List;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Customer {
