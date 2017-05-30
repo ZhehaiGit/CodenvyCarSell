@@ -95,7 +95,7 @@ public class Customer {
     public List<Car> getCars() {
         return cars;
     }
-    public void saveCar(Car car) {
+    public void setCar(Car car) {
         cars.add(car);
     }
     
