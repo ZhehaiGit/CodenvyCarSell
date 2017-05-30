@@ -103,7 +103,8 @@ public class CustomerController {
         
         List<Car> cars = customer.getCars();
         cars.add(car);
-        return new ModelAndView(new RedirectView("/removecar");
+        customer.setCars(cars);
+        return new ModelAndView(new RedirectView("/removecar"));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     
