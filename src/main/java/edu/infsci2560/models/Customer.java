@@ -136,6 +136,9 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getPassword()) {
+        return password;
+    }
     
     
     public String getEmail() {
@@ -147,7 +150,7 @@ public class Customer {
     }
     
     public void saveCar(Car c) {
-        this.cars.add(c);
+        cars.add(c);
     }
     public List<Car> getCars() {
         return cars;
