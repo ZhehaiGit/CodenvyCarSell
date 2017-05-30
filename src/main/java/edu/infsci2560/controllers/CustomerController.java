@@ -43,9 +43,10 @@ public class CustomerController {
 //    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
     
+    
     @RequestMapping(value = "signuup", method = RequestMethod.GET)
     public ModelAndView signuup() {
-        return new ModelAndView("registration", "registration", null);
+        return new ModelAndView("registrationin", "registrationin", null);
     }
     
     
