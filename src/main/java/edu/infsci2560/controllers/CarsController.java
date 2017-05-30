@@ -78,11 +78,11 @@ public class CarsController {
     
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView cars() {
-        String username = request.getRemoteUser();
-        System.out.println(username);
+//        String username = request.getRemoteUser();
+//        System.out.println(username);
 //        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-        return new ModelAndView("customer", "customer", cstmRepository.findByUserName(username).get(0));
-//        return new ModelAndView("cars", "cars", repository.findAll());  
+//        return new ModelAndView("customer", "customer", cstmRepository.findByUserName(username).get(0));
+        return new ModelAndView("cars", "cars", repository.findAll());  
     }
     
     
