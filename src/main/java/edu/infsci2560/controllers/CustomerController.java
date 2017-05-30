@@ -60,7 +60,7 @@ public class CustomerController {
 //        return new ModelAndView("home", "home", null);
 //    }
     
-    @RequestMapping(value = "/signup/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
         CustRepository.save(customer);
         System.out.println("Success!");
