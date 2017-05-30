@@ -35,6 +35,8 @@ public class CustomerController {
     @Autowired
     private CustomerRepository CustRepository;
     
+    private String Uname = request.getRemoteUser();
+    
     @RequestMapping(value = "signup", method = RequestMethod.GET)
     public ModelAndView su() {
         return new ModelAndView("signup", "signup", null);
@@ -54,11 +56,51 @@ public class CustomerController {
     
     @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
     public ModelAndView cstmCars() {
-        String username = request.getRemoteUser();
-        System.out.println(username);
+        
 //        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-        return new ModelAndView("customer", "customer", CustRepository.findByUserName(username).get(0));
-//        return new ModelAndView("cars", "cars", repository.findAll());  
+//        return new ModelAndView("customer", "customer", CustRepository.findByUserName(Uname).get(0));
+        return new ModelAndView("customer", "cars", repository.findAll());  
+    }
+    
+    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
+    public ModelAndView SellCars() {
+        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
+    }
+    @RequestMapping(value = "removecar", method = RequestMethod.GET)
+    public ModelAndView removeCar() {
+        return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
+    }
+    
+    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
+        repository.save(car);
+        return new ModelAndView("sellcars", "cars", repository.findAll());
+    }
+    
+//    @RequestMapping(value = "/removecardelt",  method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView remove(@RequestParam("id") Long id) {
+//        if (repository.findOne(id) != null) {
+//           repository.delete(id);
+////           id++;
+////           while (repository.findOne(id) != null) {
+////               repository.findOne(id).setId(id-1);
+////               id++;
+////           }
+//        } else {
+//            log.error("ID not exsit!");
+//        }
+//        return new ModelAndView("removecar", "cars", repository.findAll());
+//    }
+    
+    @RequestMapping( value = "delete-task/{id}")
+    public ModelAndView deleteTask(@PathVariable("id")  Long id){
+        if (repository.findOne(id) != null) {
+           repository.delete(id);
+        } else {
+            log.error("ID not exsit!");
+        }
+//        return new ModelAndView("removecar", "cars", repository.findAll());
+        return new ModelAndView(new RedirectView("/removecar"));
     }
     
 }

@@ -52,16 +52,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a data-th-inline="text" class="navbar-text">[[${#httpServletRequest.remoteUser}]]</a>
+              <a data-th-inline="text" class="navbar-text" value = "CarPool"></a>
+             <!--a data-th-inline="text" class="navbar-text">[[${#httpServletRequest.remoteUser}]]</a-->
               <!-- a class="navbar-brand" data-th-inline="text" href="#">[[${#httpServletRequest.remoteUser}]]</a-->
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a data-th-href="@{/cars}">Home <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a data-th-href="@{/cars}">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="sellcars">SellCar</a></li>
-                <li class="active"><a href="removecar">RemoveCar</a></li>
+                <li><a href="removecar">RemoveCar</a></li>
                 <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu">
@@ -89,20 +90,24 @@
         </nav>
         <div>
             <table class = "table table-bordered table-striped table-hover">
+                
                 <tr>
-                    <th class = "text-mid">ID</th>
+                    <th class = "text-mid">#</th>
                     <th class = "text-mid">Model</th>
                     <th class = "text-mid">Type</th>
                     <th class = "text-mid">Describe</th>
-                    <th class = "text-mid">Delet</th>
                 </tr>                
-                <tr data-th-each="car : ${customer.cars}}">
-                    <td></td>
-                    <!--td data-th-text="${car.id}"></td-->
+                <!--tr data-th-each="car : ${cars}">
+                    <td data-th-text="${car.id}"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
-                    <td><a data-th-href = "@{delete-task/{id}(id=${car.id})}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr-->
+                 <tr data-th-each="car : ${cars}">
+                    <td></td>
+                    <td data-th-text="${car.title}"></td>
+                    <td data-th-text="${car.workoutType}"></td>
+                    <td data-th-text="${car.describe}"></td>
                 </tr>
             </table>
           </div>
@@ -133,12 +138,12 @@
                     </form>
                 </div>
         	</div>
-        </div-->
+        </div>
         Remove Car<br />
-        <form data-th-action="@{/removecardelt}" name="deletCarForm" method="post">
+        <form data-th-action="@{/cars/delet}" name="deletCarForm" method="post">
             <input type="number" name="id" class="form-control" placeholder="ID"/>
             <input id="contact-submit" type="submit" value="delet" class="btn btn-primary"></input>
-        </form>
+        </form-->
         
         
         <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
@@ -185,6 +190,12 @@
                 $('select[name=workoutType]').val(1);
                 $('.selectpicker').selectpicker('refresh');
         </script>
+        <!--script>
+            function runningFormatter(value, row, index) {
+                index++;
+                return index;
+            }
+        </script-->
         <script>
             var addSerialNumber = function () {
             var i = 1
