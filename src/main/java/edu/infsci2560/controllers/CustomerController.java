@@ -54,6 +54,7 @@ public class CustomerController {
                                 @RequestParam("email") String email) {
         Customer newCustomer = new Customer(username, password, email);
         CustRepository.save(newCustomer);
+        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
         System.out.println("Success!");
         return new ModelAndView("login", "login", repository.findAll());
     }
