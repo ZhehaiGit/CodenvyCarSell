@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import edu.infsci2560.models.Car;
 import java.util.List;
+import java.util.ArrayList;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -31,7 +32,7 @@ public class Customer {
         this.password = null;
         this.email = null;
         this.id = Long.MAX_VALUE;
-        this.cars = null;
+        this.cars = new ArrayList<Car>();
     }
 
     public Customer(String firstName, String password, String email) {
