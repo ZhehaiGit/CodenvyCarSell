@@ -70,7 +70,7 @@ public class CarsController {
 //            
 //        }     
 
-    @RequestMapping(value = "/pulic/cars", method = RequestMethod.GET)
+    @RequestMapping(value = "/public/cars", method = RequestMethod.GET)
         public ModelAndView publicCars() {
             return new ModelAndView("cars", "cars", repository.findAll());  
         }
