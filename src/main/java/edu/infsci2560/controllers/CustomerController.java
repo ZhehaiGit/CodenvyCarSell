@@ -44,7 +44,7 @@ public class CustomerController {
 
     
     
-    @RequestMapping(value = "signuup", method = RequestMethod.GET)
+    @RequestMapping(value = "signup", method = RequestMethod.GET)
     public ModelAndView su() {
         return new ModelAndView("signup", "signup", null);
     }
