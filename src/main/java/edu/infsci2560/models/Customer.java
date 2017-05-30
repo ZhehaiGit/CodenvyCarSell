@@ -136,7 +136,7 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getPassword()) {
+    public String getPassword() {
         return password;
     }
     
