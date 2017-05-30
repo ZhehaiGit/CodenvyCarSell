@@ -85,11 +85,11 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());  
     }
     
-    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
-    public ModelAndView SellCars() {
-        return new ModelAndView("sellcars", "cars", repository.findAll());
-//        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
-    }
+//    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
+//    public ModelAndView SellCars() {
+//        return new ModelAndView("sellcars", "cars", repository.findAll());
+////        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
+//    }
     @RequestMapping(value = "removecar", method = RequestMethod.GET)
     public ModelAndView removeCar() {
         return new ModelAndView("removecar", "cars", repository.findAll());
