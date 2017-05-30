@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import edu.infsci2560.repositories.CarRepository;
 import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author kolobj
@@ -103,7 +104,7 @@ public class CustomerController {
         
         List<Car> cars = customer.getCars();
         cars.add(car);
-        customer.setCars(cars);
+        customer.setCars(new ArrayList<Car>(cars);
         return new ModelAndView(new RedirectView("/sellcars");
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
