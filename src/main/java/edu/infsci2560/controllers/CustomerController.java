@@ -55,23 +55,23 @@ public class CustomerController {
     public ModelAndView su() {
         return new ModelAndView("signup", "signup", null);
     }
-    @RequestMapping(value = "zhuche", method = RequestMethod.POST)
-    public ModelAndView zc() {
-        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
-        return new ModelAndView("signup", "signup", null);
-    }
-    
-    
-//    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView signupadd(@RequestParam("username") String username, 
-//                                @RequestParam("password") String password, 
-//                                @RequestParam("email") String email) {
-////        Customer newCustomer = new Customer(username, password, email);
-////        CustRepository.save(newCustomer);
+//    @RequestMapping(value = "zhuche", method = RequestMethod.POST)
+//    public ModelAndView zc() {
 //        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
-//        System.out.println("Success!");
 //        return new ModelAndView("signup", "signup", null);
 //    }
+    
+    
+    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView signupadd(@RequestParam("username") String username, 
+                                @RequestParam("password") String password, 
+                                @RequestParam("email") String email) {
+//        Customer newCustomer = new Customer(username, password, email);
+//        CustRepository.save(newCustomer);
+        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
+        System.out.println("Success!");
+        return new ModelAndView("signup", "signup", null);
+    }
     
 //    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
 //    public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
