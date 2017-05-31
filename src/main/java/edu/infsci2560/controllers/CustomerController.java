@@ -106,12 +106,14 @@ public class CustomerController {
 //        car.setEmail(customer.getEmail());
 //        car.setDealer(Uname);
         repository.save(car);
-        
+        Session session = sessionFactory.openSession();
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
-        Session.save(cars);
+        session.flush();
+//        session.save(cars);
         CustRepository.save(customer);
+        sessionFactory.close();
 //        return new ModelAndView(new RedirectView("sellcars"));
         return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
