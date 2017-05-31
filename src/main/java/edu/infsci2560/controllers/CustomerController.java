@@ -29,6 +29,7 @@ import edu.infsci2560.repositories.CarRepository;
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.annotations.Cascade;
+import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -113,7 +114,6 @@ public class CustomerController {
         session.flush();
 //        session.save(cars);
         CustRepository.save(customer);
-        sessionFactory.close();
 //        return new ModelAndView(new RedirectView("sellcars"));
         return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
