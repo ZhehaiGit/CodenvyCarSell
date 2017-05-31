@@ -125,13 +125,15 @@ public class CustomerController {
            String Uname = request.getRemoteUser();
            Customer customer = CustRepository.findByUserName(Uname).get(0);
            List<Car> cars = customer.getCars();
-           for (int i = 0; i < cars.length(); i++) {
+           for (int i = 0; i < cars.size(); i++) {
                Car c = cars.get(i);
-               if (c.id == id) {
+               if (c.get(id) == id) {
                    cars.remove(i);
                    break;
                }
            }
+           customer.setCars(cars);
+            CustRepository.save(customer);
         } else {
             log.error("ID not exsit!");
         }
