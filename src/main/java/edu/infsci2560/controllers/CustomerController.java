@@ -28,6 +28,10 @@ import org.slf4j.LoggerFactory;
 import edu.infsci2560.repositories.CarRepository;
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 /**
  *
  * @author kolobj
