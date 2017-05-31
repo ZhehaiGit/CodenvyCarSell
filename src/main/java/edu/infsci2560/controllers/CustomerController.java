@@ -31,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.annotations.Cascade;
 import javax.persistence.EntityManager;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.sessionFactory;
 import org.hibernate.Transaction;
 /**
  *
@@ -107,7 +107,7 @@ public class CustomerController {
 //        car.setEmail(customer.getEmail());
 //        car.setDealer(Uname);
         repository.save(car);
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
