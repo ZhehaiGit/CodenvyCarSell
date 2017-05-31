@@ -6,10 +6,10 @@ import edu.infsci2560.models.Car.WorkoutType;
 import edu.infsci2560.repositories.CarRepository;
 import edu.infsci2560.repositories.CustomerRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+//import javax.persistence.EntityManager;
+//import javax.persistence.EntityManagerFactory;
+//import javax.persistence.Persistence;
+//import javax.persistence.Query;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +23,8 @@ import java.util.List;
 public class FullStackWebApplication {
 
     private static final Logger log = LoggerFactory.getLogger(FullStackWebApplication.class);
-    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAService");
-    public static EntityManager em = emf.createEntityManager();
+//    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAService");
+//    public static EntityManager em = emf.createEntityManager();
     
     public static void main(String[] args) throws Exception {
         
@@ -39,21 +39,21 @@ public class FullStackWebApplication {
         
         
         
-        em.getTransaction().begin();
+//        em.getTransaction().begin();
         CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
         Customer c1 = new Customer( "zzh", "hzz", "zzh@pitt.edu");
-        em.persist(c1);
+//        em.persist(c1);
         
         List<Car> cars = c1.getCars();
         cars.add(new Car(1L, "BMW", WorkoutType.SUV, "BMWadasd","zzh@pitt.edu", "zzh"));
         cars.add(new Car(2L, "BMW3", WorkoutType.Van, "Van of Bmw","zzh@pitt.edu", "zzh"));
         c1.setCars(cars);
         
-        em.flush();
+//        em.flush();
         CstmRepository.save(c1);
-        em.getTransaction().commit();
-        em.close();
-        emf.close();
+//        em.getTransaction().commit();
+//        em.close();
+//        emf.close();
         
         
 //        CstmRepository.save(c1);
