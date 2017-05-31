@@ -33,6 +33,7 @@ import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
 /**
  *
  * @author kolobj
@@ -45,7 +46,7 @@ public class CustomerController {
     private CarRepository repository;
     @Autowired
     private CustomerRepository CustRepository;
-    
+    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 //    private String Uname = request.getRemoteUser();
 //    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
@@ -117,13 +118,12 @@ public class CustomerController {
     
     
     @RequestMapping( value = "delete-task/{id}")
-    public ModelAndView deleteTask(@PathVariable("id")  Long id){
+    public ModelAndView deleteTask(@PathVariable("id")  Long id) {
         if (repository.findOne(id) != null) {
            repository.delete(id);
         } else {
             log.error("ID not exsit!");
         }
-//        return new ModelAndView("removecar", "cars", repository.findAll());
         return new ModelAndView(new RedirectView("/removecar"));
     }
     
