@@ -6,6 +6,9 @@ import edu.infsci2560.models.Car.WorkoutType;
 import edu.infsci2560.repositories.CarRepository;
 import edu.infsci2560.repositories.CustomerRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +21,11 @@ import java.util.List;
 public class FullStackWebApplication {
 
     private static final Logger log = LoggerFactory.getLogger(FullStackWebApplication.class);
-
+    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAService");
+    static EntityManager em = emf.createEntityManager();
     public static void main(String[] args) {
+        em.getTransaction().begin();
+        
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
 
         CarRepository repository = ctx.getBean(CarRepository.class);
@@ -27,14 +33,18 @@ public class FullStackWebApplication {
         repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz","xjl@gmail.com", "xjl"));
         repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge", "wdyj@ppp.com", "wdyj"));
         
+        
+        
+        
+        
         CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
         Customer c1 = new Customer( "zzh", "hzz", "zzh@pitt.edu");
-        
+        em.persist(c1);
         List<Car> cars = c1.getCars();
         cars.add(new Car(1L, "BMW", WorkoutType.SUV, "BMWadasd","zzh@pitt.edu", "zzh"));
         cars.add(new Car(2L, "BMW3", WorkoutType.Van, "Van of Bmw","zzh@pitt.edu", "zzh"));
         c1.setCars(cars);
-        
+        em.flush();
         CstmRepository.save(c1);
         Customer c2 = new Customer( "xjl", "jlx", "xjl@gmail.edu");
         CstmRepository.save(c2);
