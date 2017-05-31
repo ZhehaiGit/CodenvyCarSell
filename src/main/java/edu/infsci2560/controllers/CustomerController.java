@@ -53,7 +53,7 @@ public class CustomerController {
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
     public ModelAndView su() {
-        return new ModelAndView("homw", "homw", null);
+        return new ModelAndView("home", "home", null);
     }
     
     
