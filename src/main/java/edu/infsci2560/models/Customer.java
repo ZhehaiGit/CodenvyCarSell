@@ -8,9 +8,10 @@ package edu.infsci2560.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-//import javax.persistence.CascadeType;
+//import org.hibernate.annotations.Cascade;
+//import org.hibernate.annotations.CascadeType;
+import javax.persistence.CascadeType;
+import javax.persistence.Cascade;
 
 import javax.persistence.Id;
 import edu.infsci2560.models.Car;
