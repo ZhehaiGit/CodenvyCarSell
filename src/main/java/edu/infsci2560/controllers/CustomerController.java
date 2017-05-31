@@ -107,6 +107,7 @@ public class CustomerController {
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
+//        CustRepository.save(new Customer("123","123","addd"));
         CustRepository.save(customer);
 //        return new ModelAndView(new RedirectView("sellcars"));
         return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));

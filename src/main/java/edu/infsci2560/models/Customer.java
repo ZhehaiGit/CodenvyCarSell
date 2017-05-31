@@ -26,8 +26,8 @@ public class Customer {
     private String password;
     private String email;
     //(cascade = {CascadeType.ALL})
-//    @OneToMany(cascade = {CascadeType.ALL})
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
+//    @OneToMany
     private List<Car> cars;
 
     protected Customer() {
