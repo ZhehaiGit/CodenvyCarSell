@@ -49,6 +49,10 @@ public class FullStackWebApplication {
         c1.setCars(cars);
         em.flush();
         
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+        
         
 //        CstmRepository.save(c1);
 //        Customer c2 = new Customer( "xjl", "jlx", "xjl@gmail.edu");
