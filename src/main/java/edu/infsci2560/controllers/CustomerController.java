@@ -127,7 +127,7 @@ public class CustomerController {
            List<Car> cars = customer.getCars();
            for (int i = 0; i < cars.size(); i++) {
                Car c = cars.get(i);
-               if (c.get(id) == id) {
+               if (c.getId(id) == id) {
                    cars.remove(i);
                    break;
                }
