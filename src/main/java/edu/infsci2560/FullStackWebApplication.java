@@ -40,7 +40,7 @@ public class FullStackWebApplication {
         
         
         em.getTransaction().begin();
-//        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
+        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
         Customer c1 = new Customer( "zzh", "hzz", "zzh@pitt.edu");
         em.persist(c1);
         
@@ -50,7 +50,7 @@ public class FullStackWebApplication {
         c1.setCars(cars);
         
         em.flush();
-        
+        CstmRepository.save(c1);
         em.getTransaction().commit();
         em.close();
         emf.close();
