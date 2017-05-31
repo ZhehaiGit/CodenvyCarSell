@@ -53,13 +53,12 @@ public class CustomerController {
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
     public ModelAndView su() {
-        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
         return new ModelAndView("signup", "signup", null);
     }
     
     
     @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView signup(@RequestParam("username") String username, 
+    public ModelAndView signupadd(@RequestParam("username") String username, 
                                 @RequestParam("password") String password, 
                                 @RequestParam("email") String email) {
 //        Customer newCustomer = new Customer(username, password, email);
