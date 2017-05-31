@@ -65,7 +65,7 @@ public class CustomerController {
 //        CustRepository.save(newCustomer);
         repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
         System.out.println("Success!");
-        return new ModelAndView("home", "home", null);
+        return new ModelAndView("signup", "signup", null);
     }
     
 //    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
