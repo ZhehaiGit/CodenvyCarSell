@@ -8,6 +8,7 @@ package edu.infsci2560.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.CascadeType;
 import javax.persistence.Id;
 import edu.infsci2560.models.Car;
 import java.util.List;
