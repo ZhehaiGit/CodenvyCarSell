@@ -55,11 +55,6 @@ public class CustomerController {
     public ModelAndView su() {
         return new ModelAndView("signup", "signup", null);
     }
-//    @RequestMapping(value = "zhuche", method = RequestMethod.POST)
-//    public ModelAndView zc() {
-//        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
-//        return new ModelAndView("signup", "signup", null);
-//    }
     
     
 //    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
@@ -76,8 +71,7 @@ public class CustomerController {
     @RequestMapping(value = "signupadd")
     public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
         CustRepository.save(customer);
-        repository.save(new Car(10L, "12345", WorkoutType.Van,"dasdsa","dad","1111"));  
-        return new ModelAndView("home", "home", null);
+        return new ModelAndView("login", "login", null);
     }
     
 //    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
@@ -107,18 +101,13 @@ public class CustomerController {
         
         String Uname = request.getRemoteUser();
         Customer customer = CustRepository.findByUserName(Uname).get(0);
-//        car.setEmail(customer.getEmail());
-//        car.setDealer(Uname);
+        car.setEmail(customer.getEmail());
+        car.setDealer(Uname);
         repository.save(car);
-//        Session session = SessionFactory.openSession();
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
-//        session.flush();
-//        session.save(cars);
         CustRepository.save(customer);
-//        session.getTransaction().commit();
-//        session.close();
 //        return new ModelAndView(new RedirectView("sellcars"));
         return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
