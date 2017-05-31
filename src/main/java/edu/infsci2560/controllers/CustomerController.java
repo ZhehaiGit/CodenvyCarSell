@@ -73,7 +73,7 @@ public class CustomerController {
 //        return new ModelAndView("home", "home", null);
 //    }
     
-    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "signupadd")
     public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
 //        CustRepository.save(customer);
         repository.save(new Car(10L, "12345", WorkoutType.Van,"dasdsa","dad","1111"));  
