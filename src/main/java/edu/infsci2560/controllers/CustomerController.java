@@ -122,6 +122,16 @@ public class CustomerController {
     public ModelAndView deleteTask(@PathVariable("id")  Long id) {
         if (repository.findOne(id) != null) {
            repository.delete(id);
+           String Uname = request.getRemoteUser();
+           Customer customer = CustRepository.findByUserName(Uname).get(0);
+           List<Car> cars = customer.getCars();
+           for (int i = 0; i < cars.length(); i++) {
+               Car c = cars.get(i);
+               if (c.id == id) {
+                   cars.remove(i);
+                   break;
+               }
+           }
         } else {
             log.error("ID not exsit!");
         }
