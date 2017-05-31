@@ -86,13 +86,15 @@ public class CustomerController {
     
     @RequestMapping(value = "sellcars", method = RequestMethod.GET)
     public ModelAndView SellCars() {
-        String Uname = request.getRemoteUser();
+//        String Uname = request.getRemoteUser();
+         String Uname = "zzh";
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
         return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
     }
     @RequestMapping(value = "removecar", method = RequestMethod.GET)
     public ModelAndView removeCar() {
-        String Uname = request.getRemoteUser();
+//        String Uname = request.getRemoteUser();
+         String Uname = "zzh";
 //        return new ModelAndView("removecar", "cars", repository.findAll());
         return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
     }
@@ -102,7 +104,8 @@ public class CustomerController {
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
 //        repository.save(car);
         
-        String Uname = request.getRemoteUser();
+//        String Uname = request.getRemoteUser();
+        String Uname = "zzh";
         Customer customer = CustRepository.findByUserName(Uname).get(0);
 //        car.setEmail(customer.getEmail());
 //        car.setDealer(Uname);
