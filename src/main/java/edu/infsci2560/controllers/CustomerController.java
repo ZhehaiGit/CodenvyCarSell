@@ -107,7 +107,7 @@ public class CustomerController {
 //        car.setEmail(customer.getEmail());
 //        car.setDealer(Uname);
         repository.save(car);
-        Session session = sessionFactory.openSession();
+        Session session = SessionFactory.openSession();
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
