@@ -8,9 +8,7 @@ package edu.infsci2560.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-//import org.hibernate.annotations.Cascade;
-//import org.hibernate.annotations.CascadeType;
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 
 import javax.persistence.Id;
 import edu.infsci2560.models.Car;
@@ -28,7 +26,7 @@ public class Customer {
     private String password;
     private String email;
     //(cascade = {CascadeType.ALL})
-    @OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+    @OneToMany
     private List<Car> cars;
 
     protected Customer() {
