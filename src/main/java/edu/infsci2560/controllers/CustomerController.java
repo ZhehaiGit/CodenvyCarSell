@@ -57,23 +57,23 @@ public class CustomerController {
     }
     
     
-//    @RequestMapping(value = "/signup/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView signup(@RequestParam("username") String username, 
-//                                @RequestParam("password") String password, 
-//                                @RequestParam("email") String email) {
+    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView signup(@RequestParam("username") String username, 
+                                @RequestParam("password") String password, 
+                                @RequestParam("email") String email) {
 //        Customer newCustomer = new Customer(username, password, email);
 //        CustRepository.save(newCustomer);
-//        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
-//        System.out.println("Success!");
-//        return new ModelAndView("home", "home", null);
-//    }
-    
-    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
-        CustRepository.save(customer);
-        repository.save(new Car(10L, "11111", WorkoutType.Van,"dasdsa","dad","1111"));  
-        return new ModelAndView("login", "login", null);
+        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
+        System.out.println("Success!");
+        return new ModelAndView("home", "home", null);
     }
+    
+//    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
+////        CustRepository.save(customer);
+//        repository.save(new Car(10L, "12345", WorkoutType.Van,"dasdsa","dad","1111"));  
+//        return new ModelAndView("login", "login", null);
+//    }
     
 //    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
 //    public ModelAndView cstmCars() {
@@ -99,7 +99,6 @@ public class CustomerController {
     @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
 //    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
-//        repository.save(car);
         
         String Uname = request.getRemoteUser();
         Customer customer = CustRepository.findByUserName(Uname).get(0);
