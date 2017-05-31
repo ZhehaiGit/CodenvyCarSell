@@ -104,7 +104,7 @@ public class CustomerController {
         Customer customer = CustRepository.findByUserName(Uname).get(0);
         car.setEmail(customer.getEmail());
         car.setDealer(Uname);
-        repository.save(car);
+//        repository.save(car);
         
         List<Car> cars = customer.getCars();
         cars.add(car);
