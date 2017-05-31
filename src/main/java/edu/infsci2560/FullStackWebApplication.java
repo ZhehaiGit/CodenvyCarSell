@@ -26,7 +26,7 @@ public class FullStackWebApplication {
     public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAService");
     public static EntityManager em = emf.createEntityManager();
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
@@ -43,10 +43,12 @@ public class FullStackWebApplication {
 //        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
         Customer c1 = new Customer( "zzh", "hzz", "zzh@pitt.edu");
         em.persist(c1);
+        
         List<Car> cars = c1.getCars();
         cars.add(new Car(1L, "BMW", WorkoutType.SUV, "BMWadasd","zzh@pitt.edu", "zzh"));
         cars.add(new Car(2L, "BMW3", WorkoutType.Van, "Van of Bmw","zzh@pitt.edu", "zzh"));
         c1.setCars(cars);
+        
         em.flush();
         
         em.getTransaction().commit();
