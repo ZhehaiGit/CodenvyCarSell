@@ -107,7 +107,6 @@ public class CustomerController {
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
-//        CustRepository.save(new Customer("123","123","addd"));
         CustRepository.save(customer);
 //        return new ModelAndView(new RedirectView("sellcars"));
         return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));
@@ -117,16 +116,16 @@ public class CustomerController {
     
     
     
-//    @RequestMapping( value = "delete-task/{id}")
-//    public ModelAndView deleteTask(@PathVariable("id")  Long id){
-//        if (repository.findOne(id) != null) {
-//           repository.delete(id);
-//        } else {
-//            log.error("ID not exsit!");
-//        }
-////        return new ModelAndView("removecar", "cars", repository.findAll());
-//        return new ModelAndView(new RedirectView("/removecar"));
-//    }
+    @RequestMapping( value = "delete-task/{id}")
+    public ModelAndView deleteTask(@PathVariable("id")  Long id){
+        if (repository.findOne(id) != null) {
+           repository.delete(id);
+        } else {
+            log.error("ID not exsit!");
+        }
+//        return new ModelAndView("removecar", "cars", repository.findAll());
+        return new ModelAndView(new RedirectView("/removecar"));
+    }
     
     
     

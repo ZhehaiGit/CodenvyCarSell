@@ -106,16 +106,16 @@ public class CarsController {
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
 //    }
 //    
-    @RequestMapping( value = "delete-task/{id}")
-    public ModelAndView deleteTask(@PathVariable("id")  Long id){
-        if (repository.findOne(id) != null) {
-           repository.delete(id);
-        } else {
-            log.error("ID not exsit!");
-        }
-//        return new ModelAndView("removecar", "cars", repository.findAll());
-        return new ModelAndView(new RedirectView("/removecar"));
-    }
+//    @RequestMapping( value = "delete-task/{id}")
+//    public ModelAndView deleteTask(@PathVariable("id")  Long id){
+//        if (repository.findOne(id) != null) {
+//           repository.delete(id);
+//        } else {
+//            log.error("ID not exsit!");
+//        }
+////        return new ModelAndView("removecar", "cars", repository.findAll());
+//        return new ModelAndView(new RedirectView("/removecar"));
+//    }
 //    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
 //    public ModelAndView cstmCars() {
 //        //        String Uname = request.getRemoteUser();
