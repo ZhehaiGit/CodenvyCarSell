@@ -106,7 +106,7 @@ public class CustomerController {
         cars.add(car);
         customer.setCars(cars);
 //        return new ModelAndView(new RedirectView("sellcars"));
-        return new ModelAndView("sellcars","customer",customer);
+        return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
     
