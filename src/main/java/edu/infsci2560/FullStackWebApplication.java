@@ -23,10 +23,11 @@ import java.util.List;
 public class FullStackWebApplication {
 
     private static final Logger log = LoggerFactory.getLogger(FullStackWebApplication.class);
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAService");
-    static EntityManager em = emf.createEntityManager();
+    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAService");
+    public static EntityManager em = emf.createEntityManager();
+    
     public static void main(String[] args) {
-        em.getTransaction().begin();
+        
         
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
 
@@ -38,8 +39,8 @@ public class FullStackWebApplication {
         
         
         
-        
-        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
+        em.getTransaction().begin();
+//        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
         Customer c1 = new Customer( "zzh", "hzz", "zzh@pitt.edu");
         em.persist(c1);
         List<Car> cars = c1.getCars();
@@ -47,13 +48,15 @@ public class FullStackWebApplication {
         cars.add(new Car(2L, "BMW3", WorkoutType.Van, "Van of Bmw","zzh@pitt.edu", "zzh"));
         c1.setCars(cars);
         em.flush();
-        CstmRepository.save(c1);
-        Customer c2 = new Customer( "xjl", "jlx", "xjl@gmail.edu");
-        CstmRepository.save(c2);
-        Customer c3 = new Customer( "wdyj", "dyjw", "wdyj@su.edu");
-        CstmRepository.save(c3);
-        Customer c4 = new Customer( "pw", "wp", "wp@su.edu");
-        CstmRepository.save(c4);
+        
+        
+//        CstmRepository.save(c1);
+//        Customer c2 = new Customer( "xjl", "jlx", "xjl@gmail.edu");
+//        CstmRepository.save(c2);
+//        Customer c3 = new Customer( "wdyj", "dyjw", "wdyj@su.edu");
+//        CstmRepository.save(c3);
+//        Customer c4 = new Customer( "pw", "wp", "wp@su.edu");
+//        CstmRepository.save(c4);
         
         
 //        CustomerRepository CstmRepository = ctx.getBean(CustomerRepository.class);
