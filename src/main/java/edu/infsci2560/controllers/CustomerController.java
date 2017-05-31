@@ -53,7 +53,8 @@ public class CustomerController {
     
     @RequestMapping(value = "signup", method = RequestMethod.GET)
     public ModelAndView su() {
-        return new ModelAndView("home", "home", null);
+        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
+        return new ModelAndView("signup", "signup", null);
     }
     
     
