@@ -121,7 +121,6 @@ public class CustomerController {
     @RequestMapping( value = "delete-task/{id}")
     public ModelAndView deleteTask(@PathVariable("id")  Long id) {
         if (repository.findOne(id) != null) {
-//           repository.delete(id);
            String Uname = request.getRemoteUser();
            Customer customer = CustRepository.findByUserName(Uname).get(0);
            List<Car> cars = customer.getCars();
@@ -134,6 +133,7 @@ public class CustomerController {
                    break;
                }
            }
+            repository.delete(id);
         } else {
             log.error("ID not exsit!");
         }
