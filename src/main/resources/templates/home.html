@@ -145,7 +145,7 @@
     // TextBall object
     var TextBalls = function(sText) {
         this.sText = sText + " ";
-        this.n = sText.length;
+        this.n = sText.length+1;
         this.balls = [];
         this.timeIntv = null;
         this.life = 0;
@@ -154,7 +154,7 @@
     }
     TextBalls.prototype = {
         createBalls: function() {
-            for (var i = 0; i < this.n; i++) {
+            for (var i = 0; i < 7; i++) {
                 var ball = new Ball(this.sText[i], i);
                 this.balls.push(ball);
             }
