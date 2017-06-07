@@ -153,51 +153,51 @@
         
     }
     
-    TextBalls.prototype = {
-        
-        
-        createBalls: function() {
-            for (var i = 0; i    < this.n; i++) {
-                var ball = new Ball(this.sText[i], i);
-                this.balls.push(ball);
-            }
-            this.balls[this.n-1].node.className = "cover";
-            this.balls[this.n-1].xTarget = cW;
-        },
-        
-        move: function() {
-            var thisObj = this;
-            this.timeIntv = setInterval(function(){
-                thisObj.life++;
-                if (thisObj.life < lifespan2) {
-                    for (var i = 0; i < thisObj.n; i++) {
-                        var ball = thisObj.balls[i];                        
-                        if (ball.y < ground) {
-                            ball.speedY += gravity;                                
-                        } else {
-                            ball.y = ground;
-                            if (ball.jumpN < i || i == thisObj.n - 1) {
-                                ball.jumpN++;
-                                ball.speedY = - speedYUp;
-                            } else {
-                                ball.speedY = 0;
-                                ball.speedX = 0;                                                              
-                            }
-                        }                        
-                        
-                        ball.move();
-                        ball.display();                    
-                    }
-                    if (thisObj.life > lifespan1) {
-                        var coverB1 = thisObj.balls[thisObj.n-1];
-                        coverB1.opa = coverB1.opa > 0? coverB1.opa-0.025 : 0;
-                        coverB1.node.style.opacity = coverB1.opa;
-                    }
-                }  else {clearInterval(thisObj.timeIntv);}                
-                
-            }, 50);
-        }
-    }
+//    TextBalls.prototype = {
+//        
+//        
+//        createBalls: function() {
+//            for (var i = 0; i < this.n; i++) {
+//                var ball = new Ball(this.sText[i], i);
+//                this.balls.push(ball);
+//            }
+//            this.balls[this.n-1].node.className = "cover";
+//            this.balls[this.n-1].xTarget = cW;
+//        },
+//        
+//        move: function() {
+//            var thisObj = this;
+//            this.timeIntv = setInterval(function(){
+//                thisObj.life++;
+//                if (thisObj.life < lifespan2) {
+//                    for (var i = 0; i < thisObj.n; i++) {
+//                        var ball = thisObj.balls[i];                        
+//                        if (ball.y < ground) {
+//                            ball.speedY += gravity;                                
+//                        } else {
+//                            ball.y = ground;
+//                            if (ball.jumpN < i || i == thisObj.n - 1) {
+//                                ball.jumpN++;
+//                                ball.speedY = - speedYUp;
+//                            } else {
+//                                ball.speedY = 0;
+//                                ball.speedX = 0;                                                              
+//                            }
+//                        }                        
+//                        
+//                        ball.move();
+//                        ball.display();                    
+//                    }
+//                    if (thisObj.life > lifespan1) {
+//                        var coverB1 = thisObj.balls[thisObj.n-1];
+//                        coverB1.opa = coverB1.opa > 0? coverB1.opa-0.025 : 0;
+//                        coverB1.node.style.opacity = coverB1.opa;
+//                    }
+//                }  else {clearInterval(thisObj.timeIntv);}                
+//                
+//            }, 50);
+//        }
+//    }
     
     var tb = new TextBalls("WELCOME");
     tb.move();
