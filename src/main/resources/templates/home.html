@@ -71,9 +71,12 @@
      <!--p>Click <a data-th-href="@{/cars}">here</a> to see your count</p-->
     <div class="welcome">
     		<h1 style="vertical-align:middle; text-align: center">Welcome!!!!</h1>
-             <a  class="btn btn-primary" style="vertical-align:middle" data-th-href="@{/public/cars}" role="button">Log with visitor</a>
-             <a  class="btn btn-primary" style="vertical-align:middle" data-th-href="@{/cstmCars}" role="button">Log with customer</a>
-             
+    		<form style="vertical-align:middle">
+    		  <a  class="btn btn-primary"  data-th-href="@{/public/cars}" role="button">Log with visitor</a>
+    		</form>
+    		<form style="vertical-align:middle">
+    		  <a  class="btn btn-primary"  data-th-href="@{/cstmCars}" role="button">Log with customer</a>
+    		</form>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
