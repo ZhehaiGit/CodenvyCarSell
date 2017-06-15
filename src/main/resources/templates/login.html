@@ -303,10 +303,10 @@ body .container .content .signup-cont {
     <body>
     <section class="container">
 		    <article class="half">
-			        <h1>Azure</h1>
+			        <h1>CARpool</h1>
 			        <div class="tabs">
-				            <span class="tab signin active"><a  rel="noreferrer" href="#signin">Sign in</a></span>
-				            <span class="tab signup"><a  rel="noreferrer" href="#signup">Sign up</a></span>
+				            <span class="tab signin active"><a  href="#signin">Sign in</a></span>
+				            <span class="tab signup"><a  href="#signup">Sign up</a></span>
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
@@ -342,18 +342,18 @@ body .container .content .signup-cont {
 	</body>
 	<script>
           $('.tabs .tab').click(function(){
-    if ($(this).hasClass('signin')) {
-        $('.tabs .tab').removeClass('active');
-        $(this).addClass('active');
-        $('.cont').hide();
-        $('.signin-cont').show();
-    } 
-    if ($(this).hasClass('signup')) {
-        $('.tabs .tab').removeClass('active');
-        $(this).addClass('active');
-        $('.cont').hide();
-        $('.signup-cont').show();
-    }
+            if ($(this).hasClass('signin')) {
+                $('.tabs .tab').removeClass('active');
+                $(this).addClass('active');
+                $('.cont').hide();
+                $('.signin-cont').show();
+            } 
+            if ($(this).hasClass('signup')) {
+                $('.tabs .tab').removeClass('active');
+                $(this).addClass('active');
+                $('.cont').hide();
+                $('.signup-cont').show();
+         }
 });
 $('.container .bg').mousemove(function(e){
     var amountMovedX = (e.pageX * -1 / 30);
