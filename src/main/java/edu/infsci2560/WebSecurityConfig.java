@@ -14,7 +14,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Autowired
     private CarAuthenticationProvider authenticationProvider;
-    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
