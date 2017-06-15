@@ -6,247 +6,196 @@
         <style>
         @import "compass/css3";
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
-
-$bg: #f8f8f8;
+$body-bg: #c1bdba;
+$form-bg: #13232f;
 $white: #ffffff;
-$blue: #263238;
-$grey: #d9d9d9;
-$plchldr: #999999;
 
-* {@include box-sizing(border-box); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;}
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
 
-@mixin placeholder {
-	&::-webkit-input-placeholder {@content;}
-	&:-moz-placeholder {@content;}
-	&::-moz-placeholder {@content;}
-	&:-ms-input-placeholder {@content;}
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }
+
+html {
+	overflow-y: scroll; 
+}
+
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: $bg;
-    .container {
-        position: relative;
-        overflow: hidden;
-        width: 700px;
-        height: 500px;
-        margin: 80px auto 0;
-        background-color: $white;
-        @include box-shadow(rgba(0,0,0,.1) 0px 10px 30px);
-        .half {
-            float: left;
-            width: 50%;
-            height: 100%;
-            padding: 58px 40px 0;
-            &.bg {
-                //background: url(https://i.imgur.com/J2JddJ4.jpg);
-                background-image:url("https://s7.postimg.org/boj7tcxhn/image.jpg");
-                background-size: 400px;
-                background-repeat: no-repeat;
-            }
-        }
-        h1 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 23px;
-            text-align: center;
-            text-indent: 6px;
-            letter-spacing: 7px;
-            text-transform: uppercase;
-            color: $blue;
-        }
-        .tabs {
-            width: 100%;
-            margin-bottom: 29px;
-            border-bottom: 1px solid $grey;
-            .tab {
-                display: inline-block;
-                margin-bottom: -1px;
-                padding: 20px 15px 10px;
-                cursor: pointer;
-                letter-spacing: 0;
-                border-bottom: 1px solid $grey;
-                @include user-select(none);
-                transition: all 0.1s ease-in-out;
-                a {
-                    font-size: 11px;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    color: $grey;
-                    transition: all 0.1s ease-in-out;
-                }
-                &.active,&:hover {
-                    a {
-                        color: $blue;
-                    }
-                }
-                &.active {
-                    border-bottom: 1px solid $blue;
-                }
-            }
-        }
-        .content {
-            form {
-                position: relative;
-                height: 287px;
-            }
-            label, input, .more {
-                &:first-of-type {
-                    @include animation(slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1));
-                }
-                &:nth-of-type(2) {
-                    @include animation(slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1));
-                }
-                &:nth-of-type(3) {
-                    @include animation(slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1));
-                }
-            }
-            label {
-                font-size: 12px;
-                color: $blue;
-                @include user-select(none);
-                &:not([for='remember']) {
-                    display: none;
-                }
-            }
-            input {
-                &.inpt {
-                    font-size: 14px;
-                    display: block;
-                    width: 100%;
-                    height: 42px;
-                    margin-bottom: 12px;
-                    padding: 16px 13px;
-                    color: $plchldr;
-                    border: 1px solid $grey;
-                    background: transparent;
-                    @include border-radius(2px);
-                    @include placeholder {
-                        font-size: 14px;
-                        color: $plchldr;
-                        font-family: 'Lato', sans-serif;
-                    };
-                    &:focus {
-                        border-color: $plchldr;
-                    }
-                }
-                &.submit {
-                    font-size: 12px;
-                    line-height: 42px;
-                    display: block;
-                    width: 100%;
-                    height: 42px;
-                    cursor: pointer;
-                    vertical-align: middle;
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-                    color: $blue;
-                    border: 1px solid $blue;
-                    background: transparent;
-                    @include border-radius(2px);
-                    &:hover {
-                        background-color: $blue;
-                        color: $white;
-                        @include transition(all 0.2s);
-                    }
-                }
-                &:focus {
-                    outline: none;
-                }
-            }
-            .checkbox {
-                margin-top: 4px;
-                overflow: hidden;
-                clip: rect(0 0 0 0);
-                width: 0; height:0;
-                margin: 17px -1px; padding: 0;
-                border: 0;
-                opacity: 0;
-                visibility: hidden;
-                & + label {
-                    vertical-align: middle;
-                    display: inline-block;
-                    width: 50%;
-                    &:before {
-                        content: "\A";
-                        color: $plchldr;
-                        font-family: Verdana;
-                        font-weight: bold;
-                        font-size: 8px;
-                        line-height: 10px;
-                        text-align: center;
-                        display: inline-block;
-                        vertical-align: middle;
-                        position:relative;
-                        @include border-radius(2px);
-                        background: transparent;
-                        border: 1px solid $grey;
-                        width: 11px; height: 11px;
-                        margin: -2px 8px 0 0;
-                    }
-                }
-                &:checked + label {
-                    &:before {
-                        content: "✓";
-                    }
-                }
-            }
-            .submit-wrap {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                a {
-                    font-size: 12px;
-                    display: block;
-                    margin-top: 20px;
-                    text-align: center;
-                    text-decoration: none;
-                    color: $plchldr;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-            .signup-cont { display: none; }
-        }
-    }
-}
-@keyframes slideIn {
-    0% {
-        @include opacity(0);
-        margin-left: -320px;
-    }
-    100% {
-        @include opacity(1);
-        margin-left: 0px;
-    }
+  background:$body-bg;
+  font-family: 'Titillium Web', sans-serif;
 }
 
-@-webkit-keyframes slideIn {
-    0% {
-        @include opacity(0);
-        margin-left: -320px;
-    }
-    100% {
-        @include opacity(1);
-        margin-left: 0px;
-    }
+a {
+  text-decoration:none;
+  color:$main;
+  transition:.5s ease;
+  &:hover {
+    color:$main-dark;
+  }
 }
 
-.credits {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: $plchldr;
-    font-size: 14px;
-    margin: 0 10px 10px 0;
-    a {
-        @include opacity(0.8);
-        color: inherit;
-        font-weight: 700;
-        text-decoration: none;
+.form {
+  background:rgba($form-bg,.9);
+  padding: 40px;
+  max-width:600px;
+  margin:40px auto;
+  border-radius:$br;
+  box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+}
+
+.tab-group {
+  list-style:none;
+  padding:0;
+  margin:0 0 40px 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:rgba($gray-light,.25);
+    color:$gray-light;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+    &:hover {
+      background:$main-dark;
+      color:$white;
     }
+  }
+  .active a {
+    background:$main;
+    color:$white;
+  }
+}
+
+.tab-content > div:last-child {
+  display:none;
+}
+
+
+h1 {
+  text-align:center;
+  color:$white;
+  font-weight:$thin;
+  margin:0 0 40px;
+}
+
+label {
+  position:absolute;
+  transform:translateY(6px);
+  left:13px;
+  color:rgba($white,.5);
+  transition:all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size:22px;
+  .req {
+  	margin:2px;
+  	color:$main;
+  }
+}
+
+label.active {
+  transform:translateY(50px);
+  left:2px;
+  font-size:14px;
+  .req {
+    opacity:0;
+  }
+}
+
+label.highlight {
+	color:$white;
+}
+
+input, textarea {
+  font-size:22px;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:5px 10px;
+  background:none;
+  background-image:none;
+  border:1px solid $gray-light;
+  color:$white;
+  border-radius:0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+}
+
+textarea {
+  border:2px solid $gray-light;
+  resize: vertical;
+}
+
+.field-wrap {
+  position:relative;
+  margin-bottom:40px;
+}
+
+.top-row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    &:last-child { 
+      margin:0;
+    }
+  }
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:$main;
+  color:$white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+  }
+}
+
+.button-block {
+  display:block;
+  width:100%;
+}
+
+.forgot {
+  margin-top:-20px;
+  text-align:right;
 }
         </style>
     </head>
@@ -270,67 +219,129 @@ body {
      
     </body-->
     <body>
-    <section class="container">
-		    <article class="half">
-			        <h1>CarPool</h1>
-			        <div class="tabs">
-				            <span class="tab signin active"><a href="#login">Sign in</a></span>
-				            <span class="tab signup"><a href="#signup">Sign up</a></span>
-			        </div>
-			        <div class="content">
-				            <div class="signin-cont cont">
-					                <form action="@{/login}" method="post" enctype="multipart/form-data">
-						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label>
-						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                						    <label for="password">Your password</label>
-						                    <input type="checkbox" id="remember" class="checkbox" checked>
-						                    <label for="remember">Remember me</label>
-						                    <div class="submit-wrap">
-							                        <input type="submit" value="Sign in" class="submit">
-							                        <a href="#" class="more">Forgot your password?</a>
-						                    </div>
-        					        </form>
-    				        </div>
-    				        <div class="signup-cont cont">
-                <form action="@{/signupadd}" method="post" enctype="multipart/form-data">
-						                    <input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name">
-						                    <label for="name">Your name</label>
-                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label>
-						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                						    <label for="password">Your password</label>
-						                    <div class="submit-wrap">
-							                        <input type="submit" value="Sign up" class="submit">
-							                        <a href="#" class="more">Terms and conditions</a>
-						                    </div>
-        					        </form>
+    <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
             </div>
-			        </div>
-		    </article>
-		    <div class="half bg"></div>
-	</section>
-	
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
 	</body>
 	<script>
-            $('.tabs .tab').click(function(){
-    if ($(this).hasClass('login')) {
-        $('.tabs .tab').removeClass('active');
-        $(this).addClass('active');
-        $('.cont').hide();
-        $('.signin-cont').show();
-    } 
-    if ($(this).hasClass('signup')) {
-        $('.tabs .tab').removeClass('active');
-        $(this).addClass('active');
-        $('.cont').hide();
-        $('.signup-cont').show();
+           $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
     }
+
 });
-$('.container .bg').mousemove(function(e){
-    var amountMovedX = (e.pageX * -1 / 30);
-    var amountMovedY = (e.pageY * -1 / 9);
-    $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
 });
     </script>
 	
