@@ -167,7 +167,8 @@
     };
     TextBalls.prototype = {
         createBalls: function() {
-            for (var i = 0; i != 3; i++) {
+            var i = 0;
+            for ( i = 0; i < this.n; i++) {
                 var ball = new Ball(this.sText[i], i);
                 this.balls.push(ball);
             }
