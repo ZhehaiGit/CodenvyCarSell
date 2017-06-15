@@ -57,10 +57,164 @@
     background-color: rgb(233,65,103);
     border-radius: 50%;    
 }
+body {
+  background: #eee;
+}
+
+.scene {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  overflow: hidden;
+}
+.scene:after {
+  content: " ";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #eeeeee), color-stop(100%, rgba(238, 238, 238, 0)));
+  background-image: -moz-linear-gradient(left, #eeeeee, rgba(238, 238, 238, 0));
+  background-image: -webkit-linear-gradient(left, #eeeeee, rgba(238, 238, 238, 0));
+  background-image: linear-gradient(to right, #eeeeee, rgba(238, 238, 238, 0));
+  position: absolute;
+}
+.scene:before {
+  content: " ";
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjEuMCIgeTE9IjAuNSIgeDI9IjAuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #eeeeee), color-stop(100%, rgba(238, 238, 238, 0)));
+  background-image: -moz-linear-gradient(right, #eeeeee, rgba(238, 238, 238, 0));
+  background-image: -webkit-linear-gradient(right, #eeeeee, rgba(238, 238, 238, 0));
+  background-image: linear-gradient(to left, #eeeeee, rgba(238, 238, 238, 0));
+  position: absolute;
+  z-index: 10;
+}
+.scene em {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 55px;
+  right: 0;
+  text-align: center;
+  font-style: normal;
+  font-family: Proxima Nova;
+  color: #0bb4a6;
+  letter-spacing: 0.2em;
+}
+
+.car {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  margin-left: -30px;
+  animation: peel 4s ease-in-out forwards infinite, bump 0.2s linear infinite;
+}
+
+.poof {
+  position: absolute;
+  top: 110px;
+  left: 160px;
+  margin-left: -30px;
+  opacity: 0;
+  animation: poof 4s ease-in-out forwards infinite;
+}
+
+.sign {
+  position: absolute;
+  right: -40px;
+  top: 30px;
+  animation: sign 4s ease-in-out forwards infinite;
+}
+
+@keyframes sign {
+  0% {
+    right: -40px;
+  }
+  30% {
+    right: 80px;
+  }
+  70% {
+    right: 80px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@keyframes peel {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  73% {
+    transform: rotate(-9deg);
+  }
+  95% {
+    transform: rotate(-9deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes poof {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    left: 170px;
+    transform: scale(1);
+  }
+  76% {
+    opacity: 1;
+    transform: scale(1.3);
+    left: 160px;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+@keyframes bump {
+  0% {
+    top: 70px;
+  }
+  50% {
+    top: 70px;
+  }
+  60% {
+    top: 69px;
+  }
+  100% {
+    top: 70px;
+  }
+}
     </style>
   </head>
   
   <body>
+  <div class="scene">
+<img class="car" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/43033/car.svg" alt="" />
+<img class="poof" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/43033/poof.svg" alt="" />
+<img class="sign" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/43033/sign.svg" alt="" />
+  <em>LOADING...</em>
+</div>
      <!--h1>Welcome!!!!</h1>
      <a class="btn btn-primary" data-th-href="@{/public/cars}" role="button">Log with visitor</a>
      <a class="btn btn-primary" data-th-href="@{/cstmCars}" role="button">Log with customer</a-->
@@ -88,129 +242,7 @@
   </body>
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script>
-  window.onload = function() {
-    var container = document.getElementById("container");
-    
-    var cW = container.offsetWidth;
-    var cH = container.offsetHeight;
-    var gravity = 2.55;
-    var lifespan1 = 100;
-    var lifespan2 = 150;
-    var ground = .3 * cH;
-    var startX;
-    var r = 38;
-    var speedX;
-    var speedYDown = 3;
-    var speedYUp = 15;
-    var fontSize = 32;    
-    if (cW > 500) {
-        startX = 0.25 * cW;
-        speedX = 0.005 * cW;
-    } else {
-        startX = 0.15 * cW;
-        speedX = 0.007 * cW;
-    }
-    
-    
-    // Ball object
-    var Ball = function(sLetter, index) {
-        this.sLetter = sLetter;
-        this.node;
-        this.x = startX;
-        this.y = ground - 50;
-        this.index = index;
-        this.r = r;
-        this.jumpN = 0;
-        this.speedY = speedYDown;
-        this.speedX = speedX;
-        this.opa = 1;
-        this.create();
-    }
-    
-    Ball.prototype = {
-        create: function() {
-            this.node = document.createElement("div");
-            this.node.className = "ball";
-            this.node.style.width = this.r + "px";
-            this.node.style.height = this.r + "px";
-            this.node.style.left = this.x + "px";
-            this.node.style.top = this.y + "px";
-            this.node.innerHTML = this.sLetter;
-            container.appendChild(this.node);
-            this.node.style.fontSize = fontSize + "px";
-        },
-        move: function() {
-            this.y += this.speedY;
-            this.x += this.speedX;
-        
-        },
-        display: function() {
-            //this.node.style.transform = "translate("+ this.x + "px," + this.y + "px)";
-            //this.node.style.top = this.y + "px";
-            //this.node.style.left = this.x + "px";
-          this.node.style.top = this.y / cH * 100 + "%";
-            this.node.style.left = this.x / cW * 100 + "%";
-        }
-    }
-    
-    
-    // TextBall object
-    var TextBalls = function(sText) {
-        this.sText = sText + " ";
-        this.n = sText.length + 1;
-        this.balls = [];
-        this.timeIntv = null;
-        this.life = 0;
-        this.createBalls();
-        
-    }
-    TextBalls.prototype = {
-        createBalls: function() {
-            for (var i = 0; i < this.n; i++) {
-                var ball = new Ball(this.sText[i], i);
-                this.balls.push(ball);
-            }
-            this.balls[this.n-1].node.className = "cover";
-            this.balls[this.n-1].xTarget = cW;
-        },
-        
-        move: function() {
-            var thisObj = this;
-            this.timeIntv = setInterval(function(){
-                thisObj.life++;
-                if (thisObj.life < lifespan2) {
-                    for (var i = 0; i < thisObj.n; i++) {
-                        var ball = thisObj.balls[i];                        
-                        if (ball.y < ground) {
-                            ball.speedY += gravity;                                
-                        } else {
-                            ball.y = ground;
-                            if (ball.jumpN < i || i == thisObj.n - 1) {
-                                ball.jumpN++;
-                                ball.speedY = - speedYUp;
-                            } else {
-                                ball.speedY = 0;
-                                ball.speedX = 0;                                                              
-                            }
-                        }                        
-                        
-                        ball.move();
-                        ball.display();                    
-                    }
-                    if (thisObj.life > lifespan1) {
-                        var coverB1 = thisObj.balls[thisObj.n-1];
-                        coverB1.opa = coverB1.opa > 0? coverB1.opa-0.025 : 0;
-                        coverB1.node.style.opacity = coverB1.opa;
-                    }
-                }  else {clearInterval(thisObj.timeIntv);}                
-                
-            }, 50);
-        }
-    }
-    
-    var tb = new TextBalls("WELCOME");
-    tb.move();
-}
+  
   </script>
   
 </html>
