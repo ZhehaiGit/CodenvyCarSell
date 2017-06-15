@@ -88,6 +88,7 @@
   </body>
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script>
+  /*eslint-disable semi, semi, semi, semi*/
   window.onload = function() {
     var container = document.getElementById("container");
     
@@ -163,7 +164,7 @@
         this.life = 0;
         this.createBalls();
         
-    }
+    };
     TextBalls.prototype = {
         createBalls: function() {
             for (var i = 0; i < this.n; i++) {
@@ -185,7 +186,7 @@
                             ball.speedY += gravity;                                
                         } else {
                             ball.y = ground;
-                            if (ball.jumpN < i || i == thisObj.n - 1) {
+                            if (ball.jumpN < i || i === thisObj.n - 1) {
                                 ball.jumpN++;
                                 ball.speedY = - speedYUp;
                             } else {
@@ -206,12 +207,12 @@
                 
             }, 50);
         }
-    }
+    };
     
     var tb = new TextBalls("WELCOME");
     tb.move();
     
-}
+};
   </script>
   
 </html>
