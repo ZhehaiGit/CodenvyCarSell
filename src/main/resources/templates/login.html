@@ -305,13 +305,13 @@ body .container .content .signup-cont {
 		    <article class="half">
 			        <h1>CARpool</h1>
 			        <div class="tabs">
-				            <span class="tab signin active"><a  href="#signin">Sign in</a></span>
+				            <span class="tab signin active"><a rel="nofollow" rel="noreferrer" href="#signin">Sign in</a></span>
 				            <span class="tab signup"><a  href="#signup">Sign up</a></span>
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="@{/login}" method="post" enctype="multipart/form-data">
-						                    <input type="text" name="username" id="username" class="inpt" required="required" placeholder="Your email"/>
+					                <form data-th-action="@{/login}" method="post" enctype="multipart/form-data">
+						                    <input type="text" name="username" id="username" class="inpt" required="required" placeholder="Your username"/>
 						                    <label for="text">Your email</label>
 						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password"/>
                 						    <label for="password">Your password</label>
@@ -323,7 +323,7 @@ body .container .content .signup-cont {
         					        </form>
     				        </div>
     				        <div class="signup-cont cont">
-                <form action="@{/signupadd}" method="post" enctype="multipart/form-data">
+                <form data-th-action="@{/signupadd}" method="post" enctype="multipart/form-data">
 						                    <input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name"/>
 						                    <label for="name">Your name</label>
                                             <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email"/>
@@ -353,8 +353,8 @@ body .container .content .signup-cont {
                 $(this).addClass('active');
                 $('.cont').hide();
                 $('.signup-cont').show();
-         }
-});
+            }
+        });
 $('.container .bg').mousemove(function(e){
     var amountMovedX = (e.pageX * -1 / 30);
     var amountMovedY = (e.pageY * -1 / 9);
