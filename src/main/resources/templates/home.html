@@ -31,6 +31,12 @@
                 margin-left: -200px;
                         
         }
+        .btn-z {
+            top: 10%;
+          color: #ffffff;
+          background-color: #E0C8C3;
+          border-color: #357ebd;
+        }
         body {
     background-color: #f5f5f5;
     height: 600px;
@@ -115,7 +121,7 @@ body {
 
 .car {
   position: absolute;
-  top: 30px;
+  top: 500px;
   left: 50%;
   margin-left: -30px;
   animation: peel 4s ease-in-out forwards infinite, bump 0.2s linear infinite;
@@ -123,7 +129,7 @@ body {
 
 .poof {
   position: absolute;
-  top: 80px;
+  top: 110px;
   left: 160px;
   margin-left: -30px;
   opacity: 0;
@@ -133,7 +139,7 @@ body {
 .sign {
   position: absolute;
   right: -40px;
-  top: 10px;
+  top: 30px;
   animation: sign 4s ease-in-out forwards infinite;
 }
 
@@ -226,10 +232,10 @@ body {
     <div class="welcome">
     		<h1 style="vertical-align:middle; text-align: center; font-size:30px; border-bottom: 30px">Welcome To CarPool</h1>
     		<form class="but" style="vertical-align:middle; text-align: center; border-bottom: 30px">
-    		  <a  class="btn btn-info" data-th-href="@{/public/cars}" role="button">Visitor</a>
+    		  <a  class="btn btn-z" data-th-href="@{/public/cars}" role="button">Visitor</a>
     		</form>
     		<form class="but" style="vertical-align:middle; text-align: center; border-bottom: 30px">
-    		  <a  class="btn btn-info"  data-th-href="@{/cstmCars}" role="button">Customer</a>
+    		  <a  class="btn btn-z"  data-th-href="@{/cstmCars}" role="button">Customer</a>
     		</form>
     </div>
 
