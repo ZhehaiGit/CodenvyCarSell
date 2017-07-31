@@ -139,6 +139,27 @@
             </table>
           </div>
         <hr />
+        <form data-th-action="@{/sellcarsadd}" name="addCarForm" method="post">
+                        <div class="controls controls-row">
+                            <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
+                            <select name="workoutType" class="selectpicker">
+                              <option data-hidden="true">Select Car Type</option>
+                              <option value="Unknown">Unknown</option>
+                              <option value="MicroCar">MicroCar</option>
+                              <option value="NormalCar">NormalCar</option>
+                              <option value="SportsCar">SportsCar</option>
+                              <option value="Van">Van</option>
+                              <option value="SUV">SUV</option>
+                            </select>
+                        </div>
+                        <div class="controls">
+                            <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5"></textarea>
+                        </div>
+                          
+                        <div class="controls">
+                            <button id="contact-submit" type="submit" value="" class="btn btn-primary input-medium pull-down">Send</button>
+                        </div>
+                    </form>
         <!--Add Car<br />
         <div class="container">
         	<div class="row">
