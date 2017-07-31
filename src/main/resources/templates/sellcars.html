@@ -98,7 +98,9 @@
                               </div>
                             </div>
                          </div>
-                        <label for="Describe">Describe:</label>
+                         <div class="controls controls-row >
+                            <label for="Describe">Describe:</label>
+                        </div>
                 		<div class="controls controls-row">
 	                        <form class="form-inline">
 		                        <div class="col-xs-1">		                        </div>
@@ -158,9 +160,14 @@
                                 </select>
                               </div>
             </div>
-            <div class="controls">
-                <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5"></textarea>
-            </div>
+            <div class="controls controls-row">
+	                        <div class="form-inline">
+		                        <div class="col-xs-1">		                        </div>
+		                        <div class = "col-xs-11 pull-left">
+		                            <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5" cols="80"></textarea>
+		                        </div>
+	                        </div>
+                        </div>
               
             <div class="controls">
                 <button id="contact-submit" type="submit" value="" class="btn btn-primary input-medium pull-down">Send</button>
