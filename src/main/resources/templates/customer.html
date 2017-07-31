@@ -9,13 +9,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
     </head>
     <style>
-    .wrap{  
-        width: 150px;
-        white-space: nowrap; 
-        text-overflow: ellipsis;   
-        overflow: hidden;   
-    }  
-    
     .headtry{
         border-left:26px;
         border-right:26px;
@@ -35,6 +28,12 @@
     .nav-tabs {
         margin-bottom:0;
     }
+    .wrap{  
+        width: 150px;
+        white-space: nowrap; 
+        text-overflow: ellipsis;   
+        overflow: hidden; 
+    }  
     </style>
 
     <body>
@@ -108,7 +107,7 @@
                     <td></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
-                    <td class ="wrap" style="overflow:hidden;" data-th-text="${car.describe}"></td>
+                    <td class = "" data-th-text="${car.describe}"></td>
                     <td data-th-text="${car.Email}"></td>
                     <td data-th-text="${car.Dealer}"></td>
                 </tr>
