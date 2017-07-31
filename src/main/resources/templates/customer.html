@@ -35,6 +35,11 @@
         overflow: hidden; 
     }
     .table {table-layout:fixed;}
+    .table  td {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
     </style>
  
     <body>
@@ -108,7 +113,7 @@
                     <td></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
-                    <td class = "wrap" data-th-text="${car.describe}"></td>
+                    <td data-th-text="${car.describe}"></td>
                     <td data-th-text="${car.Email}"></td>
                     <td data-th-text="${car.Dealer}"></td>
                 </tr>
