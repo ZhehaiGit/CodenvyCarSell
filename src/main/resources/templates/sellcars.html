@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
     </head>
     <style>
+    .Mleft {
+        margin-left:30px;
+    }
      .p {
         margin-top:40px;
     }
@@ -78,31 +81,34 @@
                 <div class="span6">
                     <form data-th-action="@{/sellcarsadd}" name="addCarForm" method="post">
                         <div class="form-inline col-xs-12">
-                                          <div class="form-group col-xs-4">
-                                            <label for="model ">Car Model:</label>
-                                            <input type="text" class="span3" id="name"/>
-                                            </div>
-                                          <div class="form-group col-xs-4">
-                                            <label for="Type">Car Type:</label>
-                                            <select  name="workoutType" class="selectpicker">
-                                              <option data-hidden="true">Select Car Type</option>
-                                              <option value="Unknown">Unknown</option>
-                                              <option value="MicroCar">MicroCar</option>
-                                              <option value="NormalCar">NormalCar</option>
-                                              <option value="SportsCar">SportsCar</option>
-                                              <option value="Van">Van</option>
-                                              <option value="SUV">SUV</option>
-                                            </select>
-                                          </div>
+                              <div class="form-group col-xs-4">
+                                <label for="model ">Car Model:</label>
+                                <input type="text" class="span3" id="name"/>
+                                </div>
+                              <div class="form-group col-xs-4">
+                                <label for="Type">Car Type:</label>
+                                <select  name="workoutType" class="selectpicker">
+                                  <option data-hidden="true">Select Car Type</option>
+                                  <option value="Unknown">Unknown</option>
+                                  <option value="MicroCar">MicroCar</option>
+                                  <option value="NormalCar">NormalCar</option>
+                                  <option value="SportsCar">SportsCar</option>
+                                  <option value="Van">Van</option>
+                                  <option value="SUV">SUV</option>
+                                </select>
+                              </div>
                         </div>
-                        <div class="controls controls-row">
-                            <label for="Describe">Describe:</label>
+                         <div class="controls controls-row">
+                        	<div class = "Mleft">
+                        	<label for="Describe">Describe:</label>
+                        	</div>
                         </div>
+                        
                         <div class="controls controls-row">
                             <div class="form-inline">
                                 <div class="col-xs-1"></div>
                                 <div class = "col-xs-11 pull-left">
-                                    <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5" cols="80"></textarea>
+                                    <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5" cols="75"></textarea>
                                 </div>
                             </div>
                         </div>
