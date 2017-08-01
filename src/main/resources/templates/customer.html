@@ -234,14 +234,16 @@
         
         <script>
            var $rows = $('#table tr td');
-                $('#search').keyup(function() {
-                    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-                    
-                    $rows.show().filter(function() {
-                        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                        return !~text.indexOf(val);
-                    }).hide();
-                });
+            $('#search').keyup(function() {
+                
+                var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                    reg = RegExp(val, 'i'),
+                    text;
+                
+                $rows.show().filter(function() {
+                    text = $(this).text().replace(/\s+/g, ' ');
+                    return !reg.test(text);
+                }).hid
         </script>
     </body>
 </html>
