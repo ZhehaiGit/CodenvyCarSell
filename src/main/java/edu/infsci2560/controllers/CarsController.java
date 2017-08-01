@@ -94,7 +94,7 @@ public class CarsController {
 //    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
     public ModelAndView carInfo(@PathVariable("id") Long id) {
  
-        return new ModelAndView("carInfo","car",repository.findById(id));
+        return new ModelAndView("carInfo","car",repository.findById(id).get(0);
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }
 }

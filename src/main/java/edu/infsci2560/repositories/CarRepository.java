@@ -13,5 +13,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @author kolobj
  */
 public interface CarRepository extends PagingAndSortingRepository<Car, Long> {
-  
+   List<Car> findById(Long id);
 }
