@@ -127,9 +127,9 @@
                 
                 <tbody data-th-each="car : ${cars}">
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
-                <tr id = "tableId" class="clickable-row"  data-th-value="${car.id}" data-href= "carInfo/${car.id}">
+                <tr id = "tableId" class="clickable-row">
                     <td></td>
-                    <td id = "eid"  value = "222" style="display:none;" data-th-text="${car.id}"></td>
+                    <td id = "eid" data-th-value="${car.id}" style="display:none;"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
