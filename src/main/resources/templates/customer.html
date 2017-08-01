@@ -252,8 +252,8 @@
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
                 var x = document.getElementById("tableId");
-                var i = eval(document.getElementById('eid')).value;
-                var j = document.getElementById('eid').innerHTML;
+//                var i = eval(document.getElementById('eid')).data("value");
+                var j = document.getElementById('eid').data("value");
 //                alert(i);
                 window.open("https://car-sells.herokuapp.com" + "/carInfo/" + j);
             }); 
