@@ -249,25 +249,25 @@
         </script>
         <script>
         
-//        jQuery(document).ready(function($) {
-//            $(".clickable-row").click(function() {
-//               
-////                var x = document.getElementById("tableId");
-//////                var i = eval(document.getElementById('eid')).data("value");
-////                var z = $('.eid').data('value');
-////                var j = document.getElementById('eid').data("value"); 
-//                
-////                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
-//            }); 
-//        });
+        jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+               
+//                var x = document.getElementById("tableId");
+////                var i = eval(document.getElementById('eid')).data("value");
+//                var z = $('.eid').data('value');
+                var j = document.getElementById('eid').data("value"); 
+                 alert("j");
+//                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
+            }); 
+        });
 
-$(document).on('click', '#tableId tr', function (e) {
-    e.stopPropagation();
-    var $this = $(this);
-    var trid = $this.closest('tr').find("#eid").data("geomet");
-    alert("TR ID " + trid);
-
-}); 
+//$(document).on('click', '#tableId tr', function (e) {
+//    e.stopPropagation();
+//    var $this = $(this);
+//    var trid = $this.closest('tr').find("#eid").data("geomet");
+//    alert("TR ID " + trid);
+//
+//}); 
         
         </script>
     </body>
