@@ -129,6 +129,7 @@
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
                 <tr id = "tableId" class="clickable-row"  data-th-value="${car.id}" data-href= "carInfo/${car.id}">
                     <td></td>
+                    <td id = "eid"  style="display:none;" data-th-text="${car.title}"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
@@ -250,7 +251,7 @@
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
                 var x = document.getElementById("tableId");
-                var i = document.getElementById('tableId').value;
+                var i = document.getElementById('eid').;
                 window.open("https://car-sells.herokuapp.com" + "/carInfo/" + i);
             }); 
         });
