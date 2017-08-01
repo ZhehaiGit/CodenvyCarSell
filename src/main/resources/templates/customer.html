@@ -125,11 +125,11 @@
                 </tr>   
                 </thead>
                
-                <tbody  data-th-each="car : ${cars}">
+                <tbody data-th-each="car : ${cars}">
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
-                <tr class="clickable-row" >
+                <tr>
                     <td></td>
-                    <td id = "eid" data-th-value="${car.id}" style="display:none;"></td>
+                    <td id = "eid" data-value="${car.id}" style="display:none;"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
@@ -251,11 +251,11 @@
         
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
-                var x = document.getElementById("tableId").value;
+                var x = document.getElementById("tableId");
                 var i = eval(document.getElementById('eid')).value;
-                
+                var j = document.getElementById('eid').innerHTML;
 //                alert(i);
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + i);
+                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + j);
             }); 
         });
         </script>
