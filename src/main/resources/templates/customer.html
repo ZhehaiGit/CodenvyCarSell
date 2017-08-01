@@ -250,16 +250,23 @@
         <script>
         
         jQuery(document).ready(function($) {
-            $(".clickable-row").click(function() {
-               
-//                var x = document.getElementById("tableId");
-////                var i = eval(document.getElementById('eid')).data("value");
-//                var z = $('.eid').data('value'); attr
-                var j = document.getElementById('eid').attr("value"); 
-                 alert(j);
-//                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
-            }); 
+             
+        $('.table').on('click', 'table tbody tr', function() {
+        alert($(this).attr('value'));
+    });
+            
+            
+//            $(".clickable-row").click(function() {
+//               
+////                var x = document.getElementById("tableId");
+//////                var i = eval(document.getElementById('eid')).data("value");
+////                var z = $('.eid').data('value'); attr
+//                var j = document.getElementById('eid').attr("value"); 
+//                 alert(j);
+////                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
+//            }); 
         });
+       
 
 //$(document).on('click', '#tableId tr', function (e) {
 //    e.stopPropagation();
