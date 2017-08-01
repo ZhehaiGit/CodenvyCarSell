@@ -249,16 +249,23 @@
         </script>
         <script>
         
-        jQuery(document).ready(function($) {
-            $(".clickable-row").click(function() {
-                var x = document.getElementById("tableId");
-//                var i = eval(document.getElementById('eid')).data("value");
-                var z = $('.eid').data('value');
-                var j = document.getElementById('eid').data("value");
-                alert(z);
-//                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
-            }); 
-        });
+//        jQuery(document).ready(function($) {
+//            $(".clickable-row").click(function() {
+//                var x = document.getElementById("tableId");
+////                var i = eval(document.getElementById('eid')).data("value");
+//                var z = $('.eid').data('value');
+//                var j = document.getElementById('eid').data("value");
+//                alert(z);
+////                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
+//            }); 
+//        });
+        $(".eid").on('click','tr',function(e){
+    e.preventDefault();
+    var id = $(this).attr('value');
+    alert(id);
+}); 
+        
+        
         </script>
     </body>
 </html>
