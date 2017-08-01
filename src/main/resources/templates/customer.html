@@ -249,13 +249,13 @@
         </script>
         <script>
         
-        jQuery(document).ready(function($) {
-             
-        $('.table').on('click', 'table tbody tr', function() {
-             var $this = $(this);
-            var trid = $this.closest('tr').find("#eid").data("value");
-            alert(trid);
-    });
+//        jQuery(document).ready(function($) {
+//             
+//        $('.table').on('click', 'table tbody tr', function() {
+//             var $this = $(this);
+//            var trid = $this.closest('tr').find("#eid").data("value");
+//            alert(trid);
+//    });
             
             
 //            $(".clickable-row").click(function() {
@@ -267,16 +267,19 @@
 //                 alert(j);
 ////                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + z);
 //            }); 
-        });
-       
 
-//$(document).on('click', '#tableId tr', function (e) {
-//    e.stopPropagation();
-//    var $this = $(this);
-//    var trid = $this.closest('tr').find("#eid").data("geomet");
-//    alert("TR ID " + trid);
-//
-//}); 
+//        });
+       
+ jQuery(document).ready(function($) {
+$(document).on('click', '#tableId tr', function (e) {
+    e.stopPropagation();
+    var $this = $(this);
+    var trid = $this.closest('tr').find("#eid").data("geomet");
+    alert("TR ID " + trid);
+
+}); 
+});
+
         
         </script>
     </body>
