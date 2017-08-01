@@ -125,9 +125,9 @@
                 </tr>   
                 </thead>
                 
-                <tbody data-th-each="car : ${cars}">
+                <tbody id = "tableId" data-th-each="car : ${cars}">
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
-                <tr id = "tableId" class="clickable-row">
+                <tr class="clickable-row" >
                     <td></td>
                     <td id = "eid" data-th-value="${car.id}" style="display:none;"></td>
                     <td data-th-text="${car.title}"></td>
@@ -248,14 +248,32 @@
                 });
         </script>
         <script>
-        jQuery(document).ready(function($) {
-            $(".clickable-row").click(function() {
-                var x = document.getElementById("tableId").value;
-                var i = document.getElementById('eid').value;
-//                alert(i);
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + i);
-            }); 
-        });
+        function addRowHandlers() {
+    var table = document.getElementById("tableId");
+    var rows = table.getElementsByTagName("tr");
+    for (i = 0; i < rows.length; i++) {
+        var currentRow = table.rows[i];
+        var createClickHandler = 
+            function(row) 
+            {
+                return function() { 
+                                        var cell = row.getElementsByTagName("td")[0];
+                                        var id = cell.innerHTML;
+                                        alert("id:" + id);
+                                 };
+            };
+
+//        currentRow.onclick = createClickHandler(currentRow);
+    }
+}
+//        jQuery(document).ready(function($) {
+//            $(".clickable-row").click(function() {
+//                var x = document.getElementById("tableId").value;
+//                var i = document.getElementById('eid').value;
+////                alert(i);
+//                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + i);
+//            }); 
+//        });
         </script>
     </body>
 </html>
