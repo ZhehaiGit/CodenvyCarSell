@@ -129,7 +129,7 @@
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
                 <tr class = "clickable-row" data-value="${car.id}">
                     <td></td>
-                    <td id = "eid" data-th-text="${car.id}"  data-geomet="${car.id}" data-value="${car.id}" style="display:none;"></td>
+                    <td id = "eid" data-th-text="${car.id}"  data-geomet="${car.id}" data-value="{car.id}" style="display:none;"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
@@ -274,7 +274,7 @@
 $(document).on('click', '#tableId tr', function (e) {
     e.stopPropagation();
     var $this = $(this);
-    var trid = $this.closest('tr').find("#eid").text();
+    var trid = $this.closest('tr').find("#eid").data("value");
     alert("TR ID " + trid);
 
 }); 
