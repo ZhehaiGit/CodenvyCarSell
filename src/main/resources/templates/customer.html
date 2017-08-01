@@ -113,7 +113,7 @@
           </div><!-- /.container-fluid -->
         </nav>
         <div>
-            <table class = "table table-bordered table-striped table-hover" id = "table">
+            <table class = "table table-bordered table-striped table-hover" id="tableId">
                 <thead>
                 <tr>
                     <th width="5%" class = "text-mid">ID</th>
@@ -124,8 +124,8 @@
                     <th width="8%" class = "text-mid">Dealer</th>
                 </tr>   
                 </thead>
-                
-                <tbody id = "tableId" data-th-each="car : ${cars}">
+               
+                <tbody  data-th-each="car : ${cars}">
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
                 <tr class="clickable-row" >
                     <td></td>
