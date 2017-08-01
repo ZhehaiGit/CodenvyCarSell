@@ -127,7 +127,7 @@
                 
                 <tbody data-th-each="car : ${cars}">
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
-                <tr class="clickable-row"  data-href= "">
+                <tr class="clickable-row"  data-href= "carInfo/${car.id}">
                     <td></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
@@ -249,8 +249,9 @@
         <script>
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
-                var id = ele.id;
-                window.location = "carInfo/" + "id";
+                var id = 123456
+                var loc = window.location.herf + "/carInfo/" + id;
+                window.open(loc);
             }); 
         });
         </script>
