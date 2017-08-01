@@ -127,7 +127,7 @@
                 
                 <tbody data-th-each="car : ${cars}">
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
-                <tr class="clickable-row"  data-href= "carInfo/${car.id}">
+                <tr id="tableId" class="clickable-row"  data-href= "carInfo/${car.id}">
                     <td></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
@@ -249,8 +249,9 @@
         <script>
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
-                var id = 123456;
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + id);
+                var x = document.getElementById("tableId").innerHTML;
+                
+                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + x);
             }); 
         });
         </script>
