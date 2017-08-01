@@ -249,7 +249,7 @@
         <script>
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
-                var x = document.getElementById("tableId").innerHTML;
+                var x = document.getElementById("tableId").id;
                 
                 window.open("https://car-sells.herokuapp.com" + "/carInfo/" + x);
             }); 
