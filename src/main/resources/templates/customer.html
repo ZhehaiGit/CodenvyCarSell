@@ -250,9 +250,9 @@
         <script>
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
-                var x = document.getElementById("tableId");
+                var x = document.getElementById("tableId").getAttribute("id");
                 var i = document.getElementById('eid');
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + i);
+                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + x);
             }); 
         });
         </script>
