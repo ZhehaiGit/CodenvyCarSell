@@ -249,9 +249,9 @@
         <script>
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
-                var x = document.getElementById("tableId").value;
+                var x = document.getElementById("tableId");
                 
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + x);
+                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + eval(x.value);
             }); 
         });
         </script>
