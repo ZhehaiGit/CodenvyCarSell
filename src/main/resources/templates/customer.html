@@ -129,7 +129,7 @@
                 <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
                 <tr id = "tableId" class="clickable-row"  data-th-value="${car.id}" data-href= "carInfo/${car.id}">
                     <td></td>
-                    <td id = "eid"  value = "${car.title}" style="display:none;" data-th-text="${car.title}"></td>
+                    <td id = "eid"  value = "${car.id}" style="display:none;" data-th-text="${car.id}"></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
