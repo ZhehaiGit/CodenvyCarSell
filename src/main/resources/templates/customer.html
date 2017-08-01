@@ -260,20 +260,20 @@
 //            }); 
 //        });
 
-// $(".tableId").on('click','tr',function(e){
-//    e.preventDefault();
-//    var id = $(this).attr('value');
-//    alert(id);
-//}); 
-
-$(document).on('click', '#tableId tr', function (e) {
+//
+//$(document).on('click', '#tableId tr', function (e) {
+//    e.stopPropagation();
+//    var $this = $(this);
+//    var trid = $this.closest('tr').data('value');
+//    alert("TR ID " + trid);
+//
+//}); 可行但是没有数值；
+    $('#tableId tr').click(function(e) {
     e.stopPropagation();
     var $this = $(this);
-    var trid = $this.closest('tr').data('value');
+    var trid = $this.closest('tr').attr('data-value');
     alert("TR ID " + trid);
-
-});
-        
+});    
         
         </script>
     </body>
