@@ -252,10 +252,10 @@
         jQuery(document).ready(function($) {
             $(".clickable-row").click(function() {
                 var x = document.getElementById("tableId").value;
-                var i = document.getElementById('eid').value;
-                var j = row.getElementsByTagName("td")[1];
+                var i = eval(document.getElementById('eid')).value;
+                
 //                alert(i);
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + j);
+                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + i);
             }); 
         });
         </script>
