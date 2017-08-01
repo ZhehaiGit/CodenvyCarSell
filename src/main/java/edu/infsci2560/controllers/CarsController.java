@@ -90,7 +90,7 @@ public class CarsController {
     }
     
     
-@RequestMapping(value = "/carInfo/{id}", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+@RequestMapping(value = "carInfo/{id}")
 //    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
     public ModelAndView carInfo(@PathVariable("id") Long id) {
  
