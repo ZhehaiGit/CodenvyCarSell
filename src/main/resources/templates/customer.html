@@ -252,7 +252,9 @@
         jQuery(document).ready(function($) {
              
         $('.table').on('click', 'table tbody tr', function() {
-        alert($(this).attr('value'));
+             var $this = $(this);
+            var trid = $this.closest('tr').find("#eid").data("value");
+            alert(trid);
     });
             
             
