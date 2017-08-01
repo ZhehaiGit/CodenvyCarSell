@@ -261,19 +261,19 @@
 //        });
 
 //
-//$(document).on('click', '#tableId tr', function (e) {
-//    e.stopPropagation();
-//    var $this = $(this);
-//    var trid = $this.closest('tr').data('value');
-//    alert("TR ID " + trid);
-//
-//}); 可行但是没有数值；
-    $('#tableId tr').click(function(e) {
+$(document).on('click', '#tableId tr', function (e) {
     e.stopPropagation();
     var $this = $(this);
-    var trid = $this.closest('tr').attr('data-value');
+    var trid = $this.closest('tr').data('data-value');
     alert("TR ID " + trid);
-});    
+
+}); 
+//    $('#tableId tr').click(function(e) {
+//    e.stopPropagation();
+//    var $this = $(this);
+//    var trid = $this.closest('tr').attr('data-value');
+//    alert("TR ID " + trid);
+//});    
         
         </script>
     </body>
