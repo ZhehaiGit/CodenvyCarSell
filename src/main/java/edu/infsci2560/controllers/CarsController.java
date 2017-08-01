@@ -89,39 +89,12 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());  
     }
     
-//    @RequestMapping(value = "sellcars", method = RequestMethod.GET)
-//    public ModelAndView SellCars() {
-//        return new ModelAndView("sellcars", "cars", repository.findAll());
-////        return new ModelAndView("sellcars", "customer", CustRepository.findByUserName(Uname).get(0));
-//    }
-//    @RequestMapping(value = "removecar", method = RequestMethod.GET)
-//    public ModelAndView removeCar() {
-//        return new ModelAndView("removecar", "cars", repository.findAll());
-////        return new ModelAndView("removecar", "customer", CustRepository.findByUserName(Uname).get(0));
-//    }
     
-//    @RequestMapping(value = "sellcarsadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
-//        repository.save(car);
+@RequestMapping(value = "/carInfo/{id}", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+//    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
+    public ModelAndView carInfo(@PathVariable("id") Long id) {
+ 
+        return new ModelAndView("carInfo","car",repository.findById(id).get(0));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
-//    }
-//    
-//    @RequestMapping( value = "delete-task/{id}")
-//    public ModelAndView deleteTask(@PathVariable("id")  Long id){
-//        if (repository.findOne(id) != null) {
-//           repository.delete(id);
-//        } else {
-//            log.error("ID not exsit!");
-//        }
-////        return new ModelAndView("removecar", "cars", repository.findAll());
-//        return new ModelAndView(new RedirectView("/removecar"));
-//    }
-//    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
-//    public ModelAndView cstmCars() {
-//        //        String Uname = request.getRemoteUser();
-//        //        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-//        //        return new ModelAndView("customer", "customer", CustRepository.findByUserName(Uname).get(0));
-//        return new ModelAndView("customer", "cars", repository.findAll());
-//    }
-    
+    }
 }
