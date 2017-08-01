@@ -264,7 +264,7 @@
 $(document).on('click', '#tableId tr', function (e) {
     e.stopPropagation();
     var $this = $(this);
-    var trid = $this.closest('tr').find("#eid").val();
+    var trid = $this.closest('tr').find("#eid").data("value");
     alert("TR ID " + trid);
 
 }); 
