@@ -275,7 +275,7 @@ $(document).on('click', '#tableId tr', function (e) {
     e.stopPropagation();
     var $this = $(this);
     var trid = $this.closest('tr').find("#eid").text();
-    window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid);
+    window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, "carInfo", "width=200,height=100");
 }); 
 });
 
