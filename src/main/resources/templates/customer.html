@@ -9,6 +9,23 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
     </head>
     <style>
+    body{
+  padding:20px 20px;
+}
+
+.results tr[visible='false'],
+.no-result{
+  display:none;
+}
+
+.results tr[visible='true']{
+  display:table-row;
+}
+
+.counter{
+  padding:8px; 
+  color:#ccc;
+}
     .headtry{
         border-left:26px;
         border-right:26px;
@@ -89,7 +106,8 @@
               </ul>
               <form class="navbar-form navbar-left">
                 <div class="form-group">
-                  <input type="text" class="search form-control" placeholder="Search"/>
+                  <!--input type="text" class="search form-control" placeholder="Search"/-->
+                  <input type="text" class="search form-control" placeholder="What you looking for?">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
               </form>
@@ -110,17 +128,17 @@
                     <th width="15%" class = "text-mid">Connect</th>
                     <th width="8%" class = "text-mid">Dealer</th>
                 </tr>   
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 <tr data-th-each="car : ${cars}">
                     <td></td>
                     <td data-th-text="${car.title}"></td>
                     <td data-th-text="${car.workoutType}"></td>
-                    <td  data-th-text="${car.describe}"></td>
+                    <td data-th-text="${car.describe}"></td>
                     <td data-th-text="${car.Email}"></td>
                     <td data-th-text="${car.Dealer}"></td>
                 </tr>
-                </tbody>
+            </tbody>
             </table>
           </div>
         <hr />
@@ -212,6 +230,7 @@
             };
             addSerialNumber();
         </script>
+        
         <script>
            $(document).ready(function() {
               $(".search").keyup(function () {
