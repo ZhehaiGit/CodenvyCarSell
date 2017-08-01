@@ -260,11 +260,19 @@
 //            }); 
 //        });
 
- $(".tableId").on('click','tr',function(e){
-    e.preventDefault();
-    var id = $(this).attr('value');
-    alert(id);
-}); 
+// $(".tableId").on('click','tr',function(e){
+//    e.preventDefault();
+//    var id = $(this).attr('value');
+//    alert(id);
+//}); 
+
+$(document).on('click', '#tableId tr', function (e) {
+    e.stopPropagation();
+    var $this = $(this);
+    var trid = $this.closest('tr').data('value');
+    alert("TR ID " + trid);
+
+});
         
         
         </script>
