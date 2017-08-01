@@ -120,7 +120,7 @@
         </nav>
         <div>
             <table class = "table table-bordered table-striped table-hover" id = "table">
-            <thead>
+            
                 <tr>
                     <th width="5%" class = "text-mid">ID</th>
                     <th width="10%" class = "text-mid">Model</th>
@@ -129,8 +129,8 @@
                     <th width="15%" class = "text-mid">Connect</th>
                     <th width="8%" class = "text-mid">Dealer</th>
                 </tr>   
-            </thead>
-            <tbody>
+            
+            
                 <tr data-th-each="car : ${cars}">
                     <td></td>
                     <td data-th-text="${car.title}"></td>
@@ -139,7 +139,7 @@
                     <td data-th-text="${car.Email}"></td>
                     <td data-th-text="${car.Dealer}"></td>
                 </tr>
-            </tbody>
+            
             </table>
           </div>
         <hr />
@@ -233,7 +233,7 @@
         </script>
         
         <script>
-           var $rows = $('#table tbody');
+           var $rows = $('#table tr td');
                 $('#search').keyup(function() {
                     var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
                     
