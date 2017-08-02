@@ -161,7 +161,7 @@
                 $.ajax({
                     type: "GET",
                     url : "https://car-sells.herokuapp.com/cstmCars",
-                    data: "car=" + eval(document.getElementById('datecar')).value,
+                    data: eval(document.getElementById('datecar')).value,
             		
                     dataType: 'JSON',
             		success : function(data) {
