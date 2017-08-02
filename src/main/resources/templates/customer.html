@@ -162,10 +162,10 @@
                     type: "POST",
                     url : "https://car-sells.herokuapp.com/cstmCars",
                    
-                    dataType: 'JSON',
+                    
                     data: "car=" + eval(document.getElementById('ContainerNumDislikes')).value,
-//            		 data : JSON.stringify(data),
-
+            		data : JSON.stringify(data),
+                    dataType: 'JSON',
             		success : function(data) {
             		    alert(data);
             		    $('#tableId').DataTable({
