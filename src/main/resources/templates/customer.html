@@ -123,7 +123,7 @@
           </div><!-- /.container-fluid -->
         </nav>
         <div class = "table-responsive">
-            <table class = "table table-bordered table-striped table-hover" id="tableId">
+            <table class = "table table-bordered table-striped" id="tableId">
                 <thead>
                     <tr>
                         <th width="5%" class = "text-mid">ID</th>
@@ -236,46 +236,46 @@
         
         
         <script>/*eslint-env jquery, jquery*/
-                $('select[name=workoutType]').selectpicker();
-                $('select[name=workoutType]').val(1);
-                $('.selectpicker').selectpicker('refresh');
+//                $('select[name=workoutType]').selectpicker();
+//                $('select[name=workoutType]').val(1);
+//                $('.selectpicker').selectpicker('refresh');
         </script>
         
         <script>
-            var addSerialNumber = function () {
-            var i = 1;
-                $('table tr').each(function(index) {
-                    $(this).find('td:nth-child(1)').html(index+0);
-                });
-            };
-            addSerialNumber();
+//            var addSerialNumber = function () {
+//            var i = 1;
+//                $('table tr').each(function(index) {
+//                    $(this).find('td:nth-child(1)').html(index+0);
+//                });
+//            };
+//            addSerialNumber();
         </script>
         
         <script>
-           var $rows = $('#table tbody tr');
-                $('#search').keyup(function() {
-                    
-                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-                        reg = RegExp(val, 'i'),
-                        text;
-                    
-                    $rows.show().filter(function() {
-                        text = $(this).text().replace(/\s+/g, ' ');
-                        return !reg.test(text);
-                    }).hide();
-                });
+//           var $rows = $('#table tbody tr');
+//                $('#search').keyup(function() {
+//                    
+//                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+//                        reg = RegExp(val, 'i'),
+//                        text;
+//                    
+//                    $rows.show().filter(function() {
+//                        text = $(this).text().replace(/\s+/g, ' ');
+//                        return !reg.test(text);
+//                    }).hide();
+//                });
         </script>
         <script>
-             jQuery(document).ready(function($) {
-            $(document).on('click', '#tableId tbody tr', function (e) {
-                e.stopPropagation();
-                var $this = $(this);
-                var trid = $this.closest('tr').find("#eid").text();
-                var x = screen.width/2 - 700/2;
-                var y = screen.height/2 - 450/2;
-                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
-            }); 
-            });
+//             jQuery(document).ready(function($) {
+//            $(document).on('click', '#tableId tbody tr', function (e) {
+//                e.stopPropagation();
+//                var $this = $(this);
+//                var trid = $this.closest('tr').find("#eid").text();
+//                var x = screen.width/2 - 700/2;
+//                var y = screen.height/2 - 450/2;
+//                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
+//            }); 
+//            });
         </script>
         
     </body>
