@@ -168,9 +168,11 @@
             
            $(document).ready(function() {
                 $.ajax({
-                    
+                    url = "cstmCars",
+                    dataType: 'JSON',
+                    async : false ,
             		success : function(data) {
-            		     alert(JSON.parse(data));
+            		    alert(JSON.parse(data));
             		    $('#tableId').DataTable({
             			data: data,
             			columns : [ 
