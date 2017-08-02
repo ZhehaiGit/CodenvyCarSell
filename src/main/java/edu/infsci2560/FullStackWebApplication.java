@@ -38,6 +38,10 @@ public class FullStackWebApplication {
         repository.save(new Car(4L, "odge Ram", WorkoutType.Van, "Dodgefn", "wdyj@ppp.com", "wdyj"));
         repository.save(new Car(5L, "Dge", WorkoutType.Van, "Dodgead", "wdyj@ppp.com", "wdy"));
         repository.save(new Car(6L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        repository.save(new Car(7L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        repository.save(new Car(8L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        repository.save(new Car(9L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        
         
         
         
