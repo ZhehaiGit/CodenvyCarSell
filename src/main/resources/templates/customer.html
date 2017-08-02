@@ -10,6 +10,27 @@
         
     </head>
     <style>
+    .paging-nav {
+  text-align: right;
+  padding-top: 2px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: #91b9e6;
+  color: white;
+  border-radius: 3px;
+}
+
+.paging-nav .selected-page {
+  background: #187ed5;
+  font-weight: bold;
+}
+    
+    
 
 .results tr[visible='false'],
 .no-result{
@@ -217,8 +238,8 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.js"></script>
-        
+        <script src="paging.js"></script>
+
         <script>/*eslint-env jquery, jquery*/
                 $('select[name=workoutType]').selectpicker();
                 $('select[name=workoutType]').val(1);
@@ -263,7 +284,14 @@
             });
         </script>
         <script>
-            $('tableId').DataTable();
+           $('#table-demo').paging({
+
+                limit: 8,
+                rowDisplayStyle: 'block',
+                activePage: 0,
+                rows: []
+                
+                });
         </script>
     </body>
 </html>
