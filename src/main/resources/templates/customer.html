@@ -159,12 +159,11 @@
             
            $(document).ready(function() {
                 $.ajax({
-//                    type: "POST",
-//                    url : "https://car-sells.herokuapp.com/cstmCars",
-//                    data : JSON.stringify(data),
-//                    dataType: 'JSON',
-                    data : eval(document.getElementById('data')).value,
-                    data: "car=" + eval(document.getElementById('ContainerNumDislikes')).value,
+                    type: "POST",
+                    url : "https://car-sells.herokuapp.com/cstmCars",
+                    data : JSON.stringify(data),
+                    dataType: 'JSON',
+//                    data: "car=" + eval(document.getElementById('ContainerNumDislikes')).value,
                     async : true ,
             		success : function(data) {
             		    alert(data);
