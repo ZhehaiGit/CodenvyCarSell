@@ -126,7 +126,7 @@
         
         
         <div class = "table-responsive">
-            <table class = "table table-bordered table-striped" id="tableId">
+            <table class = "table table-bordered table-striped" id="tableId" data-th-each="${cars}">
                 <thead>
                     <tr>
                         <th width="5%" class = "text-mid">ID</th>
@@ -139,7 +139,7 @@
                     </tr>   
                 </thead>
                 
-                <tbody id = "date" data-th-each="car : ${cars}">
+                <tbody id = "date" data-th-each="car: ${cars}">
                     <!--?php
                         while ($row = car) {
                             echo '';
@@ -168,7 +168,7 @@
             
            $(document).ready(function() {
                 $.ajax({
-            		data: eval(document.getElementById('date')).value, 
+            		data: eval(document.getElementById('tableId')).value, 
             		async: true,
             		success : function(data) {
             		    $('#tableId').DataTable({
