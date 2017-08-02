@@ -168,7 +168,6 @@
             
            $(document).ready(function() {
                 $.ajax({
-            		url: '../public/api/palettes/ajax/like/' + eval(document.getElementById('ContainerLikeId')).value,
             		data:  eval(document.getElementById('date')).value, 
             		async: true,
             		success : function(data) {
