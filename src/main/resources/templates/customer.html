@@ -147,7 +147,7 @@
                         }
                     ?-->
 
-                    <!--tr class = "clickable-row" data-value="${car.id}">
+                    <tr class = "clickable-row" data-value="${car.id}">
                         <td></td>
                         <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
                         <td data-th-text="${car.title}"></td>
@@ -168,7 +168,7 @@
            $(document).ready(function() {
                 $.ajax({
 //                    type: "POST",
-//                    url = "https://car-sells.herokuapp.com/cstmCars",
+                    url = "https://car-sells.herokuapp.com/cstmCars",
 //                    data : JSON.stringify(data),
 
 //                    dataType: 'JSON',
@@ -178,8 +178,7 @@
             		    alert(data);
             		    $('#tableId').DataTable({
             			data: data,
-            			columns : [ 
-            			     
+            			columns : [
             			    {'data' : 'id'},
             			    {'data' : 'title'},
             			    {'data' : 'workoutType'},
