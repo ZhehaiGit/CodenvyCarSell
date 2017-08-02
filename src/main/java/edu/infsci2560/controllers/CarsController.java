@@ -75,7 +75,8 @@ public class CarsController {
             return new ModelAndView("pubcar", "cars", repository.findAll());  
         }
     
-     @RequestMapping(value = "cstmCars")
+     @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
+     @ResponseBody
     public ModelAndView cstmCars() {
         return new ModelAndView("customer", "cars", repository.findAll());  
     }
