@@ -10,14 +10,29 @@
     </head>
     <style>
     body{
-        background-color: #E0E0E0;
+        background-color: #F5F5F5;
         padding:20px 20px;
     }
+    label {
+        font-size: 120%;
+    }
+    input {
+      border:1px solid #F5F5F5; 
+
+        background-color: #F5F5F5;
+        vertical-align:middle; 
+        text-align: center;
+    }
+    input {star : expression( 
+        onmouseover=function(){this.style.borderColor="#060"}, 
+        onmouseout=function(){this.style.borderColor="#c00"})   
+    }  
     .p {
             margin: 10px;
     }
+
     .pt {
-        padding-top: 10px
+        padding-top: 20px
     }
     </style>
  
@@ -28,46 +43,42 @@
                 <div class="span6">
                     
                     <div class="controls controls-row pt">         
-                    <label class = "col-xs-1" for="model ">Car Model:</label>
+                    <label class = "col-xs-2" for="model ">Car Model:</label>
           
-          			<div data-text="${car.title}">
-
+          			<input class = "col-xs-3 pull-left" type="text" value="${car.title}" />
           			</div>
-          			</div>
+                    <br/>
           			<div class="controls controls-row pt">     
-                    <label class = "col-xs-1" for="Type">Car Type:</label>
-                       <div data-text="${car.workoutType}">
-
-          			</div>
+                    <label class = "col-xs-2" for="Type">Car Type:</label>
+                        <input class = "col-xs-3 pull-left" type="text" value="${car.workType}" />
                     </div>
+                    <br/>
 
                     <div class="controls controls-row pt">     
-                    <label  class = "col-xs-1" for="Type">Dealer Name</label>
-                       <div data-text="${car.name}">
-
-          			</div>
+                    <label class = "col-xs-2" for="dealer">Dealer:</label>
+                        <input class = "col-xs-3 pull-left" type="text" value="${car.Dealer}" />
                     </div>
+                    <br/>
 
                     <div class="controls controls-row pt">     
-                    <label class = "col-xs-1" for="Type">Email:</label>
-                       <div data-text="${car.email}">
-          			</div>
+                    <label class = "col-xs-2" for="email">Email:</label>
+                        <input class = "col-xs-3 pull-left" type="text" value="${car.Email}" />
                     </div>
+                    <br/>
 
-                         <div class="controls controls-row pt">
-                        	<div class = "Mleft">
-                        	<label for="Describe">Describe:</label>
-                        	</div>
-                        </div>
-                        
-                        <div class="controls controls-row">
-                            <div class="form-inline">
-                                <div class="col-xs-1"></div>
-                                <div class = "col-xs-11 pull-left">
-                                    <textarea id="message"  class="span6" rows="7" cols="55" data-th-text="${car.describe}"></textarea>
-                                </div>
+                     <div class="controls controls-row pt">
+                    	<label class = "col-xs-2" for="describe">Describe:</label>
+                    	
+                    </div>
+                    
+                    <div class="controls controls-row " style= "margin-top:30px; margin-left: 80px">
+                        <div class="form-inline">
+                            <div class="col-xs-1"></div>
+                            <div class = "col-xs-11 pull-left">
+                                <textarea id="message"  class="span6" rows="8" cols="45" data-th-text="${car.describe}"></textarea>
                             </div>
                         </div>
+                    </div>
             
         
                 </div>
