@@ -271,7 +271,9 @@
         </script>
         <script>
            $(document).ready(function() {
-               $('#tableId').DataTable();
+               $('#tableId').DataTable({
+                   "iDisplayLength": 10
+               }) ;
            });
         </script>
     </body>
