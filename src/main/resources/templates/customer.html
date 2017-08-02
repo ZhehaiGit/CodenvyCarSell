@@ -131,7 +131,7 @@
                     </tr>   
                 </thead>
                 
-                <tbody id = "date" data-th-each="car: ${cars}">
+                <tbody id = "datecar" data-th-each="car: ${cars}">
                     <!--?php
                         while ($row = car) {
                             echo '';
@@ -161,8 +161,8 @@
                 $.ajax({
                     type: "GET",
                     url : "https://car-sells.herokuapp.com/cstmCars",
-                    data: "car=" + eval(document.getElementById('ContainerNumDislikes')).value,
-            
+                    data: "car=" + eval(document.getElementById('datecar')).value,
+            		data : JSON.stringify(data),
                     dataType: 'JSON',
             		success : function(data) {
             		    alert(data);
