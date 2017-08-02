@@ -259,7 +259,7 @@
         </script>
         <script>
              jQuery(document).ready(function($) {
-            $(document).on('click', '#tableId tr', function (e) {
+            $(document).on('click', '#tableId tbody tr', function (e) {
                 e.stopPropagation();
                 var $this = $(this);
                 var trid = $this.closest('tr').find("#eid").text();
