@@ -240,7 +240,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="//code.jquery.com/jquery.min.js"></script>
-        <script src="jquery.paginate.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
         <script>/*eslint-env jquery, jquery*/
                 $('select[name=workoutType]').selectpicker();
@@ -286,9 +286,11 @@
             });
         </script>
         <script>
-          $('tableId').jqPagination({
-  'elemsPerPage': 3
-});
+        $(document).ready(function() {
+    $('#tableId').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
         </script>
     </body>
 </html>
