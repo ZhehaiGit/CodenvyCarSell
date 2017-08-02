@@ -41,9 +41,9 @@ public class FullStackWebApplication {
         repository.save(new Car(7L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
         repository.save(new Car(8L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
         repository.save(new Car(9L, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
-        repository.save(new Car(10, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
-        repository.save(new Car(11, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
-        repository.save(new Car(12, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        repository.save(new Car(9L++, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        repository.save(new Car(9L+2, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
+        repository.save(new Car(9L+3, "DodRam", WorkoutType.Van, "Dodgesfs", "wdy@ppp.com", "wyj"));
         
         
         
