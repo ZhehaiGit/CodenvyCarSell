@@ -170,6 +170,7 @@
                 $.ajax({
                     type: "GET",
                     url = "cstmCars",
+                    data : JSON.stringify(data),
                     dataType: 'JSON',
                     async : false ,
             		success : function(data) {
