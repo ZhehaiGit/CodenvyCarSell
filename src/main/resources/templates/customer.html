@@ -7,7 +7,7 @@
         <title>User Home</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
-        
+        <link href="jquery.paginate.css" rel="stylesheet">
     </head>
     <style>
     .paging-nav {
@@ -239,7 +239,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="paging.js"></script>
+        <script src="jquery.paginate.js"></script>
 
         <script>/*eslint-env jquery, jquery*/
                 $('select[name=workoutType]').selectpicker();
@@ -285,14 +285,9 @@
             });
         </script>
         <script>
-           $('#tableId').paging({
-
-                limit: 8,
-                rowDisplayStyle: 'block',
-                activePage: 0,
-                rows: []
-                
-                });
+          $('tableId').paginate({
+  'elemsPerPage': 3
+});
         </script>
     </body>
 </html>
