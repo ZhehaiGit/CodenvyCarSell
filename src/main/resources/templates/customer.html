@@ -139,25 +139,23 @@
                     </tr>   
                 </thead>
                 
-                <tbody data-th-each="car : ${cars}">
-                    <?php
+                <tbody id = "date" data-th-each="car : ${cars}">
+                    <!--?php
                         while ($row = car) {
-                            echo '
-                            <tr class = "clickable-row" data-value="${car.id}">
-                                <td></td>
-                                <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
-                                <td data-th-text="${car.title}"></td>
-                                <td data-th-text="${car.workoutType}"></td>
-                                <td data-th-text="${car.describe}"></td>
-                                <td data-th-text="${car.Email}"></td>
-                                <td data-th-text="${car.Dealer}"></td>
-                            </tr>
-                            ';
+                            echo '';
                             
                         }
-                    ?>
+                    ?-->
 
-                    
+                    <tr class = "clickable-row" data-value="${car.id}">
+                        <td></td>
+                        <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
+                        <td data-th-text="${car.title}"></td>
+                        <td data-th-text="${car.workoutType}"></td>
+                        <td data-th-text="${car.describe}"></td>
+                        <td data-th-text="${car.Email}"></td>
+                        <td data-th-text="${car.Dealer}"></td>
+                    </tr>
              
                 </tbody>
             </table>
@@ -167,11 +165,25 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
         <script>
-//           $(document).ready(function() {
-//               $('#tableId').DataTable({
-//                   "iDisplayLength": 5
-//               }) ;
-//           });
+            
+           $(document).ready(function() {
+                $.ajax({
+            		url: '../public/api/palettes/ajax/like/' + eval(document.getElementById('ContainerLikeId')).value,
+            		data:  eval(document.getElementById('date')).value, 
+            		async: true,
+            		success : function(data) {
+            			data : data,
+            			columns : [ 
+            			    {'data' : 'id',}
+            			    {'data' : 'id',}
+            			    {'data' : 'title',}
+            			    {'data' : 'workoutType',}
+            			    {'data' : 'describe',}
+            			    {'data' : 'Email',}
+            			    {'data' : 'Dealer',}
+            			]
+            		};
+	  });
         </script>
         
         
