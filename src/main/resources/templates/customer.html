@@ -171,17 +171,19 @@
             		data:  eval(document.getElementById('date')).value, 
             		async: true,
             		success : function(data) {
-            			data : data,
+            		    $('#tableId').DataTable({
+            			data: data,
             			columns : [ 
-            			    {'data' : 'id',}
-            			    {'data' : 'id',}
-            			    {'data' : 'title',}
-            			    {'data' : 'workoutType',}
-            			    {'data' : 'describe',}
-            			    {'data' : 'Email',}
-            			    {'data' : 'Dealer',}
-            			]
-            		};
+            			    {'data' : 'id'},
+            			    {'data' : 'id'},
+            			    {'data' : 'title'},
+            			    {'data' : 'workoutType'},
+            			    {'data' : 'describe'},
+            			    {'data' : 'Email'},
+            			    {'data' : 'Dealer'}
+            			     ]
+        			     });
+            	   }
 	  });
         </script>
         
