@@ -130,7 +130,7 @@
                 <thead>
                     <tr>
                         <th width="5%" class = "text-mid">ID</th>
-                        <th class ="text-mid" style="display:none;"></th>
+                        <!--th class ="text-mid" style="display:none;"></th-->
                         <th width="10%" class = "text-mid">Model</th>
                         <th width="8%" class = "text-mid">Type</th>
                         <th class = "text-mid">Describe</th>
@@ -147,7 +147,7 @@
                         }
                     ?-->
 
-                    <tr class = "clickable-row" data-value="${car.id}">
+                    <!--tr class = "clickable-row" data-value="${car.id}">
                         <td></td>
                         <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
                         <td data-th-text="${car.title}"></td>
@@ -155,7 +155,7 @@
                         <td data-th-text="${car.describe}"></td>
                         <td data-th-text="${car.Email}"></td>
                         <td data-th-text="${car.Dealer}"></td>
-                    </tr>
+                    </tr-->
              
                 </tbody>
             </table>
@@ -174,8 +174,7 @@
             		    $('#tableId').DataTable({
             			data: data,
             			columns : [ 
-            			    {'' : 'ID'},
-            			    {'data' : ''},
+            			    {'data' : 'ID'},
             			    {'data' : 'Model'},
             			    {'data' : 'Type'},
             			    {'data' : 'Describe'},
