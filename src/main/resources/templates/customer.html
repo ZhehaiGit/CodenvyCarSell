@@ -160,7 +160,7 @@
            $(document).ready(function() {
                 $.ajax({
                     type: "GET",
-                    url : "https://car-sells.herokuapp.com/cstmCars",
+                    url : "$!{_index}/cstmCars",
 //                    data: eval(document.getElementById('datecar')).value,
             		data:JSON.stringify(dataObj),
                     dataType: 'JSON',
