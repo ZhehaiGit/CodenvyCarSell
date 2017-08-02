@@ -30,6 +30,9 @@
     .pt {
         padding-top: 20px
     }
+    .fSize {
+        font-size: 100%;
+    }
     </style>
  
     <body>
@@ -40,24 +43,24 @@
                     
                     <div class="controls controls-row pt">         
                     <label class = "col-xs-2" for="model ">Model:</label>
-          			<label style = "text-align: center; font-weight:normal;" class = "col-xs-3 pull-left" type="text"  data-th-text="${car.title}"></label>
+          			<label style = "text-align: center; font-weight:normal;" class = "col-xs-3 pull-left fSize" type="text"  data-th-text="${car.title}"></label>
           			</div>
                     <br/>
           			<div class="controls controls-row pt">     
                     <label class = "col-xs-2" for="Type">Type:</label>
-                        <label style = "text-align: center; font-weight:normal;" class = "col-xs-3 pull-left" type="text"  data-th-text="${car.workoutType}" ></label>
+                        <label style = "text-align: center; font-weight:normal;" class = "col-xs-3 pull-left fSize" type="text"  data-th-text="${car.workoutType}" ></label>
                     </div>
                     <br/>
 
                     <div class="controls controls-row pt">     
                     <label class = "col-xs-2" for="dealer">Dealer:</label>
-                        <label style = "text-align: center;font-weight:normal;"  class = "col-xs-3 pull-left" type="text" data-th-text="${car.Dealer}" ></label>
+                        <label style = "text-align: center;font-weight:normal;"  class = "col-xs-3 pull-left fSize" type="text" data-th-text="${car.Dealer}" ></label>
                     </div>
                     <br/>
 
                     <div class="controls controls-row pt">     
                     <label class = "col-xs-2" for="email">Email:</label>
-                        <label  style = "text-align: center;font-weight:normal;" class = "col-xs-3 pull-left" type="email" data-th-text="${car.Email}" ></label>
+                        <label  style = "text-align: center;font-weight:normal;" class = "col-xs-3 pull-left fSize" type="email" data-th-text="${car.Email}" ></label>
                     </div>
                     <br/>
 
@@ -70,7 +73,7 @@
                         <div class="form-inline">
                             <div class="col-xs-1"></div>
                             <div class = "col-xs-11 pull-left">
-                                <label id="message"  class="span6" rows="8" cols="45" data-th-text="${car.describe}"></label>
+                                <label style = "font-weight:normal;" id="message"  class="span6 fSize" rows="8" cols="45" data-th-text="${car.describe}"></label>
                             </div>
                         </div>
                     </div>
