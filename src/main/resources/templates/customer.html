@@ -170,17 +170,18 @@
                 $.ajax({
                     url: "https://car-sells.herokuapp.com/cstmCars",
             		success : function(data) {
-            		    $('#tableId').DataTable({
-            			data: data,
-            			columns : [ 
-            			    {'data' : 'id'},
-            			    {'data' : 'title'},
-            			    {'data' : 'workoutType'},
-            			    {'data' : 'describe'},
-            			    {'data' : 'Email'},
-            			    {'data' : 'Dealer'}
-            			     ]
-        			     });
+            		     alert(JSON.parse(data));
+//            		    $('#tableId').DataTable({
+//            			data: data,
+//            			columns : [ 
+//            			    {'data' : 'id'},
+//            			    {'data' : 'title'},
+//            			    {'data' : 'workoutType'},
+//            			    {'data' : 'describe'},
+//            			    {'data' : 'Email'},
+//            			    {'data' : 'Dealer'}
+//            			     ]
+//        			     });
             	   }
             	  });
               });
