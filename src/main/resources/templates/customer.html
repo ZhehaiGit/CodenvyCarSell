@@ -156,7 +156,6 @@
                         <td data-th-text="${car.Email}"></td>
                         <td data-th-text="${car.Dealer}"></td>
                     </tr-->
-             
                 </tbody>
             </table>
           </div>
@@ -176,10 +175,11 @@
 //                    async : false ,
                     data = eval(document.getElementById('data')).value, 
             		success : function(data) {
-            		    
+            		    alert(data);
             		    $('#tableId').DataTable({
             			data: data,
             			columns : [ 
+            			     
             			    {'data' : 'id'},
             			    {'data' : 'title'},
             			    {'data' : 'workoutType'},
