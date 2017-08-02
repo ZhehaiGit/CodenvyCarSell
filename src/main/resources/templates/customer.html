@@ -139,7 +139,7 @@
                         }
                     ?-->
 
-                    <tr class = "clickable-row" data-value="${car.id}">
+                    <!--tr class = "clickable-row" data-value="${car.id}">
                         <td></td>
                         <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
                         <td data-th-text="${car.title}"></td>
@@ -147,7 +147,7 @@
                         <td data-th-text="${car.describe}"></td>
                         <td data-th-text="${car.Email}"></td>
                         <td data-th-text="${car.Dealer}"></td>
-                    </tr>
+                    </tr-->
                 </tbody>
             </table>
           </div>
@@ -164,7 +164,7 @@
 //                    data : JSON.stringify(data),
 
 //                    dataType: 'JSON',
-//                    async : false ,
+                    async : true ,
                     data = eval(document.getElementById('data')).value, 
             		success : function(data) {
             		    alert(data);
