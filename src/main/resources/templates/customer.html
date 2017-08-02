@@ -161,10 +161,9 @@
                 $.ajax({
                    
                     url : "cstmCars",
-                     type: "GET",
+                     type: "POST",
 //                    data: eval(document.getElementById('datecar')).value,
                     dataType: 'JSON',
-                   
             		success : function(data) {
             		    alert("1");
             		    $('#tableId').DataTable({
@@ -179,8 +178,8 @@
             			     ]
         			     });
             	       }
+            	       
             	  });
-            	   alert("2");
               });
 
 
