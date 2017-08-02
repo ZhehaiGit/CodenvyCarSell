@@ -168,11 +168,13 @@
             
            $(document).ready(function() {
                 $.ajax({
-                    type: "POST",
-                    url = "https://car-sells.herokuapp.com/cstmCars",
-                    data : JSON.stringify(data),
-                    dataType: 'JSON',
-                    async : false ,
+//                    type: "POST",
+//                    url = "https://car-sells.herokuapp.com/cstmCars",
+//                    data : JSON.stringify(data),
+
+//                    dataType: 'JSON',
+//                    async : false ,
+                    data = eval(document.getElementById('data')).value, 
             		success : function(data) {
             		    
             		    $('#tableId').DataTable({
