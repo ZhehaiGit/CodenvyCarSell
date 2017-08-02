@@ -164,6 +164,7 @@
 //                    data : JSON.stringify(data),
 //                    dataType: 'JSON',
                     data : eval(document.getElementById('data')).value,
+                    data: "car=" + eval(document.getElementById('ContainerNumDislikes')).value,
                     async : true ,
             		success : function(data) {
             		    alert(data);
