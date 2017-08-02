@@ -17,26 +17,7 @@
         
     </head>
     <style>
-    .paging-nav {
-  text-align: right;
-  padding-top: 2px;
-}
-
-.paging-nav a {
-  margin: auto 1px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 1px 7px;
-  background: #91b9e6;
-  color: white;
-  border-radius: 3px;
-}
-
-.paging-nav .selected-page {
-  background: #187ed5;
-  font-weight: bold;
-}
-    
+   
     
 
 .results tr[visible='false'],
@@ -143,27 +124,26 @@
         <div>
             <table class = "table table-bordered table-striped table-hover" id="tableId">
                 <thead>
-                <tr>
-                    <th width="5%" class = "text-mid">ID</th>
-                    <th width="10%" class = "text-mid">Model</th>
-                    <th width="8%" class = "text-mid">Type</th>
-                    <th class = "text-mid">Describe</th>
-                    <th width="15%" class = "text-mid">Connect</th>
-                    <th width="8%" class = "text-mid">Dealer</th>
-                </tr>   
+                    <tr>
+                        <th width="5%" class = "text-mid">ID</th>
+                        <th class ="text-mid" style="display:none;"></th>
+                        <th width="10%" class = "text-mid">Model</th>
+                        <th width="8%" class = "text-mid">Type</th>
+                        <th class = "text-mid">Describe</th>
+                        <th width="15%" class = "text-mid">Connect</th>
+                        <th width="8%" class = "text-mid">Dealer</th>
+                    </tr>   
                 </thead>
-               
                 <tbody data-th-each="car : ${cars}">
-                <!-- @{/blogs/edit/{id}(id=${blog.id})} @{{/carInfo/} + ${car.title}}-->
-                <tr class = "clickable-row" data-value="${car.id}">
-                    <td></td>
-                    <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
-                    <td data-th-text="${car.title}"></td>
-                    <td data-th-text="${car.workoutType}"></td>
-                    <td data-th-text="${car.describe}"></td>
-                    <td data-th-text="${car.Email}"></td>
-                    <td data-th-text="${car.Dealer}"></td>
-                </tr>
+                    <tr class = "clickable-row" data-value="${car.id}">
+                        <td></td>
+                        <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
+                        <td data-th-text="${car.title}"></td>
+                        <td data-th-text="${car.workoutType}"></td>
+                        <td data-th-text="${car.describe}"></td>
+                        <td data-th-text="${car.Email}"></td>
+                        <td data-th-text="${car.Dealer}"></td>
+                    </tr>
              
                 </tbody>
             </table>
@@ -245,12 +225,7 @@
         
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
-        <script>
-           $(document).ready(function() {
-               $('#tableId').DataTable();
-           });
-
-        </script>
+        
         
         <script>/*eslint-env jquery, jquery*/
                 $('select[name=workoutType]').selectpicker();
@@ -283,7 +258,6 @@
                 });
         </script>
         <script>
-       
              jQuery(document).ready(function($) {
             $(document).on('click', '#tableId tr', function (e) {
                 e.stopPropagation();
@@ -295,6 +269,10 @@
             }); 
             });
         </script>
-        
+        <script>
+           $(document).ready(function() {
+               $('#tableId').DataTable();
+           });
+        </script>
     </body>
 </html>
