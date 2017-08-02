@@ -159,13 +159,13 @@
             
            $(document).ready(function() {
                 $.ajax({
-                    type: "GET",
-                    url : "/cstmCars",
+                   
+                    url : "cstmCars",
+                     type: "GET",
 //                    data: eval(document.getElementById('datecar')).value,
-            		
                     dataType: 'JSON',
             		success : function(data) {
-            		    alert(data);
+            		    alert("1");
             		    $('#tableId').DataTable({
             			data: data,
             			columns : [
