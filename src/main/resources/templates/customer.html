@@ -129,8 +129,8 @@
             <table class = "table table-bordered table-striped" id="tableId">
                 <thead>
                     <tr>
-                        <!--th width="5%" class = "text-mid">ID</th>
-                        <th class ="text-mid" style="display:none;"></th-->
+                        <th width="5%" class = "text-mid">ID</th>
+                        <th class ="text-mid" style="display:none;"></th>
                         <th width="10%" class = "text-mid">Model</th>
                         <th width="8%" class = "text-mid">Type</th>
                         <th class = "text-mid">Describe</th>
@@ -140,8 +140,8 @@
                 </thead>
                 <tbody data-th-each="car : ${cars}">
                     <tr class = "clickable-row" data-value="${car.id}">
-                        <!--td></td>
-                        <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td-->
+                        <td></td>
+                        <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
                         <td data-th-text="${car.title}"></td>
                         <td data-th-text="${car.workoutType}"></td>
                         <td data-th-text="${car.describe}"></td>
@@ -157,55 +157,55 @@
         <!-- script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
         
         <script>
-           $(document).ready(function() {
-               $('#tableId').DataTable({
-                   "iDisplayLength": 5
-               }) ;
-           });
+//           $(document).ready(function() {
+//               $('#tableId').DataTable({
+//                   "iDisplayLength": 5
+//               }) ;
+//           });
         </script>
         
         
         <script>/*eslint-env jquery, jquery*/
-//                $('select[name=workoutType]').selectpicker();
-//                $('select[name=workoutType]').val(1);
-//                $('.selectpicker').selectpicker('refresh');
+                $('select[name=workoutType]').selectpicker();
+                $('select[name=workoutType]').val(1);
+                $('.selectpicker').selectpicker('refresh');
         </script>
         
         <script>
-//            var addSerialNumber = function () {
-//            var i = 1;
-//                $('table tr').each(function(index) {
-//                    $(this).find('td:nth-child(1)').html(index+0);
-//                });
-//            };
-//            addSerialNumber();
+            var addSerialNumber = function () {
+            var i = 1;
+                $('table tr').each(function(index) {
+                    $(this).find('td:nth-child(1)').html(index+0);
+                });
+            };
+            addSerialNumber();
         </script>
         
         <script>
-//           var $rows = $('#table tbody tr');
-//                $('#search').keyup(function() {
-//                    
-//                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-//                        reg = RegExp(val, 'i'),
-//                        text;
-//                    
-//                    $rows.show().filter(function() {
-//                        text = $(this).text().replace(/\s+/g, ' ');
-//                        return !reg.test(text);
-//                    }).hide();
-//                });
+           var $rows = $('#table tbody tr');
+                $('#search').keyup(function() {
+                    
+                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                        reg = RegExp(val, 'i'),
+                        text;
+                    
+                    $rows.show().filter(function() {
+                        text = $(this).text().replace(/\s+/g, ' ');
+                        return !reg.test(text);
+                    }).hide();
+                });
         </script>
         <script>
-//             jQuery(document).ready(function($) {
-//            $(document).on('click', '#tableId tbody tr', function (e) {
-//                e.stopPropagation();
-//                var $this = $(this);
-//                var trid = $this.closest('tr').find("#eid").text();
-//                var x = screen.width/2 - 700/2;
-//                var y = screen.height/2 - 450/2;
-//                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
-//            }); 
-//            });
+             jQuery(document).ready(function($) {
+            $(document).on('click', '#tableId tbody tr', function (e) {
+                e.stopPropagation();
+                var $this = $(this);
+                var trid = $this.closest('tr').find("#eid").text();
+                var x = screen.width/2 - 700/2;
+                var y = screen.height/2 - 450/2;
+                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
+            }); 
+            });
         </script>
         
     </body>
