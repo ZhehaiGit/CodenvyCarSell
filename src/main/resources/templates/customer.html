@@ -196,21 +196,20 @@ var search = {
 //                    Model : "POST",
 //                    dataType: "text",
                     contentType: "json",
-                    data: search,
-            		success : function() {
+            		success : function(data) {
             		    
-            		     var mid = JSON.stringify(search);//这个是对的 但是是string
-            		     alert("mid"+ mid);
+            		     JSON.stringify(search);//这个是对的 但是是string
+            		     alert("mid"+ search);
             
             		   
             		    $('#tableId').DataTable({
             		     
             			columns : [
-            			    {"mid" : "id"},
-            			    {"mid" : "title"},
-            			    {"mid" : "workoutType"},
-            			    {data : 'describe'},
-            			    {'mid' : 'Email'},
+            			    {"search" : "id"},
+            			    {"search" : "title"},
+            			    {"search" : "workoutType"},
+            			    {search : 'describe'},
+            			    {'search' : 'Email'},
             			    {'mid' : 'Dealer'}
             			     ]
         			     });
