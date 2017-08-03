@@ -162,9 +162,10 @@
                    
                     url : "cstmCars.json",
                     Method : "POST",
-                    data: eval(document.getElementById('datecar')).val(),
+//                    data: eval(document.getElementById('datecar')).value,
 //                    data: data,
-                    dataType: 'JSON',
+                    contentType:"json",
+                    dataType: "JSON",
             		success : function(data) {
             		    alert("1");
             		    $('#tableId').DataTable({
