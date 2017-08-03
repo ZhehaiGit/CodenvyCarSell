@@ -185,8 +185,8 @@
                           "Email" :"email@",
                           "Dealer" :"dealer"
                        };
+                       alert(111+ search);
                 alert(222+ search['Dealer']);
-                 alert(222+ search);
 //                alert("sample:" + obj);
 //               var car = $('#person').val();
                 $.ajax({
@@ -197,6 +197,7 @@
                     contentType: "json",
                     data: search,
             		success : function(data) {
+            		     alert(333+ data['Dealer']);
             		    var yourval = jQuery.parseJSON(JSON.stringify(search));
             		    
             		    alert(2+ yourval);
