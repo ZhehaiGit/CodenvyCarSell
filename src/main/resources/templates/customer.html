@@ -185,8 +185,8 @@
 //            </c:forEach>            
            $(document).ready(function() {
 //               var carValue =  $('#tableId');
-                alert("1:" + document.getElementById("tableId").innerHTML);
-               var car = document.getElementById ('#tableId').val();
+                alert("1:" + document.getElementById("tableId").value);
+               var car = document.getElementById ("tableId").val();
                 $.ajax({
                     url : "cstmCars",
                     type : "GET",
@@ -195,7 +195,7 @@
                     contentType: "json",
                     data: JSON.stringify(car),
             		success : function(data) {
-            		    alert(car);
+            		    alert(2+ car);
             		    alert(data);
             		    $('#tableId').DataTable({
             		     
