@@ -186,18 +186,20 @@
            $(document).ready(function() {
 //               var carValue =  $('#tableId');
 //                document.write("1:" + document.getElementById("tableId").value);
-                document.write(222+ search['sample']);
+                alert(222+ search['sample']);
 //                alert("sample:" + obj);
                var car = $('#person').val();
                 $.ajax({
                     url : "cstmCars",
                     type : "GET",
 //                    Model : "POST",
-//                    dataType: "text",
+                    dataType: "text",
                     contentType: "json",
                     data: JSON.stringify(car),
             		success : function(data) {
-            		    alert(2+ car);
+            		    var yourval = jQuery.parseJSON(JSON.stringify(search));
+            		    
+            		    alert(2+ yourval);
             		    alert(data);
             		    $('#tableId').DataTable({
             		     
