@@ -162,12 +162,7 @@
                 $.ajax({
                     url : "cstmCars.json",
                     Method : "GET",
-                    data : [
-    ["UpdateBootProfile","PASS","00:00:00",[]] ,
-    ["NRB Boot","PASS","00:00:50.5000000",[{"TestName":"TOTAL_TURN_ON_TIME","Result":"PASS","Value":"50.5","LowerLimit":"NaN","UpperLimit":"NaN","ComparisonType":"nctLOG","Units":"SECONDS"}]] ,
-    ["NvMgrCommit","PASS","00:00:00",[]] ,
-    ["SyncNvToEFS","PASS","00:00:01.2500000",[]]
-], 
+                    dataType: "json",
                     contentType:"json",  
             		success : function(data) {
             		    alert(1+data),
