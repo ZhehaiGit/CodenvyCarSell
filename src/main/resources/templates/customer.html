@@ -164,14 +164,7 @@
 //            }
     //      var data = eval(document.getElementById('datecar')).value;
           
-            var search = {
-                          "id" : 1,
-                          "title" :"Title",
-                          "workoutType" :"Ven",
-                          "describe" :"dasjkdhakf",
-                          "Email" :"email@",
-                          "Dealer" :"dealer"
-                       };
+           
 //            var  obj = JSON.parse(search);   
                        
 //           var listForJavascript = [];
@@ -184,11 +177,21 @@
 //              listForJavascript.push(arr);
 //            </c:forEach>            
            $(document).ready(function() {
+                var search = {
+                          "id" : 1,
+                          "title" :"Title",
+                          "workoutType" :"Ven",
+                          "describe" :"dasjkdhakf",
+                          "Email" :"email@",
+                          "Dealer" :"dealer"
+                       };
+                var cur_ques_details ={"ques_id":15,"ques_title":"jlkjlkjlkjljl"};
+document.write(cur_ques_details['ques_title']);
 //               var carValue =  $('#tableId');
 //                document.write("1:" + document.getElementById("tableId").value);
                 alert(222+ search['sample']);
 //                alert("sample:" + obj);
-               var car = $('#person').val();
+//               var car = $('#person').val();
                 $.ajax({
                     url : "cstmCars",
                     type : "GET",
@@ -219,7 +222,7 @@
                         alert(textStatus); // paser error;
                     },
             	  });
-            	   alert(3+ car);
+            	   alert(3);
               });
               
         </script>
