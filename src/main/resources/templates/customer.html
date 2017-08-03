@@ -165,10 +165,11 @@
                     dataType: "text",
 //                   contentType: "json",  
             		success : function(data) {
-            		     var json = $.parseJSON(data);
-            		    alert(json),
+//            		     var json = $.parseJSON(data);
+                               
+            		    alert(data),
             		    $('#tableId').DataTable({
-            			data: json,
+                        data: JSON.stringify(data),
             			columns : [
             			    {data : 'id'},
             			    {data : 'title'},
