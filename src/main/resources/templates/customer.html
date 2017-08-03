@@ -194,7 +194,7 @@
                     url : "cstmCars",
                     type : "GET",
 //                    Model : "POST",
-                    dataType: "json",
+//                    dataType: "json",
                     contentType: "json",
             		success : function(data) {
             		    
@@ -205,9 +205,9 @@
             		    $('#tableId').DataTable({
             		     data : search,
             			columns : [
-            			    {'data' : "id"},
-            			    {'data' : "title"},
-            			    {'data' : "workoutType"},
+            			    {'data' : 'id'},
+            			    {'data' : 'title'},
+            			    {'data' : 'workoutType'},
             			    {'data': 'describe'},
             			    {'data' : 'Email'},
             			    {'data': 'Dealer'}
