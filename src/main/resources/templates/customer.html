@@ -175,9 +175,8 @@
 //              arr.push("<c:out value="${listItem.param2}" />");
 //            
 //              listForJavascript.push(arr);
-//            </c:forEach>            
-           $(document).ready(function() {
-                var search = {
+//            </c:forEach>
+var search = {
                           "id" : 1,
                           "title" :"Title",
                           "workoutType" :"Ven",
@@ -185,7 +184,9 @@
                           "Email" :"email@",
                           "Dealer" :"dealer"
                        };
-                       alert(111+ search);
+                       alert(111+ search);            
+           $(document).ready(function() {
+                
                 alert(222+ search['Dealer']);
 //                alert("sample:" + obj);
 //               var car = $('#person').val();
@@ -198,11 +199,9 @@
                     data: search,
             		success : function(data) {
             		     alert(333+ data['Dealer']);
-            		     var mid = JSON.stringify(search);
+            		     var mid = JSON.stringify(search);//这个是对的 但是是string
             		      alert("mid"+ mid);
-            		    var yourval = jQuery.parseJSON(mid);
-            		    
-            		    alert(2+ yourval);
+            
             		    alert(data);
             		    $('#tableId').DataTable({
             		     
