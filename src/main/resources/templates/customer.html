@@ -163,7 +163,6 @@
             }
     //      var data = eval(document.getElementById('datecar')).value;
           
-              = parseJSON(personJson.val());
             var search = {
                           "id" : 1,
                           "title" :"Title",
@@ -182,12 +181,10 @@
 //                    dataType: "text",
                     contentType: "json",
                     data: JSON.stringify(search),
-            		success : function(car) {
-//            		     data = $.parseJSON(data);
-                               
-            		    alert(try1);
+            		success : function(data) {
+            		    alert(car);
             		    $('#tableId').DataTable({
-                        
+            		     
             			columns : [
             			    {"data" : "id"},
             			    {"data" : "title"},
@@ -204,8 +201,9 @@
                         alert(textStatus); // paser error;
                     },
             	  });
+            	   alert(car);
               });
-                alert(try1);
+           
 
         </script>
         
