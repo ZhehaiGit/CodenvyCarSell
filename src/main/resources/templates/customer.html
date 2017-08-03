@@ -160,10 +160,11 @@
            $(document).ready(function() {
                 $.ajax({
                    
-                    url : "cstmCars.json",
-                    Method : "POST",
-//                    data: eval(document.getElementById('datecar')).value,
+//                    url : "cstmCars.json",
+//                    Method : "POST",
+                    data: eval(document.getElementById('datecar')).value,
 //                    data: data,
+                    
                     contentType:"json",
                     dataType: "JSON",
             		success : function(data) {
