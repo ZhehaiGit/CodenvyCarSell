@@ -162,13 +162,13 @@
                 $.ajax({
                     url : "cstmCars.json",
                     Method : "GET",
-//                    dataType: "json",
-                   contentType: "json",  
+                    dataType: "text",
+//                   contentType: "json",  
             		success : function(data) {
             		     var json = $.parseJSON(data);
-            		    alert(data),
+            		    alert(json),
             		    $('#tableId').DataTable({
-            			data: data,
+            			data: json,
             			columns : [
             			    {data : 'id'},
             			    {data : 'title'},
