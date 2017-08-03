@@ -157,19 +157,27 @@
         
         <script>
 //            var data = eval(document.getElementById('datecar')).value;
-            var data = 
+            var search = {
+                          "id" : "Id",
+                          "title" :"Title",
+                          "workoutType" :"WorkoutType",
+                          "describe" :"Describe",
+                          "Email" :"email",
+                          "Dealer" :"dealer"
+                       } 
            $(document).ready(function() {
                 $.ajax({
-                    url : "cstmCars.json",
-                    Method : "GET",
+                    url : "cstmCars",
+                    Method : "POST",
 //                    dataType: "text",
-                    contentType: "json",  
+                    contentType: "json",
+                    data: JSON.stringify(search),
             		success : function(data) {
 //            		     var json = $.parseJSON(data);
                                
             		    alert(data),
             		    $('#tableId').DataTable({
-                        data: JSON.stringify(data),
+                        
             			columns : [
             			    {"data" : "id"},
             			    {"data" : "title"},
