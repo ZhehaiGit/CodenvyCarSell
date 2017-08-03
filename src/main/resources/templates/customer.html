@@ -165,7 +165,8 @@
 //                    dataType: "json",
                    contentType: "json",  
             		success : function(data) {
-            		    alert(1+data),
+            		     var json = $.parseJSON(data);
+            		    alert(data),
             		    $('#tableId').DataTable({
             			data: data,
             			columns : [
