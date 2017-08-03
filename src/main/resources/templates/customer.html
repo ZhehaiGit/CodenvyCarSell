@@ -184,7 +184,7 @@ var search = {
                           "Email" :"email@",
                           "Dealer" :"dealer"
                        };
-                       alert(111+ search);            
+                                 
            $(document).ready(function() {
                 
                 alert(222+ search['Dealer']);
@@ -199,7 +199,7 @@ var search = {
                     data: search,
             		success : function(data) {
             		     alert(333+ data['Dealer']);
-            		     var mid = JSON.stringify(search);//这个是对的 但是是string
+            		     var mid = JSON.stringify(data);//这个是对的 但是是string
             		      alert("mid"+ mid);
             
             		    alert(data);
