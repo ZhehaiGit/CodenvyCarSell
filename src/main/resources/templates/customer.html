@@ -174,7 +174,7 @@
                     contentType: "json",
                     data: JSON.stringify(search),
             		success : function(data) {
-//            		     var json = $.parseJSON(data);
+            		     data = $.parseJSON(data);
                                
             		    alert(data),
             		    $('#tableId').DataTable({
