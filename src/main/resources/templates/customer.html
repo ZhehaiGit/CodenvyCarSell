@@ -185,10 +185,6 @@
                           "Email" :"email@",
                           "Dealer" :"dealer"
                        };
-                var cur_ques_details ={"ques_id":15,"ques_title":"jlkjlkjlkjljl"};
-                    alert(cur_ques_details['ques_title']);
-//               var carValue =  $('#tableId');
-//                document.write("1:" + document.getElementById("tableId").value);
                 alert(222+ search['Dealer']);
                  alert(222+ search);
 //                alert("sample:" + obj);
@@ -197,9 +193,9 @@
                     url : "cstmCars",
                     type : "GET",
 //                    Model : "POST",
-                    dataType: "text",
+//                    dataType: "text",
                     contentType: "json",
-                    data: JSON.stringify(car),
+                    data: search,
             		success : function(data) {
             		    var yourval = jQuery.parseJSON(JSON.stringify(search));
             		    
