@@ -194,16 +194,16 @@ var search = {
                     url : "cstmCars",
                     type : "GET",
 //                    Model : "POST",
-//                    dataType: "text",
+                    dataType: "json",
                     contentType: "json",
             		success : function(data) {
             		    
-            		      data = JSON.stringify(search);//这个是对的 但是是string
+            		      var search = JSON.stringify(search);//这个是对的 但是是string
             		     alert("mid"+ data);
             
             		   
             		    $('#tableId').DataTable({
-            		     
+            		     data : search
             			columns : [
             			    {"data" : "id"},
             			    {"data" : "title"},
