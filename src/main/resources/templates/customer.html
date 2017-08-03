@@ -198,7 +198,9 @@
                     data: search,
             		success : function(data) {
             		     alert(333+ data['Dealer']);
-            		    var yourval = jQuery.parseJSON(JSON.stringify(search));
+            		     var mid = JSON.stringify(search);
+            		      alert("mid"+ mid);
+            		    var yourval = jQuery.parseJSON(mid);
             		    
             		    alert(2+ yourval);
             		    alert(data);
