@@ -198,19 +198,19 @@
                     contentType: "json",
             		success : function(data) {
             		    
-            		      var search = JSON.stringify(search);//这个是对的 但是是string
+            		     var search = JSON.stringify(search);//这个是对的 但是是string
             		     alert("mid"+ search);
             
             		   
             		    $('#tableId').DataTable({
             		     data : search,
             			columns : [
-            			    {"data" : "id"},
-            			    {"data" : "title"},
-            			    {"data" : "workoutType"},
-            			    {data : 'describe'},
+            			    {'data' : "id"},
+            			    {'data' : "title"},
+            			    {'data' : "workoutType"},
+            			    {'data': 'describe'},
             			    {'data' : 'Email'},
-            			    {'mid' : 'Dealer'}
+            			    {'data': 'Dealer'}
             			     ]
         			     });
             	       },
