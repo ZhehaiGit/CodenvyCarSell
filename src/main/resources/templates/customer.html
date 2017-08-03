@@ -173,7 +173,7 @@
                        };
            $(document).ready(function() {
                var carValue =  $('#tableId');
-               var car = window.JSON.parse(carValue.val());
+               var car = carValue.val();
                 $.ajax({
                     url : "cstmCars",
                     type : "GET",
