@@ -118,7 +118,7 @@
         
         
         <div class = "table-responsive">
-            <table class = "table table-bordered table-striped" id="tableId">
+            <table class = "table table-bordered table-striped" id="tableId" value="${cars}">
                 <thead>
                     <tr>
                         <th width="5%" class = "text-mid">ID</th>
@@ -157,6 +157,7 @@
         
         <script>
 //            var data = eval(document.getElementById('datecar')).value;
+            var try1 =  $('#tableId');
             var search = {
                           "id" : 1,
                           "title" :"Title",
@@ -176,7 +177,7 @@
             		success : function(search) {
 //            		     data = $.parseJSON(data);
                                
-            		    alert(search),
+            		    alert(try1);
             		    $('#tableId').DataTable({
                         
             			columns : [
@@ -196,7 +197,7 @@
                     },
             	  });
               });
-
+            alert(try1);
 
         </script>
         
