@@ -197,21 +197,21 @@ var search = {
 //                    dataType: "text",
                     contentType: "json",
                     data: search,
-            		success : function(data) {
-            		     alert(333+ data['Dealer']);
-            		     var mid = JSON.stringify(data);//这个是对的 但是是string
-            		      alert("mid"+ mid);
+            		success : function(search) {
+            		    
+            		     var mid = JSON.stringify(search);//这个是对的 但是是string
+            		     alert("mid"+ mid);
             
-            		    alert(data);
+            		   
             		    $('#tableId').DataTable({
             		     
             			columns : [
-            			    {"data" : "id"},
-            			    {"data" : "title"},
-            			    {"data" : "workoutType"},
+            			    {"search" : "id"},
+            			    {"search" : "title"},
+            			    {"search" : "workoutType"},
             			    {data : 'describe'},
-            			    {'data' : 'Email'},
-            			    {'data' : 'Dealer'}
+            			    {'search' : 'Email'},
+            			    {'search' : 'Dealer'}
             			     ]
         			     });
             	       },
