@@ -172,7 +172,7 @@
                           "Email" :"email@",
                           "Dealer" :"dealer"
                        };
-            var  obj = JSON.parse(search);   
+//            var  obj = JSON.parse(search);   
                        
 //           var listForJavascript = [];
 //            <c:forEach items="${cars}" var="listItem">
@@ -186,7 +186,8 @@
            $(document).ready(function() {
 //               var carValue =  $('#tableId');
                 document.write("1:" + document.getElementById("tableId").value);
-                alert("sample:" + obj);
+                document.write(search['sample']);
+//                alert("sample:" + obj);
                var car = $('#person').val();
                 $.ajax({
                     url : "cstmCars",
