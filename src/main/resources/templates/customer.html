@@ -164,7 +164,7 @@
 //                    data: eval(document.getElementById('datecar')).value,
                     contentType:"json",  
             		success : function(data) {
-            		    window.alert(data); 
+            		    window.alert(parseJSON(data)); 
             		    $('#tableId').DataTable({
             			data: data,
             			columns : [
