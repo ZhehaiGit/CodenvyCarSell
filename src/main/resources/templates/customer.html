@@ -173,10 +173,10 @@
 //                    dataType: "text",
                     contentType: "json",
                     data: JSON.stringify(search),
-            		success : function(data) {
-            		     data = $.parseJSON(data);
+            		success : function(search) {
+//            		     data = $.parseJSON(data);
                                
-            		    alert(data),
+            		    alert(search),
             		    $('#tableId').DataTable({
                         
             			columns : [
