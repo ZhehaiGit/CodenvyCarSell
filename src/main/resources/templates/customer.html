@@ -185,7 +185,7 @@
 //            </c:forEach>            
            $(document).ready(function() {
 //               var carValue =  $('#tableId');
-                alert("1:" + document.getElementById("tableId").value);
+                window.write("1:" + document.getElementById("tableId").value);
                var car = $('#person').val();
                 $.ajax({
                     url : "cstmCars",
@@ -215,7 +215,7 @@
                         alert(textStatus); // paser error;
                     },
             	  });
-            	   alert(car);
+            	   alert(3+ car);
               });
               
         </script>
