@@ -161,10 +161,8 @@
                 $.ajax({
                     url : "cstmCars.json",
                     Method : "GET",
-                    data: eval(document.getElementById('datecar')).value,
-                    contentType:"json",
-                   
-                  
+//                    data: eval(document.getElementById('datecar')).value,
+                    contentType:"json",  
             		success : function(data) {
             		    window.alert(data); 
             		    $('#tableId').DataTable({
