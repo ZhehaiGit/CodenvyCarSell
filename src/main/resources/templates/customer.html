@@ -163,7 +163,7 @@
                     url : "cstmCars.json",
                     Method : "GET",
                     dataType: "json",
-                    contentType:"json",  
+                   contentType: "application/json; charset=utf-8",  
             		success : function(data) {
             		    alert(1+data),
             		    $('#tableId').DataTable({
