@@ -156,7 +156,13 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
         <script>
-            var data = eval(document.getElementById('datecar')).value;
+//            var data = eval(document.getElementById('datecar')).value;
+            var data = [
+    ["UpdateBootProfile","PASS","00:00:00",[]] ,
+    ["NRB Boot","PASS","00:00:50.5000000",[{"TestName":"TOTAL_TURN_ON_TIME","Result":"PASS","Value":"50.5","LowerLimit":"NaN","UpperLimit":"NaN","ComparisonType":"nctLOG","Units":"SECONDS"}]] ,
+    ["NvMgrCommit","PASS","00:00:00",[]] ,
+    ["SyncNvToEFS","PASS","00:00:01.2500000",[]]
+];
            $(document).ready(function() {
                 $.ajax({
                     url : "cstmCars.json",
