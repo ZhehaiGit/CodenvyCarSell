@@ -156,8 +156,14 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
         <script>
-//            var data = eval(document.getElementById('datecar')).value;
-            var try1 =  $('#tableId');
+        
+        
+            function parseJSON(data) {
+                    return window.JSON && window.JSON.parse ? window.JSON.parse( data ) : (new Function("return " + data))(); 
+            }
+    //      var data = eval(document.getElementById('datecar')).value;
+          
+              = parseJSON(personJson.val());
             var search = {
                           "id" : 1,
                           "title" :"Title",
@@ -167,6 +173,8 @@
                           "Dealer" :"dealer"
                        };
            $(document).ready(function() {
+               var carValue =  $('#tableId');
+               var car = parseJSON(carValue.val());
                 $.ajax({
                     url : "cstmCars",
                     type : "GET",
@@ -174,7 +182,7 @@
 //                    dataType: "text",
                     contentType: "json",
                     data: JSON.stringify(search),
-            		success : function(search) {
+            		success : function(car) {
 //            		     data = $.parseJSON(data);
                                
             		    alert(try1);
@@ -197,7 +205,7 @@
                     },
             	  });
               });
-            alert(try1);
+                alert(try1);
 
         </script>
         
