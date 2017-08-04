@@ -268,7 +268,18 @@
                             window.open("https://car-sells.herokuapp.com" + "/carInfo/" + localId, 'carInfo','height=485,width=700,left='+x+',top='+y);
                 
                         });
-        			     
+        			    var $rows = $('#tableId tbody tr');
+                        $('#search').keyup(function() {
+                            
+                            var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                                reg = RegExp(val, 'i'),
+                                text;
+                            
+                            $rows.show().filter(function() {
+                                text = $(this).text().replace(/\s+/g, ' ');
+                                return !reg.test(text);
+                            }).hide();
+                        });
             	       },
             	    error: function(XMLHttpRequest, textStatus, errorThrown) {  //#3这个error函数调试时非常有用，如果解析不正确，将会弹出错误框
                         alert(XMLHttpRequest.status);
@@ -301,18 +312,18 @@
         </script>
         
         <script>
-           var $rows = $('#tableId tbody tr');
-                $('#search').keyup(function() {
-                    
-                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-                        reg = RegExp(val, 'i'),
-                        text;
-                    
-                    $rows.show().filter(function() {
-                        text = $(this).text().replace(/\s+/g, ' ');
-                        return !reg.test(text);
-                    }).hide();
-                });
+//           var $rows = $('#tableId tbody tr');
+//                $('#search').keyup(function() {
+//                    
+//                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+//                        reg = RegExp(val, 'i'),
+//                        text;
+//                    
+//                    $rows.show().filter(function() {
+//                        text = $(this).text().replace(/\s+/g, ' ');
+//                        return !reg.test(text);
+//                    }).hide();
+//                });
         </script>
         <script>
 //             jQuery(document).ready(function($) {
