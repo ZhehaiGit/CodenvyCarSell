@@ -90,6 +90,11 @@ public class CarsController {
 //        return new ModelAndView("customer", "customer", cstmRepository.findByUserName(username).get(0));
         return new ModelAndView("cars", "cars", repository.findAll());  
     }
+    @RequestMapping(value = "/getCarData", method = RequestMethod.GET)
+    public  @ResponseBody List<Car> getAllProfiles( ModelMap model ) {
+    	List<Car> cars = repository.findAll();
+    	return cars;
+    }
     
     
 @RequestMapping(value = "carInfo/{id}")

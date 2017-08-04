@@ -199,15 +199,15 @@
 //                alert("sample:" + obj);
 //               var car = $('#person').val();
                 $.ajax({
-                    url : "cstmCars",
+                    url : "getCarData",
                     type : "GET",
 //                    Model : "POST",
 //                    dataType: "json",
                     contentType: "json",
             		success : function(data) {
-            		    
-            		     var mid = JSON.stringify(search);//这个是对的 但是是string
-            		     alert("mid"+ mid);
+            		    alert("try1"+ data);
+            		     var mid = JSON.stringify(data);//这个是对的 但是是string
+            		     alert("try2"+ mid);
             
             		   
             		    $('#tableId').DataTable({
