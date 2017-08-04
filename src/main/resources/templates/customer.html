@@ -121,8 +121,9 @@
             <table class = "table table-bordered table-striped" id="tableId" value="${cars}">
                 <thead>
                     <tr>
+                        <th width="5%" class = "text-mid">#</th>
                         <th width="5%" class = "text-mid">ID</th>
-                        <th class ="text-mid" style="display:none;"></th>
+                        <!--th class ="text-mid" style="display:none;"></th-->
                         <th width="10%" class = "text-mid">Model</th>
                         <th width="8%" class = "text-mid">Type</th>
                         <th class = "text-mid">Describe</th>
@@ -209,7 +210,7 @@
             		     data : data,
             		     
             		     columns: [
-            		         
+            		        { "data": null },
                             { "data": "id" },
                             { "data": "title" },
                             { "data": "workoutType" },
@@ -229,7 +230,7 @@
                                 
                                 });
 
-}
+                        }
     			
         			     });
             	       },
