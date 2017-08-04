@@ -194,7 +194,7 @@
                           }
                           ];
                                  
-           var table = $(document).ready(function() {
+            $(document).ready(function() {
                 $.ajax({
                     url : "getCarData",
                     type : "GET",
@@ -206,7 +206,7 @@
 //            		     alert(data);
                         
             		   
-            		    $('#tableId').DataTable({
+            		    var table = $('#tableId').DataTable({
             		     data : data,
             		     columns: [
             		        { "data": null },
@@ -241,6 +241,7 @@
 //                            }); 
     			
         			     });
+//        			     var table = $('#example').DataTable();
         			     $('#tableId tbody').on( 'click', 'tr', function () {
                                alert("begin");
                             alert( table.row( this ).column(2).innerhtml);
