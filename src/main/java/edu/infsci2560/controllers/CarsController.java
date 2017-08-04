@@ -10,6 +10,7 @@ import edu.infsci2560.repositories.CarRepository;
 import edu.infsci2560.repositories.CustomerRepository;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -92,7 +93,7 @@ public class CarsController {
     }
     @RequestMapping(value = "/getCarData", method = RequestMethod.GET)
     public  @ResponseBody List<Car> getCarData() {
-//    	List<Car> cars = Lists.newArrayList(repository.findAll());
+    	List<Car> cars = Lists.newArrayList(repository.findAll());
     	return repository.findAll();
     }
     
