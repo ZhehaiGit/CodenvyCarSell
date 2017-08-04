@@ -247,10 +247,11 @@
                            
                             var trid = table.row(this).data();
                             var js = JSON.stringify(trid);
-                            alert(js.id);
+                            var localId = trid.id;
+                            alert([table.row(this).data()], ["id"]);
                             var x = screen.width/2 - 700/2;
                             var y = screen.height/2 - 450/2;
-                            window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
+                            window.open("https://car-sells.herokuapp.com" + "/carInfo/" + loaclId, 'carInfo','height=485,width=700,left='+x+',top='+y);
                 
                         });
         			     
