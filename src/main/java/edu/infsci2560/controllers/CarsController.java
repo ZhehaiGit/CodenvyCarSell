@@ -91,8 +91,8 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());  
     }
     @RequestMapping(value = "/getCarData", method = RequestMethod.GET)
-    public  @ResponseBody List<Car> getAllProfiles( ModelMap model ) {
-    	List<Car> cars = repository.findAll();
+    public  @ResponseBody List<Car> getCarData() {
+    	List<Car> cars = Lists.newArrayList(repository.findAll());
     	return cars;
     }
     
