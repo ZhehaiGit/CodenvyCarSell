@@ -205,20 +205,20 @@
 //                    dataType: "json",
                     contentType: "json",
             		success : function(data) {
-            		    alert("try1"+ data);
-            		     var mid = JSON.stringify(data);//这个是对的 但是是string
-            		     alert("try2"+ mid);
-            
+//            		    alert("try1"+ data);
+            		     data = JSON.stringify(data);//这个是对的 但是是string
+            		     alert("try2"+ data);
+                        
             		   
             		    $('#tableId').DataTable({
-            		     data : mid,
-            		     "columns": [
-                            { "mid": "id" },
-                            { "mid": "title" },
-                            { "mid": "workoutType" },
-                            { "mid": "describe" },
-                            { "mid": "Email" },
-                            { "mid": "Dealer" }
+            		     data : data,
+            		     columns: [
+                            { "data": "id" },
+                            { "data": "title" },
+                            { "data": "workoutType" },
+                            { "data": "describe" },
+                            { "data": "Email" },
+                            { "data": "Dealer" }
                         ]
 //            			columns : [
 //            			    {'mid' : 'id'},
