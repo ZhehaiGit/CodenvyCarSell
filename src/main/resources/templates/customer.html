@@ -288,8 +288,9 @@
         <script>
              jQuery(document).ready(function($) {
             $(document).on('click', '#tableId tbody tr', function (e) {
-                console.log( table.row( this ).data() );
-//                e.stopPropagation();
+                e.stopPropagation();
+                alert(table.row( this ).data());
+//                
 //                var $this = $(this);
 //                var trid = $this.closest('tr').find("#eid").text();
 //                var x = screen.width/2 - 700/2;
