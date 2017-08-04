@@ -122,7 +122,7 @@
                 <thead>
                     <tr>
                         <th width="5%" class = "text-mid">ID</th>
-                        <!--th class ="text-mid" style="display:none;"></th-->
+                        <th class ="text-mid" style="display:none;"></th>
                         <th width="10%" class = "text-mid">Model</th>
                         <th width="8%" class = "text-mid">Type</th>
                         <th class = "text-mid">Describe</th>
@@ -194,40 +194,43 @@
                           ];
                                  
            $(document).ready(function() {
-                
-                alert(222+ search['Dealer']);
-//                alert("sample:" + obj);
-//               var car = $('#person').val();
                 $.ajax({
                     url : "getCarData",
                     type : "GET",
-//                    Model : "POST",
                     dataType: "json",
                     contentType: "json",
             		success : function(data) {
 //            		    alert("try1"+ data);
 //            		     data = "cars=" +JSON.stringify(data);//这个是对的 但是是string
-            		     alert(data);
+//            		     alert(data);
                         
             		   
             		    $('#tableId').DataTable({
             		     data : data,
+            		     
             		     columns: [
+            		         
                             { "data": "id" },
                             { "data": "title" },
                             { "data": "workoutType" },
                             { "data": "describe" },
                             { "data": "email" },
                             { "data": "dealer" }
-                        ]
-//            			columns : [
-//            			    {'mid' : 'id'},
-//            			    {'mid' : 'title'},
-//            			    {'mid' : 'workoutType'},
-//            			    {'mid': 'describe'},
-//            			    {'mid' : 'Email'},
-//            			    {'mid': 'Dealer'}
-//            			     ]
+                        ],
+                        drawCallback : function() { // 序号列
+
+                                var api = this.api();
+                                
+                                var startIndex = api.context[0]._iDisplayStart; // 获取本页开始的条数
+                                
+                                api.column(0).nodes().each(function(cell, i) {
+                                
+                                cell.innerHTML = startIndex + i + 1;
+                                
+                                });
+
+}
+    			
         			     });
             	       },
             	    error: function(XMLHttpRequest, textStatus, errorThrown) {  //#3这个error函数调试时非常有用，如果解析不正确，将会弹出错误框
