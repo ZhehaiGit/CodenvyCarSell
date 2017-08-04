@@ -92,9 +92,9 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findAll());  
     }
     @RequestMapping(value = "/getCarData", method = RequestMethod.GET)
-    public  @ResponseBody List<Car> getCarData() {
-    	List<Car> cars = Lists.newArrayList(repository.findAll());
-    	return cars;
+    public  @ResponseBody Object getCarData() {
+//    	List<Car> cars = Lists.newArrayList(repository.findAll());
+    	return repository.findAll();
     }
     
     
