@@ -244,7 +244,9 @@
 //        			     var table = $('#example').DataTable();
         			     $('#tableId tbody').on( 'click', 'tr', function () {
                                alert("begin");
-                            alert( table.row( this ).column(1).text());
+                           
+                            var trid = table.row( this ).column(1).innerhtml;
+                             alert( trid);
                         });
         			     
             	       },
@@ -252,6 +254,10 @@
                         alert(XMLHttpRequest.status);
                         alert(XMLHttpRequest.readyState);
                         alert(textStatus); // paser error;
+                        var x = screen.width/2 - 700/2;
+                        var y = screen.height/2 - 450/2;
+                        window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
+                
                     },
             	  });
             	 
