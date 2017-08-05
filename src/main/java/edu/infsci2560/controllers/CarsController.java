@@ -97,6 +97,11 @@ public class CarsController {
 //    	List<Car> cars = Lists.newArrayList(repository.findAll());
     	return repository.findAll();
     }
+     @RequestMapping(value = "/public/getCarData", method = RequestMethod.GET)
+    public  @ResponseBody Object getCarData() {
+//    	List<Car> cars = Lists.newArrayList(repository.findAll());
+    	return repository.findAll();
+    }
     
     
 @RequestMapping(value = "carInfo/{id}")
