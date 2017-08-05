@@ -41,6 +41,7 @@ public class Car {
 //    protected String price;
 //    protected String location;
 //    protected String mileage;
+    @column(length=1000) 
     protected String describe;
     protected String Email;
     protected String Dealer;
@@ -84,7 +85,7 @@ public class Car {
     public void setDealer(String dealer){
         this.Dealer = dealer;
     }
-    @Column(length = 1000)
+//    @Column(length = 1000)
     public String getDescribe(){
         return describe;
     }
