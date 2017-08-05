@@ -91,7 +91,7 @@ public class FullStackWebApplication {
                                 "Anne"));
         repository.save(new Car(12L, "2011 Chevrolet Camaro SS", 
                                 WorkoutType.Coupe, 
-                                "CARFAX BuyBack Guarantee got you covered. A Chevrolet with as few miles as this one is a rare find. This Chevrolet Camaro 1SS was gently driven and it shows. High-performance tires are another option found on this vehicle. A vehicle as well-maintained as this Chevrolet Camaro almost doesn't need a warranty, but you rest easier knowing it comes covered with the Chevrolet factory warranty. The interior of this Chevrolet Camaro 1SS has been through meticulous inspection and could almost pass for a brand new vehicle. Take this car on a test drive today, only at Auto Palace."
+                                "CARFAX BuyBack Guarantee got you covered. A Chevrolet with as few miles as this one is a rare find. This Chevrolet Camaro 1SS was gently driven and it shows. High-performance tires are another option found on this vehicle. A vehicle as well-maintained as this Chevrolet Camaro almost doesn't need a warranty, but you rest easier knowing it comes covered with the Chevrolet factory warranty. The interior of this Chevrolet Camaro 1SS has been through meticulous inspection and could almost pass for a brand new vehicle. Take this car on a test drive today, only at Auto Palace.",
                                 "AdamShul@gmail.com", 
                                 "Adam"));
         repository.save(new Car(13L, "2006 Buick Terraza 4dr CXL AWD", 
