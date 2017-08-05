@@ -34,6 +34,15 @@
         font-size: 100%;
         font-family:"Times New Roman",Georgia,Serif;
     }
+    .label1 {
+        text-align: center; 
+        font-weight:normal;
+    }
+    .labelS {
+        text-align: left; 
+        font-weight:normal;
+        width: 500px;
+    }
     </style>
  
     <body>
@@ -43,30 +52,30 @@
                 <div class="span6">
                     
                     <div class="controls controls-row pt">         
-                    <label class = "col-xs-2" for="model ">Model:</label>
-          			<label style = "text-align: center; font-weight:normal;" class = "col-xs-3 pull-left fSize" type="text"  data-th-text="${car.title}"></label>
+                    <label  class = "col-xs-2 label1" for="model ">Model:</label>
+          			<label style = "text-align: left; font-weight:normal;" class = "col-xs-8 pull-left fSize" type="text"  data-th-text="${car.title}"></label>
           			</div>
                     <br/>
           			<div class="controls controls-row pt">     
-                    <label class = "col-xs-2" for="Type">Type:</label>
-                        <label style = "text-align: center; font-weight:normal;" class = "col-xs-3 pull-left fSize" type="text"  data-th-text="${car.workoutType}" ></label>
+                    <label  class = "col-xs-2 label1" for="Type">Type:</label>
+                        <label style = "text-align: left; font-weight:normal;" class = "col-xs-8 pull-left fSize" type="text"  data-th-text="${car.workoutType}" ></label>
                     </div>
                     <br/>
 
                     <div class="controls controls-row pt">     
-                    <label class = "col-xs-2" for="dealer">Dealer:</label>
-                        <label style = "text-align: center;font-weight:normal;"  class = "col-xs-3 pull-left fSize" type="text" data-th-text="${car.Dealer}" ></label>
+                    <label class = "col-xs-2 label1" for="dealer">Dealer:</label>
+                        <label style = "text-align: left;font-weight:normal;"  class = "col-xs-8 pull-left fSize" type="text" data-th-text="${car.Dealer}" ></label>
                     </div>
                     <br/>
 
                     <div class="controls controls-row pt">     
-                    <label class = "col-xs-2" for="email">Email:</label>
-                        <label  style = "text-align: center;font-weight:normal;" class = "col-xs-3 pull-left fSize" type="email" data-th-text="${car.Email}" ></label>
+                    <label class = "col-xs-2 label1" for="email">Email:</label>
+                        <label  style = "text-align: left;font-weight:normal;" class = "col-xs-8 pull-left fSize" type="email" data-th-text="${car.Email}" ></label>
                     </div>
                     <br/>
 
                      <div class="controls controls-row pt">
-                    	<label class = "col-xs-2" for="describe">Describe:</label>
+                    	<label class = "col-xs-2 label1" for="describe">Describe:</label>
                     	
                     </div>
                     
