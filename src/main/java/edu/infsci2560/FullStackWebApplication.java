@@ -32,6 +32,7 @@ public class FullStackWebApplication {
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
 
         CarRepository repository = ctx.getBean(CarRepository.class);
+        
         repository.save(new Car(1L, "2013 Porsche 911", 
                                 WorkoutType.Coupe, 
                                 "This Certified 2013 Porsche 911 is a brilliant example of quality meets reliability. This vehicle has been thoroughly inspected and has an assured quality that you won't find with other vehicles. If you are looking for a pre-owned vehicle that looks brand-new, look no further than this Platinum Silver Metallic Porsche 911. In addition to unbelievable options, this vehicle comes equipped with a factory warranty. You will never have to worry about keeping up with traffic in this Porsche 911 as it packs a beast under the hood. This Porsche 911 offers the most up-to-date navigation system available so you'll always know the most efficient route to where you are going. We are proud to offer this 2013 Porsche that truly a must-have. This vehicle's wheels are one of the many attractive features that this 911 has to offer. Take this car on a test drive today, only at Auto Palace.",
