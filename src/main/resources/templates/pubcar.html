@@ -28,6 +28,12 @@
     .nav-tabs {
         margin-bottom:0;
     }
+    .sLabel {
+        vertical-align: middle;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size:140%;
+        width: 200px;
+    }
     </style>
 
     <body>
@@ -78,9 +84,7 @@
               </ul>
               <form class="navbar-form navbar-left">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search"/>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                   <label class = "sLabel">Enjoy The CarPool</label>
               </form>
               <form class="navbar-form navbar-right" data-th-action="@{/logout}" method="post">
                     <button type="submit" class="btn btn-default">Sign In</button>
@@ -88,97 +92,27 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        <div>
-            <table class = "table table-bordered table-striped table-hover">
-                
-                <tr>
-                    <th class = "text-mid">#</th>
-                    <th class = "text-mid">Model</th>
-                    <th class = "text-mid">Type</th>
-                    <th class = "text-mid">Describe</th>
-                </tr>                
-                <!--tr data-th-each="car : ${cars}">
-                    <td data-th-text="${car.id}"></td>
-                    <td data-th-text="${car.title}"></td>
-                    <td data-th-text="${car.workoutType}"></td>
-                    <td data-th-text="${car.describe}"></td>
-                </tr-->
-                 <tr data-th-each="car : ${cars}">
-                    <td></td>
-                    <td data-th-text="${car.title}"></td>
-                    <td data-th-text="${car.workoutType}"></td>
-                    <td data-th-text="${car.describe}"></td>
-                </tr>
+        <div class = "table-responsive">
+            <table class = "table table-bordered table-striped" id="tableId" value="${cars}">
+                <thead>
+                    <tr>
+                        <th width="5%" class = "text-mid">#</th>
+                        <th width="5%" class = "text-mid">ID</th>
+                        <!--th class ="text-mid" style="display:none;"></th-->
+                        <th width="10%" class = "text-mid">Model</th>
+                        <th width="8%" class = "text-mid">Type</th>
+                        <th class = "text-mid">Describe</th>
+                        <th width="15%" class = "text-mid">Connect</th>
+                        <th width="8%" class = "text-mid">Dealer</th>
+                    </tr>   
+                </thead>
             </table>
           </div>
-        <hr />
-        <!--div class="container">
-        	<div class="row">
-        		<div class="span6">
-                    <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-                        <div class="controls controls-row">
-                            <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <select name="workoutType" class="selectpicker">
-                              <option data-hidden="true">Select Car Type</option>
-                              <option value="Unknown">Unknown</option>
-                              <option value="MicroCar">MicroCar</option>
-                              <option value="NormalCar">NormalCar</option>
-                              <option value="SportsCar">SportsCar</option>
-                              <option value="Van">Van</option>
-                              <option value="SUV">SUV</option>
-                            </select>
-                        </div>
-                        <div class="controls">
-                            <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5"></textarea>
-                        </div>
-                          
-                        <div class="controls">
-                            <button id="contact-submit" type="submit" value="Add Car" class="btn btn-primary input-medium pull-down">Send</button>
-                        </div>
-                    </form>
-                </div>
-        	</div>
-        </div>
-        Remove Car<br />
-        <form data-th-action="@{/cars/delet}" name="deletCarForm" method="post">
-            <input type="number" name="id" class="form-control" placeholder="ID"/>
-            <input id="contact-submit" type="submit" value="delet" class="btn btn-primary"></input>
-        </form-->
+        <hr />   
         
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
-        <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-          <div class="form-group">
-            <label for="carModel">Car Model</label>
-            <input type="text" class="form-control" name="title" id="carModel" placeholder="Car Model"/>
-          </div>
-          <div class="form-group">
-            Type:<br />
-            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
-            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
-            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
-            <input type="radio" name="workoutType" value="Van" /> Van<br />
-            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
-            <input type="submit" value="Add Workout"/>
-          </div>
-            Describe:<br />
-            <textarea class="form-control" rows="3" name="describe" placeholder="Describe your car"></textarea>
-            
-          <button type="submit" class="btn btn-default"  >Submit</button>
-        </form-->
-        <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-            Model: <input type="text" name="title" /><br />
-            Type:<br />
-            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
-            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
-            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
-            <input type="radio" name="workoutType" value="Van" /> Van<br />
-            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
-            <input type="submit" value="Add Workout"/>
-        </form-->
-        
-        <hr />       
+     
         <!-- form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form-->
@@ -190,20 +124,85 @@
                 $('select[name=workoutType]').val(1);
                 $('.selectpicker').selectpicker('refresh');
         </script>
-        <!--script>
-            function runningFormatter(value, row, index) {
-                index++;
-                return index;
-            }
-        </script-->
-       <script>
-            var addSerialNumber = function () {
-            var i = 1;
-                $('table tr').each(function(index) {
-                    $(this).find('td:nth-child(1)').html(index+0);
-                });
-            };
-            addSerialNumber();
-        </script>
+         <script>
+      $(document).ready(function() {
+                $.ajax({
+                    url : "getCarData",
+                    type : "GET",
+                    dataType: "json",
+                    contentType: "json",
+            		success : function(data) {
+//            		     data = "cars=" +JSON.stringify(data);//这个是对的 但是是string
+            		    var table = $('#tableId').DataTable({
+            		     data : data,
+            		     columns: [
+            		        { "data": null },
+                            { "data": "id" },
+                            { "data": "title" },
+                            { "data": "workoutType",
+                             "ordering": false},
+                            { "data": "describe" },
+                            { "data": "email" },
+                            { "data": "dealer" }
+                        ], 
+                        "columnDefs": [ {
+                             "targets": 0,
+                            "orderable": false,
+                            "searchable": false
+                            },
+                            {
+                            "targets": 1,
+                            "visible": false,
+                            "orderable": false,
+                            "searchable": false
+                            },
+                            {
+                            "targets": 4,
+                            "orderable": false,
+                            "searchable": false
+                            },
+                            {
+                            "targets": 5,
+                            "orderable": false
+                            } ,
+                            {
+                            "targets": 6,
+                            "orderable": false
+                            } ],
+                        drawCallback : function() { // 序号列
+
+                                var api = this.api();
+                                
+                                var startIndex = api.context[0]._iDisplayStart; // 获取本页开始的条数
+                                
+                                api.column(0).nodes().each(function(cell, i) {
+                                
+                                cell.innerHTML =  i + 1;
+                                
+                                });
+
+                        },
+                        
+        			     });
+        			     $('#tableId tbody').on( 'click', 'tr', function () {
+                            var trid = table.row(this).data();
+                            var localId = trid.id;
+                            var x = screen.width/2 - 700/2;
+                            var y = screen.height/2 - 450/2;
+                            window.open("https://car-sells.herokuapp.com" + "/carInfo/" + localId, 'carInfo','height=485,width=700,left='+x+',top='+y);
+                
+                        });
+            	       },
+            	    error: function(XMLHttpRequest, textStatus, errorThrown) {  //#3这个error函数调试时非常有用，如果解析不正确，将会弹出错误框
+                        alert(XMLHttpRequest.status);
+                        alert(XMLHttpRequest.readyState);
+                        alert(textStatus); // paser error;
+                        
+                    },
+            	  });
+            	 
+              });
+
+        </script> 
     </body>
 </html>
