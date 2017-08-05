@@ -4,12 +4,11 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-        <title>User Home</title>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <title>Visitor Home</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
-        
         <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
         
@@ -46,15 +45,6 @@
 
     <body>
     
-        <!--head>
-        <div class = "page-header np-padding no margin"> 
-         <div class = "headtry">
-         <img src = "https://twistedsifter.files.wordpress.com/2013/03/bixby-bridge-highway-1-big-sur-california.jpg" class="image-responsive"></img>
-         </div>
-         </div>
-        </head-->
-    
-         <!-- h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s Count!</h1-->
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <!--a class="navbar-brand" href="#"> WebDevmentors</a-->
@@ -77,18 +67,6 @@
                 <li class="active"><a data-th-href="@{/cars}">Home <span class="sr-only">(current)</span></a></li>
                 
                 
-                <!--li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li-->
               </ul>
               <form class="navbar-form navbar-left">
                    <label class = "sLabel">Enjoy The CarPool</label>
@@ -99,6 +77,8 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
+        
+        
         <div class = "table-responsive">
             <table class = "table table-bordered table-striped" id="tableId">
                 <thead>
@@ -115,17 +95,11 @@
             </table>
           </div>
         <hr />   
-        
+           
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
-     
-        <!-- form data-th-action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form-->
-        
-       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-       
-         <script>
+        <script>
+         
           $(document).ready(function() {
                     $.ajax({
                         url : "getCarData",
