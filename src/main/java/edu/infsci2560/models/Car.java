@@ -41,7 +41,7 @@ public class Car {
 //    protected String price;
 //    protected String location;
 //    protected String mileage;
-    protected Blob describe;
+    protected String describe;
     protected String Email;
     protected String Dealer;
 
@@ -57,7 +57,7 @@ public class Car {
         this.Dealer = null;
     }
 
-    public Car(Long id, String name, WorkoutType workoutType, Blob des, String email, String dealer) {
+    public Car(Long id, String name, WorkoutType workoutType, String des, String email, String dealer) {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
@@ -84,8 +84,8 @@ public class Car {
     public void setDealer(String dealer){
         this.Dealer = dealer;
     }
-    
-    public Blob getDescribe(){
+    @Column(length = 1000)
+    public String getDescribe(){
         return describe;
     }
     public void setDescribe(String des){
