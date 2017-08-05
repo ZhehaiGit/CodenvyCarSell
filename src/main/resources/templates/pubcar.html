@@ -92,12 +92,11 @@
           </div><!-- /.container-fluid -->
         </nav>
         <div class = "table-responsive">
-            <table class = "table table-bordered table-striped" id="tableId" value="${cars}">
+            <table class = "table table-bordered table-striped" id="tableId">
                 <thead>
                     <tr>
                         <th width="5%" class = "text-mid">#</th>
                         <th width="5%" class = "text-mid">ID</th>
-                        <!--th class ="text-mid" style="display:none;"></th-->
                         <th width="10%" class = "text-mid">Model</th>
                         <th width="8%" class = "text-mid">Type</th>
                         <th class = "text-mid">Describe</th>
@@ -124,83 +123,83 @@
                 $('.selectpicker').selectpicker('refresh');
         </script>
          <script>
-      $(document).ready(function() {
-                $.ajax({
-                    url : "getCarData",
-                    type : "GET",
-                    dataType: "json",
-                    contentType: "json",
-            		success : function(data) {
-//            		     data = "cars=" +JSON.stringify(data);//这个是对的 但是是string
-            		    var table = $('#tableId').DataTable({
-            		     data : data,
-            		     columns: [
-            		        { "data": null },
-                            { "data": "id" },
-                            { "data": "title" },
-                            { "data": "workoutType",
-                             "ordering": false},
-                            { "data": "describe" },
-                            { "data": "email" },
-                            { "data": "dealer" }
-                        ], 
-                        "columnDefs": [ {
-                             "targets": 0,
-                            "orderable": false,
-                            "searchable": false
+          $(document).ready(function() {
+                    $.ajax({
+                        url : "getCarData",
+                        type : "GET",
+                        dataType: "json",
+                        contentType: "json",
+                		success : function(data) {
+//                		     data = "cars=" +JSON.stringify(data);//这个是对的 但是是string
+                		     alert(JSON.stringify(data));
+                		    var table = $('#tableId').DataTable({
+                		     data : data,
+                		     columns: [
+                		        { "data": null },
+                                { "data": "id" },
+                                { "data": "title" },
+                                { "data": "workoutType",},
+                                { "data": "describe" },
+                                { "data": "email" },
+                                { "data": "dealer" }
+                            ], 
+                            "columnDefs": [ {
+                                 "targets": 0,
+                                "orderable": false,
+                                "searchable": false
+                                },
+                                {
+                                "targets": 1,
+                                "visible": false,
+                                "orderable": false,
+                                "searchable": false
+                                },
+                                {
+                                "targets": 4,
+                                "orderable": false,
+                                "searchable": false
+                                },
+                                {
+                                "targets": 5,
+                                "orderable": false
+                                } ,
+                                {
+                                "targets": 6,
+                                "orderable": false
+                                } ],
+                            drawCallback : function() { // 序号列
+    
+                                    var api = this.api();
+                                    
+                                    var startIndex = api.context[0]._iDisplayStart; // 获取本页开始的条数
+                                    
+                                    api.column(0).nodes().each(function(cell, i) {
+                                    
+                                    cell.innerHTML =  i + 1;
+                                    
+                                    });
+    
                             },
-                            {
-                            "targets": 1,
-                            "visible": false,
-                            "orderable": false,
-                            "searchable": false
-                            },
-                            {
-                            "targets": 4,
-                            "orderable": false,
-                            "searchable": false
-                            },
-                            {
-                            "targets": 5,
-                            "orderable": false
-                            } ,
-                            {
-                            "targets": 6,
-                            "orderable": false
-                            } ],
-                        drawCallback : function() { // 序号列
-
-                                var api = this.api();
-                                
-                                var startIndex = api.context[0]._iDisplayStart; // 获取本页开始的条数
-                                
-                                api.column(0).nodes().each(function(cell, i) {
-                                
-                                cell.innerHTML =  i + 1;
-                                
-                                });
-
+                            
+            			     });
+            			     $('#tableId tbody').on( 'click', 'tr', function () {
+                                var trid = table.row(this).data();
+                                var localId = trid.id;
+                                var x = screen.width/2 - 700/2;
+                                var y = screen.height/2 - 450/2;
+                                window.open("https://car-sells.herokuapp.com" + "/carInfo/" + localId, 'carInfo','height=485,width=700,left='+x+',top='+y);
+                    
+                            });
+                	       },
+                	    error: function(XMLHttpRequest, textStatus, errorThrown) {  //#3这个error函数调试时非常有用，如果解析不正确，将会弹出错误框
+                            alert(XMLHttpRequest.status);
+                            alert(XMLHttpRequest.readyState);
+                            alert(textStatus); // paser error;
+                            
                         },
-                        
-        			     });
-        			     $('#tableId tbody').on( 'click', 'tr', function () {
-                            var trid = table.row(this).data();
-                            var localId = trid.id;
-                            var x = screen.width/2 - 700/2;
-                            var y = screen.height/2 - 450/2;
-                            window.open("https://car-sells.herokuapp.com" + "/carInfo/" + localId, 'carInfo','height=485,width=700,left='+x+',top='+y);
-                
-                        });
-            	       },
-            	    error: function(XMLHttpRequest, textStatus, errorThrown) {  //#3这个error函数调试时非常有用，如果解析不正确，将会弹出错误框
-                        alert(XMLHttpRequest.status);
-                        alert(XMLHttpRequest.readyState);
-                        alert(textStatus); // paser error;
-                        
-                    },
-            	  });
-            	 
-              });
+                	  });
+                	 
+                  });
 
         </script> 
     </body>
