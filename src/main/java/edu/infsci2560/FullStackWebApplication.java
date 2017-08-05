@@ -35,7 +35,7 @@ public class FullStackWebApplication {
         
          repository.save(new Car(1L, "2013 Porsche 911", 
                                 WorkoutType.Coupe, 
-                                "fsdlkfdlf",
+                                "This Certified 2013 Porsche 911 is a brilliant example of quality meets",
                                 "Zhehai@gmail.com", 
                                 "Zhehai"));
         repository.save(new Car(14L, "2013 Porsche 911", 
