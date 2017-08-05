@@ -41,7 +41,7 @@ public class Car {
 //    protected String price;
 //    protected String location;
 //    protected String mileage;
-    @Column(length=1000) 
+    @Column(length= 3000) 
     protected String describe;
     protected String Email;
     protected String Dealer;
