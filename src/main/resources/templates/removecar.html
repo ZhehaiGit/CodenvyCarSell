@@ -88,22 +88,27 @@
           </div><!-- /.container-fluid -->
         </nav>
         <div>
-            <table class = "table table-bordered table-striped table-hover">
+            <table class = "table table-bordered table-striped table-hover" id = "tableId">
+                <thead>
                 <tr>
                     <th class = "text-mid">ID</th>
+                    <th class = "text-mid" style="display:none;"></th>
                     <th class = "text-mid">Model</th>
                     <th class = "text-mid">Type</th>
                     <th class = "text-mid">Describe</th>
                     <th class = "text-mid">Delet</th>
-                </tr>                
+                </tr> 
+                </thead>
+                <tbody>
                 <tr data-th-each="car : ${customer.cars}">
                     <td></td>
-                    <!--td data-th-text="${car.id}"></td-->
+                    <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
                     <td data-th-text="${car.title }"></td>
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
                     <td><a data-th-href = "@{delete-task/{id}(id=${car.id})}"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
+                </tbody>
             </table>
           </div>
         <hr />
@@ -193,6 +198,31 @@
                 });
                 };
             addSerialNumber();
+        </script>
+        <script>
+             var $rows = $('#tableId tbody tr');
+                $('#search').keyup(function() {
+                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+                        reg = RegExp(val, 'i'),
+                        text;
+                    
+                    $rows.show().filter(function() {
+                        text = $(this).text().replace(/\s+/g, ' ');
+                        return !reg.test(text);
+                    }).hide();
+                });
+        
+        
+             jQuery(document).ready(function($) {
+                $(document).on('click', '#tableId tbody tr', function (e) {
+                    e.stopPropagation();
+                    var $this = $(this);
+                    var trid = $this.closest('tr').find("#eid").text();
+                    var x = screen.width/2 - 700/2;
+                    var y = screen.height/2 - 450/2;
+                    window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
+                }); 
+            });
         </script>
     </body>
 </html>
