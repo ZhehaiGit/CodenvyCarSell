@@ -32,6 +32,7 @@ public class FullStackWebApplication {
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
 
         CarRepository repository = ctx.getBean(CarRepository.class);
+        repository.save(new Car(1L, "Porsche 911", WorkoutType.SUV, "BMW $30K MIle:40K 90% new. If want ore info, pls conect me for free", "zzh@pitt.edu", "zzh"));
         repository.save(new Car(1L, "BMW X6", WorkoutType.SUV, "BMW $30K MIle:40K 90% new. If want ore info, pls conect me for free", "zzh@pitt.edu", "zzh"));
         repository.save(new Car(2L, "Benz c200", WorkoutType.NormalCar, "Benz","xjl@gmail.com", "xjl"));
         repository.save(new Car(3L, "Dodge Ram", WorkoutType.Van, "Dodge", "wdyj@ppp.com", "wdyj"));

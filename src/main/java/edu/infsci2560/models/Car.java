@@ -23,11 +23,12 @@ public class Car {
 
     public enum WorkoutType {
         Unknown,
-        MicroCar,
-        NormalCar,
-        SportsCar,
         Van,
-        SUV
+        SUV,
+        Coupe,
+        Truck,
+        Sedan,
+        Convertible,
     }
     
     
@@ -37,6 +38,9 @@ public class Car {
     protected Long id;
     protected String title;
     protected WorkoutType workoutType;
+    protected String price;
+    protected String location;
+    protected String mileage;
     protected String describe;
     protected String Email;
     protected String Dealer;
@@ -45,7 +49,10 @@ public class Car {
         this.id = Long.MAX_VALUE;
         this.title = null;
         this.workoutType = WorkoutType.Unknown;
-        this.describe =  null;
+//        this.describe =  null;
+//        this.location = null;
+//        this.price = null;
+        this.mileage = null;
         this.Email = null;
         this.Dealer = null;
     }
@@ -54,6 +61,9 @@ public class Car {
         this.id = id;
         this.title = name;
         this.workoutType = workoutType;
+//        this.price = pri;
+//        this.location = loc;
+//        this.mileage = mil;
         this.describe = des;
         this.Email = email;
         this.Dealer = dealer;
