@@ -129,14 +129,17 @@
     	<label for="CarOnSell"> Car on sell:</label>
     	</div>
 
-            <table class = "table table-bordered table-striped table-hover" style = "margin-top:20px;">
+            <table class = "table table-bordered table-striped table-hover" style = "margin-top:20px;" id = "tableId">
+                <thead>
                 <tr>
                     <th class = "text-mid">#</th>
                     <th class = "text-mid" style="display:none;"></th>
                     <th class = "text-mid">Model</th>
                     <th class = "text-mid">Type</th>
                     <th class = "text-mid">Describe</th>
-                </tr>                
+                </tr>   
+                </thead>
+                <tbody>
                 <tr data-th-each="car : ${customer.cars}" >
                     <td></td>
                     <td id = "eid" data-th-text="${car.id}"  style="display:none;"></td>
@@ -144,6 +147,7 @@
                     <td data-th-text="${car.workoutType}"></td>
                     <td data-th-text="${car.describe}"></td>
                 </tr>
+                </tbody>
             </table>
           </div>
         <hr />
