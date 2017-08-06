@@ -34,6 +34,12 @@
     .nav-tabs {
         margin-bottom:0;
     }
+     .table {table-layout:fixed;}
+    .table  td {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
     </style>
 
     <body>
@@ -128,16 +134,18 @@
         <div style = "margin-top:30px;">
         <div>
     	<label for="CarOnSell"> Car on sell:</label>
-    	</div>
+    	
+    	</div class = "table-responsive">
 
             <table class = "table table-bordered table-striped table-hover" style = "margin-top:20px;" id = "tableId">
                 <thead>
                 <tr>
-                    <th class = "text-mid">#</th>
+                    <th width = "5%" class = "text-mid">#</th>
                     <th class = "text-mid" style="display:none;"></th>
-                    <th class = "text-mid">Model</th>
-                    <th class = "text-mid">Body Type</th>
+                    <th width = "25%" class = "text-mid">Model</th>
+                    <th width = "15%" class = "text-mid">Body Type</th>
                     <th class = "text-mid">Description</th>
+                    
                 </tr>   
                 </thead>
                 <tbody>
