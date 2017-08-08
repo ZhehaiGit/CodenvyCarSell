@@ -136,6 +136,7 @@ public class CustomerController {
             repository.delete(id);
         } else {
             log.error("ID not exsit!");
+            
         }
         return new ModelAndView(new RedirectView("/removecar"));
     }
