@@ -149,23 +149,6 @@
         <script>
         
         
-//            function parseJSON(data) {
-//                    return  window.JSON.parse( data );
-//            }
-    //      var data = eval(document.getElementById('datecar')).value;
-          
-           
-//            var  obj = JSON.parse(search);   
-                       
-//           var listForJavascript = [];
-//            <c:forEach items="${cars}" var="listItem">
-//              var arr = [];
-//            
-//              arr.push("<c:out value="${listItem.param1}" />");
-//              arr.push("<c:out value="${listItem.param2}" />");
-//            
-//              listForJavascript.push(arr);
-//            </c:forEach>
                
                                  
             $(document).ready(function() {
@@ -175,9 +158,6 @@
                     dataType: "json",
                     contentType: "json",
             		success : function(data) {
-//            		    alert("try1"+ data);
-//            		     data = "cars=" +JSON.stringify(data);//这个是对的 但是是string
-//            		     alert(data);
                         
             		   
             		    var table = $('#tableId').DataTable({
@@ -248,17 +228,6 @@
                             window.open("https://car-sells.herokuapp.com" + "/carInfo/" + localId, 'carInfo','height=485,width=700,left='+x+',top='+y);
                 
                         });
-//        			    var $rows = $('#tableId tbody tr');
-//                        $('#search').keyup(function() {
-//                            var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-//                                reg = RegExp(val, 'i'),
-//                                text;
-//                            
-//                            $rows.show().filter(function() {
-//                                text = $(this).text().replace(/\s+/g, ' ');
-//                                return !reg.test(text);
-//                            }).hide();
-//                        });
             	       },
             	    error: function(XMLHttpRequest, textStatus, errorThrown) {  //#3这个error函数调试时非常有用，如果解析不正确，将会弹出错误框
                         alert(XMLHttpRequest.status);
@@ -289,33 +258,6 @@
             };
             addSerialNumber();
         </script>
-        
-        <script>
-//           var $rows = $('#tableId tbody tr');
-//                $('#search').keyup(function() {
-//                    
-//                    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-//                        reg = RegExp(val, 'i'),
-//                        text;
-//                    
-//                    $rows.show().filter(function() {
-//                        text = $(this).text().replace(/\s+/g, ' ');
-//                        return !reg.test(text);
-//                    }).hide();
-//                });
-        </script>
-        <script>
-//             jQuery(document).ready(function($) {
-//                $(document).on('click', '#tableId tbody tr', function (e) {
-//                    e.stopPropagation();
-//                    var $this = $(this);
-//                    var trid = $this.closest('tr').find("#eid").text();
-//                    var x = screen.width/2 - 700/2;
-//                    var y = screen.height/2 - 450/2;
-//                    window.open("https://car-sells.herokuapp.com" + "/carInfo/" + trid, 'carInfo','height=485,width=700,left='+x+',top='+y);
-//                }); 
-//            });
-        </script>
-        
+                
     </body>
 </html>

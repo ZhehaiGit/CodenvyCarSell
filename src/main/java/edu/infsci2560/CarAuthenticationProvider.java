@@ -57,7 +57,6 @@ public class CarAuthenticationProvider implements AuthenticationProvider {
         
         
         
-//        UserDetails userDetials = userService.loadUserByUsername(username);
         
 
 

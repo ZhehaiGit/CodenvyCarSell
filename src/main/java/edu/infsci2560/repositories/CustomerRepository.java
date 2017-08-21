@@ -14,13 +14,4 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
 //    @Query("select u from #{#entityName} u where u.name = ?1")
 //@Query("UPDATE Customer c SET c.ars = :cars WHERE c.id = :id")
     List<Customer> findByUserName(String Name);
-//    List<Customer> findByLastName(String Name);
-
-//    List<Customer> findByLastName(String Username);
-
-    //      List<Customer> findByLastName(String lastName);
-
-    //    public boolean contains(String userName) {
-    //   
-    //    }
 }

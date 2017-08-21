@@ -45,32 +45,6 @@ public class CarsController {
     private CustomerRepository cstmRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
     
-//     @RequestMapping(value = "login", method = RequestMethod.GET)
-//    public ModelAndView index() {
-//        return new ModelAndView("cars", "cars", repository.findAll());
-//    }
-
-//    @RequestMapping(value = "home", method = RequestMethod.GET)
-//    public ModelAndView index() {
-//        return new ModelAndView("home", "home", null);
-//    }
-    
-//    @RequestMapping(value = "auth", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView auth(@RequestParam("username") String username, @RequestParam("password") String password) {
-//        if (username.equals("zzh") && password.equals("hzz")) {
-////            return new ModelAndView("cars", "cars", repository.findAll());
-//            return new ModelAndView("customer", "customer", cstmRepository.findByUserName("username"));
-//        } else {
-//            return new ModelAndView("param.error");
-//        }
-//    }
-
-
-//        if (cstmRepository.contains(username) && cstmRepository.get(username).Password.equals(password) {
-//            return new ModelAndView("home", "cars", repository.findAll());
-//        } else {
-//            
-//        }     
 
     @RequestMapping(value = "/public/cars", method = RequestMethod.GET)
      @ResponseBody
@@ -86,26 +60,19 @@ public class CarsController {
     
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView cars() {
-//        String username = request.getRemoteUser();
-//        System.out.println(username);
-//        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-//        return new ModelAndView("customer", "customer", cstmRepository.findByUserName(username).get(0));
         return new ModelAndView("cars", "cars", repository.findAll());  
     }
     @RequestMapping(value = "/getCarData", method = RequestMethod.GET)
     public  @ResponseBody Object getCarData() {
-//    	List<Car> cars = Lists.newArrayList(repository.findAll());
     	return repository.findAll();
     }
      @RequestMapping(value = "/public/getCarData", method = RequestMethod.GET)
     public  @ResponseBody Object getPublicCarData() {
-//    	List<Car> cars = Lists.newArrayList(repository.findAll());
     	return repository.findAll();
     }
     
     
 @RequestMapping(value = "carInfo/{id}")
-//    @Query("UPDATE Customer c SET c.cars = :cars WHERE c.id = :id")
     public ModelAndView carInfo(@PathVariable("id") Long id) {
  
         return new ModelAndView("carInfo","car",repository.findById(id).get(0));

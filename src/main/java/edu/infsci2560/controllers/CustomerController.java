@@ -47,7 +47,6 @@ public class CustomerController {
     @Autowired
     private CustomerRepository CustRepository;
     final static Logger log = LoggerFactory.getLogger(CarsController.class);
-//    private String Uname = request.getRemoteUser();
 //    final static Logger log = LoggerFactory.getLogger(CarsController.class);
 
     
@@ -58,16 +57,6 @@ public class CustomerController {
     }
     
     
-//    @RequestMapping(value = "signupadd", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-//    public ModelAndView signupadd(@RequestParam("username") String username, 
-//                                @RequestParam("password") String password, 
-//                                @RequestParam("email") String email) {
-////        Customer newCustomer = new Customer(username, password, email);
-////        CustRepository.save(newCustomer);
-//        repository.save(new Car(10L, "BMW", WorkoutType.Van,"dasdsa","dad","1111"));
-//        System.out.println("Success!");
-//        return new ModelAndView("home", "home", null);
-//    }
     
     @RequestMapping(value = "signupadd")
     public ModelAndView signup(@ModelAttribute @Valid Customer customer, BindingResult result) {
@@ -75,13 +64,6 @@ public class CustomerController {
         return new ModelAndView("login", "login", null);
     }
     
-//    @RequestMapping(value = "cstmCars", method = RequestMethod.GET)
-//    public ModelAndView cstmCars() {
-//        String Uname = request.getRemoteUser();
-////        List<Car> cars = cstmRepository.findByUserName(username).get(0).getCars();
-//        return new ModelAndView("customer", "customer", CustRepository.findByUserName(Uname).get(0));
-////        return new ModelAndView("customer", "cars", repository.findAll());  
-//    }
     
     @RequestMapping(value = "sellcars", method = RequestMethod.GET)
     public ModelAndView SellCars() {
@@ -104,13 +86,11 @@ public class CustomerController {
         Customer customer = CustRepository.findByUserName(Uname).get(0);
         car.setEmail(customer.getEmail());
         car.setDealer(Uname);
-//        repository.save(car);
         
         List<Car> cars = customer.getCars();
         cars.add(car);
         customer.setCars(cars);
         CustRepository.save(customer);
-//        return new ModelAndView(new RedirectView("sellcars"));
         return new ModelAndView("sellcars","customer",CustRepository.findByUserName(Uname).get(0));
 //        return new ModelAndView("sellcars", "cars", repository.findAll());
     }

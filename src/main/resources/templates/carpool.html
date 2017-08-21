@@ -32,19 +32,8 @@
 
     <body>
     
-        <!--head>
-        <div class = "page-header np-padding no margin"> 
-         <div class = "headtry">
-         <img src = "https://twistedsifter.files.wordpress.com/2013/03/bixby-bridge-highway-1-big-sur-california.jpg" class="image-responsive"></img>
-         </div>
-         </div>
-        </head-->
-    
-         <!-- h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s Count!</h1-->
         <nav class="navbar navbar-default">
           <div class="container-fluid">
-            <!--a class="navbar-brand" href="#"> WebDevmentors</a-->
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -53,8 +42,6 @@
                 <span class="icon-bar"></span>
               </button>
               <a data-th-inline="text" class="navbar-text" value = "CarPool"></a>
-             <!--a data-th-inline="text" class="navbar-text">[[${#httpServletRequest.remoteUser}]]</a-->
-              <!-- a class="navbar-brand" data-th-inline="text" href="#">[[${#httpServletRequest.remoteUser}]]</a-->
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,18 +50,6 @@
                 <li class="active"><a data-th-href="@{/cars}">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="sellcars">SellCar</a></li>
                 <li><a href="removecar">RemoveCar</a></li>
-                <!--li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li-->
               </ul>
               <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -106,76 +81,11 @@
             </table>
           </div>
         <hr />
-        <!--div class="container">
-        	<div class="row">
-        		<div class="span6">
-                    <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-                        <div class="controls controls-row">
-                            <input id="name" name="title" type="text"  class="span3" placeholder="Car Model"/> 
-                            <select name="workoutType" class="selectpicker">
-                              <option data-hidden="true">Select Car Type</option>
-                              <option value="Unknown">Unknown</option>
-                              <option value="MicroCar">MicroCar</option>
-                              <option value="NormalCar">NormalCar</option>
-                              <option value="SportsCar">SportsCar</option>
-                              <option value="Van">Van</option>
-                              <option value="SUV">SUV</option>
-                            </select>
-                        </div>
-                        <div class="controls">
-                            <textarea id="message" name="describe" class="span6" placeholder="Describe your car" rows="5"></textarea>
-                        </div>
-                          
-                        <div class="controls">
-                            <button id="contact-submit" type="submit" value="Add Car" class="btn btn-primary input-medium pull-down">Send</button>
-                        </div>
-                    </form>
-                </div>
-        	</div>
-        </div>
-        Remove Car<br />
-        <form data-th-action="@{/cars/delet}" name="deletCarForm" method="post">
-            <input type="number" name="id" class="form-control" placeholder="ID"/>
-            <input id="contact-submit" type="submit" value="delet" class="btn btn-primary"></input>
-        </form-->
+        </form>
         
         
-        <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-          <div class="form-group">
-            <label for="carModel">Car Model</label>
-            <input type="text" class="form-control" name="title" id="carModel" placeholder="Car Model"/>
-          </div>
-          <div class="form-group">
-            Type:<br />
-            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
-            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
-            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
-            <input type="radio" name="workoutType" value="Van" /> Van<br />
-            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
-            <input type="submit" value="Add Workout"/>
-          </div>
-            Describe:<br />
-            <textarea class="form-control" rows="3" name="describe" placeholder="Describe your car"></textarea>
-            
-          <button type="submit" class="btn btn-default"  >Submit</button>
-        </form-->
-        <!--form data-th-action="@{/cars/add}" name="addCarForm" method="post">
-            Model: <input type="text" name="title" /><br />
-            Type:<br />
-            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="MicroCar" /> MicroCar<br />
-            <input type="radio" name="workoutType" value="NormalCar" /> NormalCar<br />
-            <input type="radio" name="workoutType" value="SportsCar" /> SportsCar<br />
-            <input type="radio" name="workoutType" value="Van" /> Van<br />
-            <input type="radio" name="workoutType" value="SUV" /> SUV<br />
-            <input type="submit" value="Add Workout"/>
-        </form-->
         
         <hr />       
-        <!-- form data-th-action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form-->
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
